@@ -6,6 +6,7 @@
  * Date: 9/2/17
  * Time: 13:27
  */
+
 namespace Edujugon\GoogleAds\Session;
 
 use Edujugon\GoogleAds\Auth\OAuth2;
@@ -23,7 +24,7 @@ class AdwordsSession
      * Adwords config data based on the environment.
      * @var mixed
      */
-    protected $config;
+    protected $adsConfig;
 
     /**
      * AdwordsSession constructor.
@@ -35,7 +36,7 @@ class AdwordsSession
         if($oAuth2Credential)
             $this->oAuth2Credential = $oAuth2Credential;
 
-        $this->config = eConfigGoogleAds($env);
+        $this->adsConfig = eConfigGoogleAds($env);
     }
 
     /**
@@ -61,33 +62,24 @@ class AdwordsSession
      */
     public function build(array $data = [])
     {
+        $data = $this->mergeData($data);
+
         $adwordsSession = new AdWordsSessionBuilder();
 
-        if(!$this->validateData($data))
-            $adwordsSession->withDeveloperToken($this->config['developerToken'])
-                ->withClientCustomerId($this->config['clientCustomerId'])
-                ->withOAuth2Credential($this->oAuth2Credential);
-        else
-            $adwordsSession->withDeveloperToken($data['developerToken'])
+        return $adwordsSession->withDeveloperToken($data['developerToken'])
                 ->withClientCustomerId($data['clientCustomerId'])
-                ->withOAuth2Credential($this->oAuth2Credential);
-
-
-        return $adwordsSession->build();
+                ->withOAuth2Credential($this->oAuth2Credential)
+                ->build();
     }
 
     /**
-     * Check the data is as expected.
+     * Create an array merging the config array with passed data.
      *
      * @param $data
-     * @return bool
+     * @return array
      */
-    private function validateData($data)
+    private function mergeData(array $data)
     {
-        if(array_key_exists('developerToken',$data) &&
-            array_key_exists('clientCustomerId',$data))
-            return true;
-
-        return false;
+        return array_merge($this->adsConfig,$data);
     }
 }

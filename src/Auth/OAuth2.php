@@ -20,16 +20,17 @@ class OAuth2
      * Adwords config data based on the environment.
      * @var mixed
      */
-    protected $config;
+    protected $adsConfig;
 
     protected $oAuthConfig;
+
     /**
      * OAuth2 constructor.
      * @param null $env
      */
     function __construct($env = null)
     {
-        $this->config = eConfigGoogleAds($env);
+        $this->adsConfig = eConfigGoogleAds($env);
         $this->oAuthConfig = eConfigOAuth();
     }
 
@@ -45,25 +46,21 @@ class OAuth2
     public function build(array $data = [])
     {
 
+        $data = $this->mergeData($data);
+
         $refreshCredentials = new OAuth2TokenBuilder();
 
-        if(!$this->validateData($data))
-            $refreshCredentials->withClientId($this->config['clientId'])
-                ->withClientSecret($this->config['clientSecret'])
-                ->withRefreshToken($this->config['refreshToken']);
-        else
-            $refreshCredentials->withClientId($data['clientId'])
-                ->withClientSecret($data['clientSecret'])
-                ->withRefreshToken($data['refreshToken']);
-
-        return $refreshCredentials->build();
+        return $refreshCredentials->withClientId($data['clientId'])
+            ->withClientSecret($data['clientSecret'])
+            ->withRefreshToken($data['refreshToken'])
+            ->build();
     }
 
     public function buildFullAuthorizationUri()
     {
         $arrayClient = [
-            'clientId' => $this->config['clientId'],
-            'clientSecret' => $this->config['clientSecret']
+            'clientId' => $this->adsConfig['clientId'],
+            'clientSecret' => $this->adsConfig['clientSecret']
 
         ];
 
@@ -71,19 +68,15 @@ class OAuth2
 
         return ''.$oauth2->buildFullAuthorizationUri();
     }
-    /**
-     * Check the data is as expected.
-     *
-     * @param $data
-     * @return bool
-     */
-    private function validateData($data)
-    {
-        if(array_key_exists('clientId',$data) &&
-            array_key_exists('clientSecret',$data) &&
-            array_key_exists('refreshToken',$data))
-            return true;
 
-        return false;
+    /**
+     * Create an array merging the config array with passed data.
+     * @param $data
+     * @return array
+     */
+    private function mergeData(array $data)
+    {
+        return array_merge($this->adsConfig,$data);
     }
+
 }

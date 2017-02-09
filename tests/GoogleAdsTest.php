@@ -33,7 +33,7 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
             $pageQuery = sprintf('%s LIMIT %d,%d', $query, $offset, $this->page_limit);
             // Make the query request.
             $page = $campaignService->query($pageQuery);
-
+            dd($page);
             // Display results from the query.
             if ($page->getEntries() !== null) {
                 $totalNumEntries = $page->getTotalNumEntries();
