@@ -1,11 +1,11 @@
 <?php
 
-namespace Edujugon\Skeleton\Providers;
+namespace Edujugon\GoogleAds\Providers;
 
-use Edujugon\Skeleton\Skeleton;
+use Edujugon\GoogleAds\GoogleAds;
 use Illuminate\Support\ServiceProvider;
 
-class SkeletonServiceProvider extends ServiceProvider
+class GoogleAdsServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -14,7 +14,7 @@ class SkeletonServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $config_path = function_exists('config_path') ? config_path('skeleton.php') : 'skeleton.php';
+        $config_path = function_exists('config_path') ? config_path('google-ads.php') : 'google-ads.php';
 
         $this->publishes([
             __DIR__.'/../Config/config.php' => $config_path,
@@ -28,9 +28,9 @@ class SkeletonServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['skeleton'] = $this->app->share(function($app)
+        $this->app['googleAds'] = $this->app->share(function($app)
         {
-            return new Skeleton;
+            return new GoogleAds();
         });
     }
 }

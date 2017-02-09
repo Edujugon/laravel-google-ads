@@ -1,7 +1,7 @@
 {
-    "name": "edujugon/skeleton-laravel-package",
-    "description": "Skeleton Laravel package. Initial base for your new awesome laravel package",
-    "keywords": ["skeleton","laravel","package"],
+    "name": "edujugon/laravel-google-ads",
+    "description": "Laravel package for Google Adwords. Easy to use wrapper of googleads/googleads-php-lib for Laravel",
+    "keywords": ["google","adwords","ads","laravel"],
     "license": "MIT",
     "authors": [
         {
@@ -10,15 +10,19 @@
         }
     ],
     "require": {
-        "illuminate/support": "^5.4"
+        "illuminate/support": "^5.4",
+        "googleads/googleads-php-lib": "^25.1"
     },
     "require-dev": {
       "phpunit/phpunit": "~5.0"
     },
     "autoload": {
       "psr-4": {
-        "Edujugon\\Skeleton\\": "src/"
-      }
+        "Edujugon\\GoogleAds\\": "src/"
+      },
+      "files": [
+          "src/Support/helpers.php"
+      ]
     },
     "minimum-stability": "dev"
 }
