@@ -66,6 +66,8 @@ class Fields
      */
     public function of($reportType)
     {
+        $this->validateReportType($reportType);
+
         $this->reportDefinitionFields = $this->reportDefinitionService->getReportFields($reportType);
 
         $this->obj = $this->createObj($this->reportDefinitionFields);
@@ -73,6 +75,11 @@ class Fields
         return $this;
     }
 
+    private function validateReportType($type)
+    {
+        if(!ReportTypes::exist($type))
+            ReportTypes::invalidType();
+    }
     /**
      * Get fields as object
      *

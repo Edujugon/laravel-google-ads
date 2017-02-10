@@ -1,27 +1,28 @@
 <?php
-namespace Edujugon\GoogleAds\Reports;
-
-use Google\AdsApi\AdWords\v201609\cm\ReportDefinitionReportType;
-use Edujugon\GoogleAds\Exceptions\ReportTypes as ReportException;
-use ReflectionClass;
-
 /**
  * Project: google-ads.
  * User: Edujugon
  * Email: edujugon@gmail.com
  * Date: 10/2/17
- * Time: 9:25
+ * Time: 10:45
  */
-abstract class ReportTypes
-{
 
+namespace Edujugon\GoogleAds\Reports;
+
+
+use Edujugon\GoogleAds\Exceptions\ReportFormat;
+use Google\AdsApi\AdWords\Reporting\v201609\DownloadFormat;
+use ReflectionClass;
+
+class Format
+{
     /**
- * Load all constants from ReportDefinitionReportType
- * @return array
- */
+     * Load all constants from ReportDefinitionReportType
+     * @return array
+     */
     private static function loadConstants()
     {
-        return (new ReflectionClass(ReportDefinitionReportType::class))->getConstants();
+        return (new ReflectionClass(DownloadFormat::class))->getConstants();
     }
 
     /**
@@ -39,7 +40,7 @@ abstract class ReportTypes
      *
      * @param $key
      * @return mixed
-     * @throws ReportException
+     * @throws ReportFormat
      */
     public static function get($key)
     {
@@ -71,11 +72,12 @@ abstract class ReportTypes
     }
 
     /**
-     * @throws ReportException
+     * @throws ReportFormat
      */
     public static function invalidType()
     {
-        throw new ReportException("Invalid report type. Available types: " . implode(', ',static::loadConstants()));
+        throw new ReportFormat("Invalid report format. Available types: " . implode(', ',static::loadConstants()));
     }
+
 
 }
