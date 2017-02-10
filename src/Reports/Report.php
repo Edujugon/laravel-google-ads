@@ -148,33 +148,69 @@ class Report
     }
 
     /**
+     * Get the report as an object
+     *
+     * @return \SimpleXMLElement
+     */
+    public function getAsObj()
+    {
+        $this->format(Format::get('xml'));
+
+        $this->run();
+
+        return simplexml_load_string($this->data->getAsString());
+    }
+
+    /**
+     *
+     * @return mixed
+     */
+    public function getAsString()
+    {
+        $this->run();
+
+        return $this->data->getAsString();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStream()
+    {
+        $this->run();
+
+        return $this->data->getStream();
+    }
+
+    /**
+     * @param $filePath
+     * @param string $format
+     * @return bool
+     */
+    public function saveToFile($filePath,$format = 'csvforexcel')
+    {
+        $this->format(Format::get($format));
+        $this->run();
+
+        $this->data->saveToFile($filePath);
+
+        return true;
+    }
+
+    /**
      * Run the AWQL
      */
-    public function run()
+    private function run()
     {
         $query = $this->createQuery();
 
         $this->data = $this->reportDownloader->downloadReportWithAwql(
             $query, $this->format);
-
-        return $this;
     }
 
-    public function getAsString()
-    {
-        $this->data->getAsString();
-    }
-
-    public function getStream()
-    {
-        $this->data->getStream();
-    }
-
-    public function saveToFile($filePath)
-    {
-        $this->data->saveToFile($filePath);
-    }
-
+    /**
+     * @return string
+     */
     private function createQuery()
     {
         $query = '';

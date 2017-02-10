@@ -29,8 +29,8 @@ class ServicesTest extends PHPUnit_Framework_TestCase {
     /** @test */
     public function ads_all(){
         $ads = new \Edujugon\GoogleAds\Services\AdGroupAd();
-        //dd($campaign->limit(1)->all());
-        //dd($ads->all()->getEntries());
+        //dd($ads->limit(1)->all(['DisplayUrl']));
+        dd($ads->limit(1)->all()->getEntries());
 
     }
 }

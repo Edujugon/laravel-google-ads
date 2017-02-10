@@ -49,25 +49,16 @@ class ReportTest extends PHPUnit_Framework_TestCase {
     public function get_report()
     {
         $report = new Report();
-        $report->select('CampaignId','AdGroupId')
+        $string = $report->select('CampaignId','AdGroupId','AdGroupName','Id', 'Criteria', 'CriteriaType','Impressions', 'Clicks', 'Cost', 'UrlCustomParameters')
             ->from('CRITERIA_PERFORMANCE_REPORT')
             ->during('20170101','20170210')
-            ->run()
-            ->saveToFile(__DIR__.'/marketing');
+            ->format('XML')
+            ->where('CampaignId = 752331963')
+            ->getAsObj();
+
+        $this->assertInstanceOf(SimpleXMLElement::class,$string);
+
     }
 
-    public function report_download()
-    {
-
-        $reportQuery = 'SELECT CampaignId, AdGroupId, Id, Criteria, CriteriaType, '
-            . 'Impressions, Clicks, Cost, UrlCustomParameters FROM CRITERIA_PERFORMANCE_REPORT '
-            . 'DURING LAST_7_DAYS';
-
-        $reportDownloader = new ReportDownloader((new Edujugon\GoogleAds\Session\AdwordsSession())->oAuth()->build());
-        $reportDownloadResult = $reportDownloader->downloadReportWithAwql(
-            $reportQuery, DownloadFormat::CSV);
-
-        dd($reportDownloadResult->getAsString());
-    }
 
 }
