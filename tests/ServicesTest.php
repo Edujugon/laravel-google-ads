@@ -1,8 +1,14 @@
 <?php
 
 
+use Google\AdsApi\AdWords\AdWordsServices;
+use Google\AdsApi\AdWords\Reporting\v201609\DownloadFormat;
+use Google\AdsApi\AdWords\Reporting\v201609\ReportDownloader;
+use Google\AdsApi\AdWords\v201609\cm\ReportDefinitionReportType;
+use Google\AdsApi\AdWords\v201609\cm\ReportDefinitionService;
+use Google\AdsApi\Dfp\v201611\ReportService;
 
-class CampaignTest extends PHPUnit_Framework_TestCase {
+class ServicesTest extends PHPUnit_Framework_TestCase {
 
     /** @test */
     public function campaing_all(){
@@ -24,7 +30,7 @@ class CampaignTest extends PHPUnit_Framework_TestCase {
     public function ads_all(){
         $ads = new \Edujugon\GoogleAds\Services\AdGroupAd();
         //dd($campaign->limit(1)->all());
-        dd($ads->all()->getEntries());
+        //dd($ads->all()->getEntries());
 
     }
 }
