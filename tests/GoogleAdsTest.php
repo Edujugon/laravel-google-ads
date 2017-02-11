@@ -15,52 +15,6 @@ use Google\Auth\OAuth2;
 
 class GoogleAdsTest extends PHPUnit_Framework_TestCase {
 
-    protected $page_limit = 500;
-
-
-    /** @test */
-    public function runExample(AdWordsServices $adWordsServices,
-                                      AdWordsSession $session) {
-        $campaignService = $adWordsServices->get($session, CampaignService::class);
-
-        // Create AWQL query.
-        $query = 'SELECT Id, Name, Status ORDER BY Name';
-
-        // Create paging controls.
-        $totalNumEntries = 0;
-        $offset = 0;
-        do {
-            $pageQuery = sprintf('%s LIMIT %d,%d', $query, $offset, $this->page_limit);
-            // Make the query request.
-            $page = $campaignService->query($pageQuery);
-            dd($page);
-            // Display results from the query.
-            if ($page->getEntries() !== null) {
-                $totalNumEntries = $page->getTotalNumEntries();
-                foreach ($page->getEntries() as $campaign) {
-                    printf(
-                        "Campaign with ID %d and name '%s' was found.\n",
-                        $campaign->getId(),
-                        $campaign->getName()
-                    );
-                }
-            }
-
-            // Advance the paging offset.
-            $offset += $this->page_limit;
-        } while ($offset < $totalNumEntries);
-
-        printf("Number of results found: %d\n", $totalNumEntries);
-    }
-
-    /** @test */
-    public function campaign_service()
-    {
-
-        $session = (new Edujugon\GoogleAds\Session\AdwordsSession())->oAuth()->build();
-
-        $this->runExample(new AdWordsServices(), $session);
-    }
 
     /** @test */
     public function get_refresh_token(){
@@ -74,7 +28,7 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
             'clientSecret' => 'WUVAo3UTzg9IHC26Vxq6u5P0',
             'scope' => 'https://www.googleapis.com/auth/adwords'
         ]);
-        dd(''.$oauth2->buildFullAuthorizationUri());
+        //dd(''.$oauth2->buildFullAuthorizationUri());
 
     }
 
