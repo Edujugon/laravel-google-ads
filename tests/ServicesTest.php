@@ -12,7 +12,7 @@ class ServicesTest extends PHPUnit_Framework_TestCase {
 
     /** @test */
     public function campaing_all(){
-        $campaign = new \Edujugon\GoogleAds\Services\Campaing();
+        $campaign = new \Edujugon\GoogleAds\Services\Campaign();
         //dd($campaign->limit(1)->all());
         //dd($campaign->all());
 
@@ -30,7 +30,7 @@ class ServicesTest extends PHPUnit_Framework_TestCase {
     public function ads_all(){
         $ads = new \Edujugon\GoogleAds\Services\AdGroupAd();
         //dd($ads->limit(1)->all(['DisplayUrl']));
-        dd($ads->limit(1)->all()->getEntries());
+        //dd($ads->limit(1)->all()->getEntries());
 
     }
 }

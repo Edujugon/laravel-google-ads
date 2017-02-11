@@ -11,7 +11,7 @@ namespace Edujugon\GoogleAds\Services;
 
 use Google\AdsApi\AdWords\v201609\cm\CampaignService;
 
-class Campaing extends Service
+class Campaign extends Service
 {
 
     protected $campaignService;

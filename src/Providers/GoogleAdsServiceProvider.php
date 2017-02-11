@@ -2,6 +2,7 @@
 
 namespace Edujugon\GoogleAds\Providers;
 
+use Edujugon\GoogleAds\Console\RefreshTokenCommand;
 use Edujugon\GoogleAds\GoogleAds;
 use Illuminate\Support\ServiceProvider;
 
@@ -28,9 +29,14 @@ class GoogleAdsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['googleAds'] = $this->app->share(function($app)
-        {
+        // Console commands
+        $this->commands([
+            RefreshTokenCommand::class,
+        ]);
+
+        $this->app->bind(GoogleAds::class, function ($app) {
             return new GoogleAds();
         });
+
     }
 }

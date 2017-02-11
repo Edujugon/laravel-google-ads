@@ -23,33 +23,15 @@ class RefreshTokenCommand extends Command {
     protected $description = 'Generate a new refresh token for Google Adwords API';
 
     /**
-     * @var AdWordsServices
-     */
-    protected $adWordsService;
-
-    /**
-     * AdWordsSession
-     * @var mixed
-     */
-    protected $session;
-
-    /**
-     * RefreshTokenCommand constructor.
-     */
-    public function __construct()
-    {
-        $this->adWordsService = new AdWordsServices();
-        $this->session = (new AdwordsSession())->oAuth()->build();
-    }
-
-    /**
      * Generate refresh token
      *
      */
     public function handle()
     {
 
-        $authorizationUrl = (new OAuth2())->buildFullAuthorizationUri();
+        $oAth2 = (new OAuth2())->init();
+
+        $authorizationUrl = $oAth2->buildFullAuthorizationUri();
 
         // Show authorization URL
         $this->line(sprintf(
@@ -59,17 +41,14 @@ class RefreshTokenCommand extends Command {
         // Retrieve token
         $accessToken = $this->ask('After approving the token enter the authorization code here:');
 
-        try {
-            $oAuth2Info = $this->adWordsService->getOAuthCredentials($this->session, $accessToken);
-        } catch (Exception $e) {
-            return $this->error($e->getMessage());
-        }
+        $oAth2->setCode($accessToken);
+        $authToken = $oAth2->fetchAuthToken();
 
         $this->comment('Copy the refresh token in your googleads configuration file (config/google-ads.php)');
         // Print refresh token
         $this->line(sprintf(
             'Refresh token: "%s"',
-            $oAuth2Info['refresh_token']
+            $authToken['refresh_token']
         ));
     }
 

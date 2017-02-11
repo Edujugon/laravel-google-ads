@@ -31,11 +31,7 @@ class ReportTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals('CSV',\Edujugon\GoogleAds\Reports\Format::get('asdf'));
     }
 
-    /** @test */
-    public function report_set_during_clause()
-    {
-        $report = (new Report())->during('20150101','20150202');
-    }
+
     /** @test */
     public function report_set_select_fields()
     {

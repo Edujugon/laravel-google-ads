@@ -35,13 +35,14 @@ class OAuth2
     }
 
     /**
+     * UserRefreshCredentials
      * Generate a refreshable OAuth2 credential for authentication.
      *
      * Parameters:
      * $data: [$clientId => '',$clientSecret => '',$refreshToken => '']
      *
      * @param array $data
-     * @return \Google\Auth\Credentials\ServiceAccountCredentials|\Google\Auth\Credentials\UserRefreshCredentials|mixed
+     * @return \Google\Auth\Credentials\UserRefreshCredentials
      */
     public function build(array $data = [])
     {
@@ -56,7 +57,10 @@ class OAuth2
             ->build();
     }
 
-    public function buildFullAuthorizationUri()
+    /**
+     * @return \Google\Auth\OAuth2
+     */
+    public function init()
     {
         $arrayClient = [
             'clientId' => $this->adsConfig['clientId'],
@@ -64,9 +68,7 @@ class OAuth2
 
         ];
 
-        $oauth2 = new GoogleOAuth2(array_merge($this->oAuthConfig,$arrayClient));
-
-        return ''.$oauth2->buildFullAuthorizationUri();
+        return new GoogleOAuth2(array_merge($this->oAuthConfig,$arrayClient));
     }
 
     /**
