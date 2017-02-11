@@ -22,6 +22,10 @@ class Service
 
     protected $adWordsServices;
 
+    protected $service;
+
+    protected $fields;
+
     function __construct()
     {
         $this->adWordsServices = new AdWordsServices();
@@ -41,6 +45,16 @@ class Service
         $this->postQuery .= " LIMIT $offset,$number";
 
         return $this;
+    }
+
+    public function all($fields = [])
+    {
+        $fields = empty($fields) ? $this->fields : $fields;
+
+
+        $query = 'SELECT '. implode(',',$fields) . $this->postQuery;
+
+        return $this->service->query($query);
     }
 
 }

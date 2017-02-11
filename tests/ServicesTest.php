@@ -14,7 +14,7 @@ class ServicesTest extends PHPUnit_Framework_TestCase {
     public function campaing_all(){
         $campaign = new \Edujugon\GoogleAds\Services\Campaign();
         //dd($campaign->limit(1)->all());
-        //dd($campaign->all());
+        //dd($campaign->all()->getEntries());
 
     }
 
