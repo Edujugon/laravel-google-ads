@@ -75,6 +75,33 @@ class Service
     }
 
     /**
+     * Set the service
+     *
+     * @param $service
+     * @return $this
+     */
+    public function service($service)
+    {
+        $this->service = $service;
+
+        return $this;
+    }
+
+    /**
+     * Set the fields to retrieve
+     *
+     * @param $fields
+     * @return $this
+     */
+    public function select($fields)
+    {
+        $this->fields = is_array($fields) ? $fields : func_get_args();
+
+        return $this;
+    }
+
+
+    /**
      * Get all items.
      *
      * @param array $fields
@@ -90,14 +117,6 @@ class Service
         return $this->service->query($query);
     }
 
-    /**
-     * Set the service
-     *
-     * @param $service
-     */
-    public function service($service)
-    {
-        $this->service = $service;
-    }
+
 
 }
