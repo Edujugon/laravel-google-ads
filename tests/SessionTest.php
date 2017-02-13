@@ -1,4 +1,7 @@
 <?php
+use Edujugon\GoogleAds\Auth\OAuth2;
+use Edujugon\GoogleAds\Session\AdwordsSession;
+
 /**
  * Project: google-ads.
  * User: Edujugon
@@ -14,7 +17,7 @@ class SessionTest extends PHPUnit_Framework_TestCase {
     public function create_session()
     {
         // Generate a refreshable OAuth2 credential for authentication.
-        $oAuth2Credential = (new \Edujugon\GoogleAds\Auth\OAuth2())->build();
+        $oAuth2Credential = (new OAuth2())->build();
 
         $session = (new Edujugon\GoogleAds\Session\AdwordsSession($oAuth2Credential))->build();
 
@@ -24,7 +27,7 @@ class SessionTest extends PHPUnit_Framework_TestCase {
     /** @test */
     public function create_session_with_auto_oauth()
     {
-        $session = (new \Edujugon\GoogleAds\Session\AdwordsSession())->oAuth()->build();
+        $session = (new AdwordsSession())->oAuth()->build();
 
         $this->assertInstanceOf(Google\AdsApi\AdWords\AdWordsSession::class,$session);
     }
@@ -33,7 +36,7 @@ class SessionTest extends PHPUnit_Framework_TestCase {
     public function pass_params_to_auto_oauth(){
         $env = 'test';
 
-        $session = (new \Edujugon\GoogleAds\Session\AdwordsSession(null,$env))->oAuth($env,[
+        $session = (new AdwordsSession(null,$env))->oAuth($env,[
             'clientId' => 'test',
             'clientSecret' => 'test',
             'refreshToken' => 'TEST'
@@ -45,10 +48,19 @@ class SessionTest extends PHPUnit_Framework_TestCase {
     /** @test */
     public function build_with_parameters()
     {
-        $session = (new \Edujugon\GoogleAds\Session\AdwordsSession())->oAuth()->build([
+        $session = (new AdwordsSession())->oAuth()->build([
             'developerToken' => 'token',
             'clientCustomerId' => 'id'
         ]);
+
+        $this->assertInstanceOf(Google\AdsApi\AdWords\AdWordsSession::class,$session);
+    }
+
+    /** @test */
+    public function create_new_session_with_auto_oauth_login()
+    {
+        $session = new AdwordsSession();
+        $session = $session->build();
 
         $this->assertInstanceOf(Google\AdsApi\AdWords\AdWordsSession::class,$session);
     }

@@ -10,8 +10,12 @@
 namespace Edujugon\GoogleAds\Services;
 
 
+use Edujugon\GoogleAds\Exceptions\Session;
 use Edujugon\GoogleAds\Session\AdwordsSession;
 use Google\AdsApi\AdWords\AdWordsServices;
+use Google\AdsApi\AdWords\v201609\cm\AdGroupAdService;
+use Google\AdsApi\AdWords\v201609\cm\AdGroupService;
+use Google\AdsApi\AdWords\v201609\cm\CampaignService;
 
 class Service
 {
@@ -42,13 +46,24 @@ class Service
     protected $fields;
 
     /**
-     * Service constructor.
+     * Service types allowed.
+     * @var array
      */
-    function __construct()
+    protected $types = [
+      'campaign' => CampaignService::class,
+      'adGroup' => AdGroupService::class,
+      'adGroupAd' => AdGroupAdService::class
+    ];
+
+    /**
+     * Service constructor.
+     * @param \Google\AdsApi\AdWords\AdWordsSession $session
+     */
+    function __construct(\Google\AdsApi\AdWords\AdWordsSession $session = null)
     {
         $this->adWordsServices = new AdWordsServices();
 
-        $this->session = (new AdwordsSession())->oAuth()->build();
+        $this->session = $session ? $session : (new AdwordsSession())->oAuth()->build();
     }
 
     /**
@@ -79,10 +94,30 @@ class Service
      *
      * @param $service
      * @return $this
+     * @throws \Edujugon\GoogleAds\Exceptions\Service
      */
     public function service($service)
     {
-        $this->service = $service;
+        if(in_array($service,$this->types))
+            $this->service = $this->adWordsServices->get($this->session, $service);
+        else
+            throw new \Edujugon\GoogleAds\Exceptions\Service("The service '$service' is not available. Available services: " . implode(', ',$this->types));
+
+        return $this;
+    }
+
+    /**
+     * Set the service by name
+     * @param $name
+     * @return $this
+     * @throws \Edujugon\GoogleAds\Exceptions\Service
+     */
+    public function serviceByName($name)
+    {
+        if(in_array($name,array_keys($this->types)))
+            $this->service($this->types[$name]);
+        else
+            throw new \Edujugon\GoogleAds\Exceptions\Service("The name '$name' is not available. Available types: " . implode(', ',array_keys($this->types)));
 
         return $this;
     }
@@ -105,12 +140,14 @@ class Service
      * Get all items.
      *
      * @param array $fields
-     * @return mixed
+     * @return \Google\AdsApi\AdWords\v201609\cm\CampaignPage | \Google\AdsApi\AdWords\v201609\cm\AdGroupPage | \Google\AdsApi\AdWords\v201609\cm\AdGroupAdPage
+     *
      */
     public function all($fields = [])
     {
         $fields = empty($fields) ? $this->fields : $fields;
 
+        $this->haveFields($fields);
 
         $query = 'SELECT '. implode(',',$fields) . $this->postQuery;
 
@@ -118,5 +155,24 @@ class Service
     }
 
 
+    /**
+     * Get the Google service.
+     *
+     * @return mixed
+     */
+    public function getService()
+    {
+        return $this->service;
+    }
+
+    /**
+     * @param $fields
+     * @throws Session
+     */
+    private function haveFields($fields)
+    {
+        if (empty($fields))
+            throw new Session('You have to select some fields before "call" all method. Call "select" method before.');
+    }
 
 }

@@ -48,7 +48,7 @@ class AdwordsSession
      */
     public function oAuth($env = null, $data = [])
     {
-        $this->oAuth2Credential = (new OAuth2($env))->build($data);
+        $this->oAuth2Credential = (new OAuth2($env))->userCredentials($data);
 
         return $this;
 
@@ -62,6 +62,9 @@ class AdwordsSession
      */
     public function build(array $data = [])
     {
+        if(!$this->oAuth2Credential)
+            $this->oAuth();
+
         $data = $this->mergeData($data);
 
         $adwordsSession = new AdWordsSessionBuilder();

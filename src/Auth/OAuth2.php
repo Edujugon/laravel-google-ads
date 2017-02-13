@@ -44,7 +44,7 @@ class OAuth2
      * @param array $data
      * @return \Google\Auth\Credentials\UserRefreshCredentials
      */
-    public function build(array $data = [])
+    public function userCredentials(array $data = [])
     {
 
         $data = $this->mergeData($data);
@@ -60,7 +60,7 @@ class OAuth2
     /**
      * @return \Google\Auth\OAuth2
      */
-    public function init()
+    public function build()
     {
         $arrayClient = [
             'clientId' => $this->adsConfig['clientId'],

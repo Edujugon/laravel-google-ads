@@ -29,7 +29,7 @@ class RefreshTokenCommand extends Command {
     public function handle()
     {
 
-        $oAth2 = (new OAuth2())->init();
+        $oAth2 = (new OAuth2())->build();
 
         $authorizationUrl = $oAth2->buildFullAuthorizationUri();
 

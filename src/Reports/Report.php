@@ -215,13 +215,13 @@ class Report
     {
         $query = '';
         if(!empty($this->fields))
-            $query = 'SELECT ' . $this->queryFy($this->fields);
+            $query = 'SELECT ' . $this->querify($this->fields);
         if(!empty($this->type))
             $query .= ' FROM ' . $this->type;
         if(!empty($this->where))
             $query .= ' WHERE ' . $this->where;
         if(!empty($this->during))
-            $query .= ' DURING ' . $this->queryFy($this->during);
+            $query .= ' DURING ' . $this->querify($this->during);
 
         $this->query = $query;
 
@@ -232,7 +232,7 @@ class Report
      * @param array $data
      * @return string
      */
-    private function queryFy(array $data)
+    private function querify(array $data)
     {
         return implode(',',$data);
     }

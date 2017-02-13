@@ -1,14 +1,28 @@
 <?php
 
 
-use Google\AdsApi\AdWords\AdWordsServices;
-use Google\AdsApi\AdWords\Reporting\v201609\DownloadFormat;
-use Google\AdsApi\AdWords\Reporting\v201609\ReportDownloader;
-use Google\AdsApi\AdWords\v201609\cm\ReportDefinitionReportType;
-use Google\AdsApi\AdWords\v201609\cm\ReportDefinitionService;
-use Google\AdsApi\Dfp\v201611\ReportService;
 
 class ServicesTest extends PHPUnit_Framework_TestCase {
+
+    /** @test */
+    public function add_service()
+    {
+        $service = (new \Edujugon\GoogleAds\Services\Service())->service('Google\AdsApi\AdWords\v201609\cm\CampaignService');
+        $this->assertInstanceOf(\Google\AdsApi\AdWords\v201609\cm\CampaignService::class,$service->getService());
+    }
+
+    /** @test */
+    public function add_service_by_name()
+    {
+      $service = (new \Edujugon\GoogleAds\Services\Service())->serviceByName('campaign');
+      $this->assertInstanceOf(\Google\AdsApi\AdWords\v201609\cm\CampaignService::class,$service->getService());
+    }
+
+    /** @test */
+    public function load_oAuth()
+    {
+        $session = new Edujugon\GoogleAds\Services\Service();
+    }
 
     /** @test */
     public function campaing_all(){
