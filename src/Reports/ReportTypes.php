@@ -16,9 +16,9 @@ abstract class ReportTypes
 {
 
     /**
- * Load all constants from ReportDefinitionReportType
- * @return array
- */
+     * Load all constants from ReportDefinitionReportType
+     * @return array
+     */
     private static function loadConstants()
     {
         return (new ReflectionClass(ReportDefinitionReportType::class))->getConstants();
@@ -29,9 +29,19 @@ abstract class ReportTypes
      *
      * @return array
      */
-    public static function list()
+    public static function asObj()
     {
         return static::loadConstants();
+    }
+
+    /**
+     * Get the list of the report types.
+     *
+     * @return array
+     */
+    public static function list()
+    {
+        return array_values(static::loadConstants());
     }
 
     /**

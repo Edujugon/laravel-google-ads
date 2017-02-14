@@ -3,6 +3,10 @@ namespace Edujugon\GoogleAds;
 
 
 use Edujugon\GoogleAds\Auth\OAuth2;
+use Edujugon\GoogleAds\Reports\Fields;
+use Edujugon\GoogleAds\Reports\Format;
+use Edujugon\GoogleAds\Reports\Report;
+use Edujugon\GoogleAds\Reports\ReportTypes;
 use Edujugon\GoogleAds\Services\AdGroup;
 use Edujugon\GoogleAds\Services\AdGroupAd;
 use Edujugon\GoogleAds\Services\Campaign;
@@ -33,11 +37,14 @@ class GoogleAds
 
     /**
      * Session.
-     *
      * @var
      */
     protected $session;
 
+    /**
+     * Service
+     * @var
+     */
     protected $service;
 
     /**
@@ -80,6 +87,16 @@ class GoogleAds
         return $this;
     }
 
+    /**
+     * Get an instance of Fields
+     *
+     * @return Fields
+     */
+    public function fields()
+    {
+      return new Fields($this->session);
+    }
+
     //////////////////////////////////
     //SERVICES
     /////////////////////////////////
@@ -110,25 +127,79 @@ class GoogleAds
         return $this->service;
     }
 
+    /**
+     * AdGroupService
+     * @return AdGroup
+     */
     public function adGroupService()
     {
-        return new AdGroup();
+        return new AdGroup($this->session);
     }
 
+    /**
+     * AdGroupAdService
+     * @return AdGroupAd
+     */
     public function adGroupAdService()
     {
-        return new AdGroupAd();
+        return new AdGroupAd($this->session);
     }
 
+    /**
+     * CampaignService
+     * @return Campaign
+     */
     public function campaignService()
     {
-        return new Campaign();
+        return new Campaign($this->session);
     }
 
+
+    /////////////////////////////////
+    //REPORTS
+    /////////////////////////////////
+
+    /**
+     * Get an instance of Report
+     * @return Report
+     */
+    public function report()
+    {
+        return new Report($this->session);
+    }
+
+    /**
+     * Show a list of report types
+     *
+     * @return array
+     */
+    public function showReportTypes()
+    {
+        return ReportTypes::list();
+    }
+
+    /**
+     * Show a list of report formats.
+     * @return array
+     */
+    public function showReportFormats()
+    {
+        return Format::list();
+    }
 
     /////////////////////////////////
     //GETTERS AND SETTERS
     /////////////////////////////////
+
+    /**
+     * Get the service.
+     *
+     * @return mixed
+     */
+    public function getService()
+    {
+        return $this->service;
+    }
 
     /**
      * Get the session.
@@ -139,6 +210,7 @@ class GoogleAds
     {
         return $this->session;
     }
+
     /**
      * Get UserRefreshCredentials
      *

@@ -26,13 +26,23 @@ class Format
     }
 
     /**
-     * Get the list of the report types.
+     * Get the list of the report formats.
+     *
+     * @return array
+     */
+    public static function asObj()
+    {
+        return static::loadConstants();
+    }
+
+    /**
+     * Get the list of the report formats.
      *
      * @return array
      */
     public static function list()
     {
-        return static::loadConstants();
+        return array_values(static::loadConstants());
     }
 
     /**

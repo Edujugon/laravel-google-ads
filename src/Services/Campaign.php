@@ -9,14 +9,15 @@
 
 namespace Edujugon\GoogleAds\Services;
 
+use Google\AdsApi\AdWords\AdWordsSession;
 use Google\AdsApi\AdWords\v201609\cm\CampaignService;
 
 class Campaign extends Service
 {
 
-    function __construct()
+    function __construct(AdWordsSession $session = null)
     {
-        parent::__construct();
+        parent::__construct($session);
 
         $this->fields = ['Id', 'Name', 'Status', 'ServingStatus', 'StartDate', 'EndDate'];
         $this->service = $this->adWordsServices->get($this->session, CampaignService::class);

@@ -102,6 +102,34 @@ class Report
     }
 
     /**
+     * Set all fields from report type
+     * @return $this
+     */
+    public function selectAll()
+    {
+        $this->fields = (new Fields())->of($this->type)->asList();
+
+        return $this;
+    }
+
+    /**
+     * Pull fields form fields list.
+     *
+     * @param $excepts
+     * @return $this
+     */
+    public function except($excepts)
+    {
+        $excepts = is_array($excepts) ? $excepts : func_get_args();
+
+        $this->fields = array_filter($this->fields,function($field) use($excepts){
+            return !in_array($field,$excepts);
+        });
+
+        return $this;
+    }
+
+    /**
      * Set the report type
      *
      * @param $reportType
@@ -238,9 +266,19 @@ class Report
     }
 
 
-    /**
-     * MAGIC METHODS
-     */
+    //////////////////////
+    // GETTERS
+    /////////////////////
+
+    public function getTypes()
+    {
+        return ReportTypes::list();
+    }
+
+    public function getFields()
+    {
+        return $this->fields;
+    }
 
     /**
      * @param $name

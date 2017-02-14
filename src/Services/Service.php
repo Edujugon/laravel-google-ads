@@ -63,7 +63,7 @@ class Service
     {
         $this->adWordsServices = new AdWordsServices();
 
-        $this->session = $session ? $session : (new AdwordsSession())->oAuth()->build();
+        $this->session = $session ? $session : (new AdwordsSession())->build();
     }
 
     /**

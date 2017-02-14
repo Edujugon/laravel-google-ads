@@ -107,7 +107,7 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
     {
         $ads = new GoogleAds();
 
-        $adGroup = $ads->adGroupService()->all();
+        $adGroup = $ads->session()->adGroupService()->all();
 
         $this->assertInstanceOf(Google\AdsApi\AdWords\v201609\cm\AdGroupPage::class,$adGroup);
     }
@@ -132,4 +132,83 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
         $this->assertInstanceOf(Google\AdsApi\AdWords\v201609\cm\CampaignPage::class,$adGroup);
     }
 
+    /** @test */
+    public function show_all_fields_of_a_report_type()
+    {
+     $ads = new GoogleAds();
+
+     $fields = $ads->fields()->of('CRITERIA_PERFORMANCE_REPORT')->asList();
+
+     $this->assertInternalType('array',$fields);
+    }
+
+    ///////////////////////
+    // Reports
+    ///////////////////////
+
+    /** @test */
+    public function create_instance_of_report()
+    {
+        $ads = new GoogleAds();
+
+        $this->assertInstanceOf(\Edujugon\GoogleAds\Reports\Report::class,$ads->report());
+    }
+
+    /** @test */
+    public function get_report_as_object()
+    {
+        $ads = new GoogleAds();
+        $string = $ads->report()->select('CampaignId','AdGroupId','AdGroupName','Id', 'Criteria', 'CriteriaType','Impressions', 'Clicks', 'Cost', 'UrlCustomParameters')
+            ->from('CRITERIA_PERFORMANCE_REPORT')
+            ->during('20170101','20170210')
+            ->format('XML')
+            ->where('CampaignId = 752331963')
+            ->getAsString();
+
+        $this->assertInternalType('string',$string);
+    }
+
+    /** @test */
+    public function get_report_types()
+    {
+        $ads = new GoogleAds();
+
+        $this->assertInternalType('array',$ads->showReportTypes());
+    }
+
+    /** @test */
+    public function get_formats()
+    {
+        $ads = new GoogleAds();
+
+        $this->assertInternalType('array',$ads->showReportFormats());
+    }
+
+    /** @test */
+    public function get_report_string()
+    {
+        $ads = new GoogleAds();
+
+        $string = $ads->report()
+            ->format('CSVFOREXCEL')
+            ->select('CampaignId','AdGroupId','AdGroupName','Id', 'Criteria', 'CriteriaType','Impressions', 'Clicks', 'Cost', 'UrlCustomParameters')
+            ->from('CRITERIA_PERFORMANCE_REPORT')
+            ->getAsString();
+
+        $this->assertInternalType('string',$string);
+    }
+
+    /** @test */
+    public function get_report_with_except_fields()
+    {
+        $ads = new GoogleAds();
+        $obj = $ads->report()->from('CRITERIA_PERFORMANCE_REPORT')
+            ->selectAll()
+            ->except('ConversionCategoryName','ConversionTrackerId','ConversionTypeName','ExternalConversionSource','Slot','AverageCpe','AverageCpv','ClickType')
+            ->during('20170101','20170210')
+            ->where('CampaignId = 752331963')
+            ->getAsObj();
+
+        $this->assertInstanceOf(SimpleXMLElement::class,$obj);
+    }
 }

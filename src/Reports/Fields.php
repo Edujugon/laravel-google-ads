@@ -123,9 +123,14 @@ class Fields
         return ReportTypes::list();
     }
 
+    /**
+     * Pull fields from the list.
+     *
+     * @param array $list
+     * @return $this
+     */
     public function except(array $list)
     {
-
         foreach ($list as $field)
         {
             if(property_exists($this->obj,$field))

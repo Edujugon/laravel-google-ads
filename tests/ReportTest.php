@@ -45,16 +45,33 @@ class ReportTest extends PHPUnit_Framework_TestCase {
     public function get_report()
     {
         $report = new Report();
-        $string = $report->select('CampaignId','AdGroupId','AdGroupName','Id', 'Criteria', 'CriteriaType','Impressions', 'Clicks', 'Cost', 'UrlCustomParameters')
+        $obj = $report->select('AccountCurrencyCode','CampaignId','AdGroupId','AdGroupName','Id', 'Criteria', 'CriteriaType','Impressions', 'Clicks', 'Cost', 'UrlCustomParameters')
             ->from('CRITERIA_PERFORMANCE_REPORT')
             ->during('20170101','20170210')
             ->format('XML')
             ->where('CampaignId = 752331963')
             ->getAsObj();
 
-        $this->assertInstanceOf(SimpleXMLElement::class,$string);
+        $this->assertInstanceOf(SimpleXMLElement::class,$obj);
 
     }
 
+    /** @test */
+    public function get_all_types()
+    {
+        $report = new Report();
 
+        $this->assertInternalType('array',$report->getTypes());
+    }
+
+    /** @test */
+    public function pull_some_fields()
+    {
+        $report = new Report();
+
+        $report->from('CRITERIA_PERFORMANCE_REPORT')->selectAll()->except('Week','Year');
+
+        $this->assertTrue(in_array('Parameter',$report->getFields()));
+        $this->assertFalse(in_array('Week',$report->getFields()));
+    }
 }

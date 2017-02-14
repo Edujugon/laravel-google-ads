@@ -10,14 +10,19 @@
 namespace Edujugon\GoogleAds\Services;
 
 
+use Google\AdsApi\AdWords\AdWordsSession;
 use Google\AdsApi\AdWords\v201609\cm\AdGroupService;
 
 class AdGroup extends Service
 {
 
-    function __construct()
+    /**
+     * AdGroup constructor.
+     * @param AdWordsSession|null $session
+     */
+    function __construct(AdWordsSession $session = null)
     {
-        parent::__construct();
+        parent::__construct($session);
 
         $this->fields = ['Id', 'CampaignId', 'CampaignName', 'Name','Status', 'Settings','Labels'];
         $this->service = $this->adWordsServices->get($this->session, AdGroupService::class);
