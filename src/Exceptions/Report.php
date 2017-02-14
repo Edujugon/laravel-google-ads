@@ -10,11 +10,4 @@ use Exception;
  * Date: 9/2/17
  * Time: 13:01
  */
-class Report extends \Exception
-{
-
-    public function __construct($message = "", $code = 0, Exception $previous = null)
-    {
-        parent::__construct($message, $code, $previous);
-    }
-}
+class Report extends \Exception{}
