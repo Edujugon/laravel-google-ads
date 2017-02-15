@@ -50,9 +50,24 @@ class ReportTest extends PHPUnit_Framework_TestCase {
             ->during('20170101','20170210')
             ->format('XML')
             ->where('CampaignId = 752331963')
-            ->getAsObj();
+            ->getAsSimpleXMLObj();
 
         $this->assertInstanceOf(SimpleXMLElement::class,$obj);
+
+    }
+
+    /** @test */
+    public function get_report_obj()
+    {
+        $report = new Report();
+        $obj = $report->select('AccountCurrencyCode','CampaignId','AdGroupId','AdGroupName','Id', 'Criteria', 'CriteriaType','Impressions', 'Clicks', 'Cost', 'UrlCustomParameters')
+            ->from('CRITERIA_PERFORMANCE_REPORT')
+            ->during('20170101','20170210')
+            ->format('XML')
+            ->where('CampaignId = 752331963')
+            ->getAsObj();
+
+        $this->assertInstanceOf(\Edujugon\GoogleAds\Reports\MyReport::class,$obj);
 
     }
 

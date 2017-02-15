@@ -88,7 +88,7 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
     {
         $ads = new GoogleAds();
 
-        $campaigns = $ads->service(CampaignService::class)->select(['Id'])->all();
+        $campaigns = $ads->service(CampaignService::class)->select(['Id'])->get();
 
         $this->assertInstanceOf(Google\AdsApi\AdWords\v201609\cm\CampaignPage::class,$campaigns);
     }
@@ -108,7 +108,7 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
     {
         $ads = new GoogleAds();
 
-        $adGroup = $ads->session()->adGroupService()->all();
+        $adGroup = $ads->session()->adGroupService()->get();
 
         $this->assertInstanceOf(Google\AdsApi\AdWords\v201609\cm\AdGroupPage::class,$adGroup);
     }
@@ -118,7 +118,7 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
     {
         $ads = new GoogleAds();
 
-        $adGroup = $ads->adGroupAdService()->all();
+        $adGroup = $ads->adGroupAdService()->get();
 
         $this->assertInstanceOf(Google\AdsApi\AdWords\v201609\cm\AdGroupAdPage::class,$adGroup);
     }
@@ -128,7 +128,7 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
     {
         $ads = new GoogleAds();
 
-        $adGroup = $ads->campaignService()->all();
+        $adGroup = $ads->campaignService()->get();
 
         $this->assertInstanceOf(Google\AdsApi\AdWords\v201609\cm\CampaignPage::class,$adGroup);
     }

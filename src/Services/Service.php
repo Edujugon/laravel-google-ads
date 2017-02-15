@@ -140,10 +140,12 @@ class Service
      * Get all items.
      *
      * @param array $fields
-     * @return \Google\AdsApi\AdWords\v201609\cm\CampaignPage | \Google\AdsApi\AdWords\v201609\cm\AdGroupPage | \Google\AdsApi\AdWords\v201609\cm\AdGroupAdPage
+     * @return \Google\AdsApi\AdWords\v201609\cm\Campaign |
+     * \Google\AdsApi\AdWords\v201609\cm\AdGroup |
+     * \Google\AdsApi\AdWords\v201609\cm\AdGroupAd
      *
      */
-    public function all($fields = [])
+    public function get($fields = [])
     {
         $fields = empty($fields) ? $this->fields : $fields;
 
@@ -151,7 +153,7 @@ class Service
 
         $query = 'SELECT '. implode(',',$fields) . $this->postQuery;
 
-        return $this->service->query($query);
+        return $this->service->query($query)->getEntries();
     }
 
 

@@ -1,13 +1,14 @@
 <?php
 
 
+use Google\AdsApi\AdWords\v201609\cm\CampaignService;
 
 class ServicesTest extends PHPUnit_Framework_TestCase {
 
     /** @test */
     public function add_service()
     {
-        $service = (new \Edujugon\GoogleAds\Services\Service())->service('Google\AdsApi\AdWords\v201609\cm\CampaignService');
+        $service = (new \Edujugon\GoogleAds\Services\Service())->service(CampaignService::class);
         $this->assertInstanceOf(\Google\AdsApi\AdWords\v201609\cm\CampaignService::class,$service->getService());
     }
 
@@ -27,7 +28,8 @@ class ServicesTest extends PHPUnit_Framework_TestCase {
     /** @test */
     public function campaing_all(){
         $campaign = new \Edujugon\GoogleAds\Services\Campaign();
-        //dd($campaign->limit(1)->all());
+        $this->assertInternalType('integer',$campaign->get(['Id'])[0]->getId());
+        $this->assertInternalType('string',$campaign->limit(2)->get()[0]->getName());
         //dd($campaign->all()->getEntries());
 
     }
@@ -43,7 +45,7 @@ class ServicesTest extends PHPUnit_Framework_TestCase {
     /** @test */
     public function ads_all(){
         $ads = new \Edujugon\GoogleAds\Services\AdGroupAd();
-        //dd($ads->limit(1)->all(['DisplayUrl']));
+        $this->assertInternalType('integer',$ads->limit(1)->get(['Id'])[0]->getAd()->getId());
         //dd($ads->limit(1)->all()->getEntries());
 
     }
