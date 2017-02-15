@@ -167,9 +167,23 @@ class Report
     }
 
     /**
-     * Get the report as an object
+     * Get the report as a SimpleXMLObj
      *
      * @return \SimpleXMLElement
+     */
+    public function getAsSimpleXMLObj()
+    {
+        $this->format(Format::get('xml'));
+
+        $this->run();
+
+        return simplexml_load_string($this->data->getAsString());
+    }
+
+    /**
+     * Get the report as an object
+     *
+     * @return \Edujugon\GoogleAds\Reports\MyReport
      */
     public function getAsObj()
     {
@@ -177,7 +191,7 @@ class Report
 
         $this->run();
 
-        return simplexml_load_string($this->data->getAsString());
+        return (new MyReport(simplexml_load_string($this->data->getAsString())));
     }
 
     /**

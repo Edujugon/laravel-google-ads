@@ -3,6 +3,7 @@
 
 use Edujugon\GoogleAds\Auth\RefreshToken;
 use Edujugon\GoogleAds\GoogleAds;
+use Edujugon\GoogleAds\Reports\MyReport;
 use Google\AdsApi\AdWords\AdWordsServices;
 use Google\AdsApi\AdWords\AdWordsSession;
 use Google\AdsApi\AdWords\AdWordsSessionBuilder;
@@ -206,8 +207,21 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
             ->during('20170101','20170210')
             ->where('CampaignId = 752331963')
             ->magicSelect()
-            ->getAsObj();
+            ->getAsSimpleXMLObj();
 
         $this->assertInstanceOf(SimpleXMLElement::class,$obj);
+    }
+
+    /** @test */
+    public function get_my_report_object()
+    {
+        $ads = new GoogleAds();
+        $obj = $ads->report()->from('CRITERIA_PERFORMANCE_REPORT')
+            ->during('20170101','20170210')
+            ->where('CampaignId = 752331963')
+            ->select('CampaignId','AdGroupId','AdGroupName','Id', 'Criteria', 'CriteriaType','Impressions', 'Clicks', 'Cost', 'UrlCustomParameters')
+            ->getAsObj();
+
+        $this->assertInstanceOf(MyReport::class,$obj);
     }
 }
