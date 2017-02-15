@@ -7,7 +7,7 @@ Laravel package for Google Adwords. Wrapper of [`googleads/googleads-php-lib`](h
 ##### Type in console:
 
 ```
-composer require edujugon/push-notification
+composer require edujugon/laravel-google-ads
 ```
 
 ##### Register the GoogleAds service by adding it to the providers array.
