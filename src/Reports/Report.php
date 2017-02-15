@@ -12,6 +12,7 @@ namespace Edujugon\GoogleAds\Reports;
 
 use Edujugon\GoogleAds\Session\AdwordsSession;
 use Google\AdsApi\AdWords\Reporting\v201609\ReportDownloader;
+use Google\AdsApi\AdWords\v201609\cm\ApiException;
 
 class Report
 {
@@ -59,6 +60,12 @@ class Report
      */
     protected $type = '';
 
+
+    /**
+     * @var bool
+     */
+    protected $magicSelect = false;
+
     /**
      * Reports constructor.
      * @param null $session
@@ -97,34 +104,6 @@ class Report
     public function select($fields)
     {
         $this->fields = is_array($fields) ? $fields : func_get_args();
-
-        return $this;
-    }
-
-    /**
-     * Set all fields from report type
-     * @return $this
-     */
-    public function selectAll()
-    {
-        $this->fields = (new Fields())->of($this->type)->asList();
-
-        return $this;
-    }
-
-    /**
-     * Pull fields form fields list.
-     *
-     * @param $excepts
-     * @return $this
-     */
-    public function except($excepts)
-    {
-        $excepts = is_array($excepts) ? $excepts : func_get_args();
-
-        $this->fields = array_filter($this->fields,function($field) use($excepts){
-            return !in_array($field,$excepts);
-        });
 
         return $this;
     }
@@ -173,6 +152,18 @@ class Report
         $this->where = $condition;
 
         return $this;
+    }
+
+    /**
+     * Mark magicSelect as true.
+     *
+     * @return $this
+     */
+    public function magicSelect()
+    {
+      $this->magicSelect = true;
+
+      return $this;
     }
 
     /**
@@ -230,10 +221,70 @@ class Report
      */
     private function run()
     {
+        if($this->magicSelect){
+            $this->selectAllFields();
+            $this->magicRun();
+        }
+
         $query = $this->createQuery();
 
         $this->data = $this->reportDownloader->downloadReportWithAwql(
             $query, $this->format);
+
+    }
+
+    /**
+     * Magic Run the AWQL
+     *
+     * Will try to download the report and if fails,
+     * It pulls out the conflicted field and try again the download.
+     */
+    private function magicRun()
+    {
+        $query = $this->createQuery();
+
+        try{
+            $this->data = $this->reportDownloader->downloadReportWithAwql(
+                $query, $this->format);
+        }catch(ApiException $e)
+        {
+            $field = $e->getErrors()[0]->getFieldPath();
+
+            if(!empty($field)){
+                $this->except($field);
+                $this->magicRun();
+            }else
+                var_dump($e->getMessage());
+        }
+
+    }
+
+    /**
+     * Set all fields from report type
+     * @return $this
+     */
+    private function selectAllFields()
+    {
+        $this->fields = (new Fields())->of($this->type)->asList();
+
+        return $this;
+    }
+
+    /**
+     * Pull fields out of fields list.
+     *
+     * @param $excepts
+     * @return $this
+     */
+    private function except($excepts)
+    {
+        $excepts = is_array($excepts) ? $excepts : func_get_args();
+
+        $this->fields = array_filter($this->fields,function($field) use($excepts){
+            return !in_array($field,$excepts);
+        });
+
+        return $this;
     }
 
     /**
@@ -270,11 +321,17 @@ class Report
     // GETTERS
     /////////////////////
 
+    /**
+     * @return array
+     */
     public function getTypes()
     {
         return ReportTypes::list();
     }
 
+    /**
+     * @return string
+     */
     public function getFields()
     {
         return $this->fields;

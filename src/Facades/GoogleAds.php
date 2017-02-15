@@ -9,6 +9,6 @@ class GoogleAds extends Facade {
      *
      * @return string
      */
-    protected static function getFacadeAccessor() { return 'googleAds'; }
+    protected static function getFacadeAccessor() { return 'edujugonGoogleAds'; }
 
 }

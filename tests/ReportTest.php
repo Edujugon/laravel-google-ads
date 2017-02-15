@@ -63,15 +63,4 @@ class ReportTest extends PHPUnit_Framework_TestCase {
 
         $this->assertInternalType('array',$report->getTypes());
     }
-
-    /** @test */
-    public function pull_some_fields()
-    {
-        $report = new Report();
-
-        $report->from('CRITERIA_PERFORMANCE_REPORT')->selectAll()->except('Week','Year');
-
-        $this->assertTrue(in_array('Parameter',$report->getFields()));
-        $this->assertFalse(in_array('Week',$report->getFields()));
-    }
 }

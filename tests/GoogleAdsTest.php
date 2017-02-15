@@ -199,14 +199,13 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
     }
 
     /** @test */
-    public function get_report_with_except_fields()
+    public function get_report_with_magic_select_method()
     {
         $ads = new GoogleAds();
         $obj = $ads->report()->from('CRITERIA_PERFORMANCE_REPORT')
-            ->selectAll()
-            ->except('ConversionCategoryName','ConversionTrackerId','ConversionTypeName','ExternalConversionSource','Slot','AverageCpe','AverageCpv','ClickType')
             ->during('20170101','20170210')
             ->where('CampaignId = 752331963')
+            ->magicSelect()
             ->getAsObj();
 
         $this->assertInstanceOf(SimpleXMLElement::class,$obj);
