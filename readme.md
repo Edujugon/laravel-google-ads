@@ -1,5 +1,7 @@
 # Google Adwords Package
 
+> **Note:** This library is under development
+
 Laravel package for Google Adwords. Wrapper of [`googleads/googleads-php-lib`](https://github.com/googleads/googleads-php-lib) for Laravel.
 
 ##  Installation
@@ -24,7 +26,7 @@ composer require edujugon/laravel-google-ads
 ```
 'aliases' => array(
         ...
-        'GoogleAds' => `\Facades\GoogleAds::class,
+        'GoogleAds' => `Edujugon\GoogleAds\Facades\GoogleAds::class,
     )
 ```
 
