@@ -1,6 +1,6 @@
 {
     "name": "edujugon/laravel-google-ads",
-    "description": "Laravel package for Google Adwords. Easy to use wrapper of googleads/googleads-php-lib for Laravel",
+    "description": "Google Adwords for Laravel",
     "keywords": ["google","adwords","ads","laravel"],
     "license": "MIT",
     "authors": [
