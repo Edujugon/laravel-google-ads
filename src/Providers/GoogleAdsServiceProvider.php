@@ -34,7 +34,7 @@ class GoogleAdsServiceProvider extends ServiceProvider
             RefreshTokenCommand::class,
         ]);
 
-        $this->app->bind('edujugonGoogleAds', function ($app) {
+        $this->app->singleton('edujugonGoogleAds', function ($app) {
             return new GoogleAds();
         });
 
