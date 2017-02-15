@@ -78,7 +78,7 @@ class Format
     {
         $list = static::loadConstants();
 
-        return in_array($value,$list);
+        return in_array($value,$list) || in_array(strtoupper($value),$list) ;
     }
 
     /**
