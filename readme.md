@@ -26,7 +26,7 @@ composer require edujugon/laravel-google-ads
 ```
 'aliases' => array(
         ...
-        'GoogleAds' => `Edujugon\GoogleAds\Facades\GoogleAds::class,
+        'GoogleAds' => Edujugon\GoogleAds\Facades\GoogleAds::class,
     )
 ```
 
