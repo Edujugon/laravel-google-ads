@@ -31,13 +31,13 @@ class MyReport
      * List of fields / columns requested
      * @var \Illuminate\Support\Collection
      */
-    protected $fields;
+    public $fields;
 
     /**
      * List of items
      * @var \Illuminate\Support\Collection
      */
-    protected $result;
+    public $result;
 
     /**
      * MyReport constructor.
@@ -108,15 +108,6 @@ class MyReport
     private function convertToArray($stdClass)
     {
         return get_object_vars($stdClass->{'@attributes'});
-    }
-
-    /**
-     * Get the report result
-     * @return Collection
-     */
-    public function result()
-    {
-        return $this->result;
     }
 
     /**
