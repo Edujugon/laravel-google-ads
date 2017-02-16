@@ -115,6 +115,9 @@ class MyReport
      */
     private function convertToArray($stdClass)
     {
+        if(!property_exists($stdClass,'@attributes'))
+            return get_object_vars($stdClass);
+
         return get_object_vars($stdClass->{'@attributes'});
     }
 
