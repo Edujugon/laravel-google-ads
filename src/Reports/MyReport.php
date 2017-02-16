@@ -16,16 +16,16 @@ use SimpleXMLElement;
 class MyReport
 {
     /**
-     *
-     * @var Full xml obj as stdClass
-     */
-    protected $my_std_class;
-
-    /**
      * Report Name
      * @var
      */
     protected $name;
+
+    /**
+     * Report date range
+     * @var
+     */
+    protected $date;
 
     /**
      * List of fields / columns requested
@@ -46,25 +46,31 @@ class MyReport
     function __construct(SimpleXMLElement $xml)
     {
 
-        $this->my_std_class = json_decode(json_encode($xml));
+        $my_std_class = json_decode(json_encode($xml));
 
         $this->fields = new Collection();
         $this->result = new Collection();
 
-        $this->loadName();
-        $this->loadFields();
-        $this->loadResults();
+        $this->name = $this->loadData($my_std_class,'report-name','name');
+        $this->date = $this->loadData($my_std_class,'date-range','date');
+
+        $this->loadFields($my_std_class);
+        $this->loadResults($my_std_class);
 
     }
 
     /**
      * Load the report name.
+     * @param $my_std_class
+     * @param $property
+     * @param $subProperty
+     * @return mixed
      */
-    private function loadName()
+    private function loadData($my_std_class,$property,$subProperty)
     {
-        if(property_exists($this->my_std_class,'report-name'))
+        if(property_exists($my_std_class,$property))
         {
-            $this->name = $this->my_std_class->{'report-name'}->{'@attributes'}->name;
+            return $my_std_class->$property->{'@attributes'}->$subProperty;
 
         }
 
@@ -72,12 +78,13 @@ class MyReport
 
     /**
      * Load the report columns
+     * @param $my_std_class
      */
-    private function loadFields()
+    private function loadFields($my_std_class)
     {
-        if(property_exists($this->my_std_class->table,'columns'))
+        if(property_exists($my_std_class->table,'columns'))
         {
-            foreach ($this->my_std_class->table->columns->column as $column)
+            foreach ($my_std_class->table->columns->column as $column)
             {
                 $this->fields->push($this->convertToArray($column));
             }
@@ -87,12 +94,13 @@ class MyReport
 
     /**
      * Load the report rows
+     * @param $my_std_class
      */
-    private function loadResults()
+    private function loadResults($my_std_class)
     {
-        if(property_exists($this->my_std_class->table,'row'))
+        if(property_exists($my_std_class->table,'row'))
         {
-            foreach ($this->my_std_class->table->row as $row)
+            foreach ($my_std_class->table->row as $row)
             {
                 $this->result->push($this->convertToArray($row));
             }
