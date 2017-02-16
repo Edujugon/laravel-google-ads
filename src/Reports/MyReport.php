@@ -10,6 +10,7 @@
 namespace Edujugon\GoogleAds\Reports;
 
 
+use Illuminate\Support\Collection;
 use SimpleXMLElement;
 
 class MyReport
@@ -21,22 +22,22 @@ class MyReport
     protected $my_std_class;
 
     /**
-     * Full xml obj as array
-     * @var mixed
+     * Report Name
+     * @var
      */
-    protected $my_assoc_array;
+    protected $name;
+
+    /**
+     * List of fields / columns requested
+     * @var \Illuminate\Support\Collection
+     */
+    protected $fields;
 
     /**
      * List of items
-     * @var array
+     * @var \Illuminate\Support\Collection
      */
-    protected $items = [];
-
-    /**
-     * Count of items.
-     * @var int
-     */
-    protected $count;
+    protected $result;
 
     /**
      * MyReport constructor.
@@ -46,21 +47,57 @@ class MyReport
     {
 
         $this->my_std_class = json_decode(json_encode($xml));
-        $this->my_assoc_array = json_decode(json_encode($xml), true);
 
-        $this->loadItems();
+        $this->fields = new Collection();
+        $this->result = new Collection();
+
+        $this->loadName();
+        $this->loadFields();
+        $this->loadResults();
 
     }
 
     /**
-     * Load the report rows in Class Items property
+     * Load the report name.
      */
-    private function loadItems()
+    private function loadName()
     {
-        foreach ($this->my_std_class->table->row as $row)
+        if(property_exists($this->my_std_class,'report-name'))
         {
-            $this->items[] = $this->getCleanRowObject($row);
+            $this->name = $this->my_std_class->{'report-name'}->{'@attributes'}->name;
+
         }
+
+    }
+
+    /**
+     * Load the report columns
+     */
+    private function loadFields()
+    {
+        if(property_exists($this->my_std_class->table,'columns'))
+        {
+            foreach ($this->my_std_class->table->columns->column as $column)
+            {
+                $this->fields->push($this->convertToArray($column));
+            }
+        }
+
+    }
+
+    /**
+     * Load the report rows
+     */
+    private function loadResults()
+    {
+        if(property_exists($this->my_std_class->table,'row'))
+        {
+            foreach ($this->my_std_class->table->row as $row)
+            {
+                $this->result->push($this->convertToArray($row));
+            }
+        }
+
     }
 
     /**
@@ -68,19 +105,27 @@ class MyReport
      * @param $stdClass
      * @return mixed
      */
-    private function getCleanRowObject($stdClass)
+    private function convertToArray($stdClass)
     {
-        return $stdClass->{'@attributes'};
+        return get_object_vars($stdClass->{'@attributes'});
     }
 
-   public function items()
-   {
-       return $this->items;
-   }
+    /**
+     * Get the report result
+     * @return Collection
+     */
+    public function result()
+    {
+        return $this->result;
+    }
 
-   public function count()
-   {
-       return count($this->items);
-   }
+    /**
+     * Count result items.
+     * @return int
+     */
+    public function count()
+    {
+        return $this->result->count();
+    }
 
 }
