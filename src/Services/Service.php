@@ -98,10 +98,12 @@ class Service
      */
     public function service($service)
     {
-        if(in_array($service,$this->types))
+        try{
             $this->service = $this->adWordsServices->get($this->session, $service);
-        else
-            throw new \Edujugon\GoogleAds\Exceptions\Service("The service '$service' is not available. Available services: " . implode(', ',$this->types));
+        }catch(\Exception $e)
+        {
+            throw new \Edujugon\GoogleAds\Exceptions\Service("The service '$service' is not available. Please pass a valid service");
+        }
 
         return $this;
     }
