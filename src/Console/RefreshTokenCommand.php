@@ -2,8 +2,6 @@
 namespace Edujugon\GoogleAds\Console;
 
 use Edujugon\GoogleAds\Auth\OAuth2;
-use Edujugon\GoogleAds\Session\AdwordsSession;
-use Google\AdsApi\AdWords\AdWordsServices;
 use Illuminate\Console\Command;
 
 class RefreshTokenCommand extends Command {
