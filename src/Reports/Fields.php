@@ -75,11 +75,6 @@ class Fields
         return $this;
     }
 
-    private function validateReportType($type)
-    {
-        if(!ReportTypes::exist($type))
-            ReportTypes::invalidType();
-    }
     /**
      * Get fields as object
      *
@@ -160,5 +155,14 @@ class Fields
         }
 
         return $obj;
+    }
+
+    /**
+     * @param $type
+     */
+    private function validateReportType($type)
+    {
+        if(!ReportTypes::exist($type))
+            ReportTypes::invalidType();
     }
 }

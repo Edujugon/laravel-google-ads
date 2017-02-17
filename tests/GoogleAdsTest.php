@@ -1,19 +1,10 @@
 <?php
 
 
-use Edujugon\GoogleAds\Auth\RefreshToken;
 use Edujugon\GoogleAds\GoogleAds;
 use Edujugon\GoogleAds\Reports\MyReport;
-use Google\AdsApi\AdWords\AdWordsServices;
-use Google\AdsApi\AdWords\AdWordsSession;
-use Google\AdsApi\AdWords\AdWordsSessionBuilder;
+use Google\AdsApi\AdWords\v201609\cm\AdGroupService;
 use Google\AdsApi\AdWords\v201609\cm\CampaignService;
-use Google\AdsApi\AdWords\v201609\cm\OrderBy;
-use Google\AdsApi\AdWords\v201609\cm\Paging;
-use Google\AdsApi\AdWords\v201609\cm\Selector;
-use Google\AdsApi\AdWords\v201609\cm\SortOrder;
-use Google\AdsApi\Common\OAuth2TokenBuilder;
-use Google\Auth\OAuth2;
 
 class GoogleAdsTest extends PHPUnit_Framework_TestCase {
 
@@ -58,9 +49,9 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
     {
         $ads = new GoogleAds();
 
-        $session = $ads->session()->getSession();
+        $session = $ads->session();
 
-        $this->assertInstanceOf(Google\AdsApi\AdWords\AdWordsSession::class,$session);
+        $this->assertInstanceOf(Google\AdsApi\AdWords\AdWordsSession::class,$session->getSession());
     }
 
     /** @test */
@@ -74,23 +65,13 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
     }
 
     /** @test */
-    public function create_instance_of_service_by_name()
-    {
-        $ads = new GoogleAds();
-
-        $service = $ads->serviceByName('campaign');
-
-        $this->assertInstanceOf(CampaignService::class,$service->getService());
-    }
-
-    /** @test */
     public function get_all_items_of_campaign_service()
     {
         $ads = new GoogleAds();
 
         $campaigns = $ads->service(CampaignService::class)->select(['Id'])->get();
 
-        $this->assertInstanceOf(Google\AdsApi\AdWords\v201609\cm\CampaignPage::class,$campaigns);
+        $this->assertInternalType('array',$campaigns);
     }
 
     /** @test */
@@ -100,7 +81,7 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
 
         $adGroup = $ads->adGroupService();
 
-        $this->assertInstanceOf(Google\AdsApi\AdWords\v201609\cm\AdGroupService::class,$adGroup->getService());
+        $this->assertInstanceOf(AdGroupService::class,$adGroup->getService());
     }
 
     /** @test */
@@ -110,7 +91,7 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
 
         $adGroup = $ads->session()->adGroupService()->get();
 
-        $this->assertInstanceOf(Google\AdsApi\AdWords\v201609\cm\AdGroupPage::class,$adGroup);
+        $this->assertInternalType('array',$adGroup);
     }
 
     /** @test */
@@ -120,7 +101,7 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
 
         $adGroup = $ads->adGroupAdService()->get();
 
-        $this->assertInstanceOf(Google\AdsApi\AdWords\v201609\cm\AdGroupAdPage::class,$adGroup);
+        $this->assertInternalType('array',$adGroup);
     }
 
     /** @test */
@@ -130,22 +111,23 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
 
         $adGroup = $ads->campaignService()->get();
 
-        $this->assertInstanceOf(Google\AdsApi\AdWords\v201609\cm\CampaignPage::class,$adGroup);
+        $this->assertInternalType('array',$adGroup);
     }
 
-    /** @test */
-    public function show_all_fields_of_a_report_type()
-    {
-     $ads = new GoogleAds();
-
-     $fields = $ads->fields()->of('CRITERIA_PERFORMANCE_REPORT')->asList();
-
-     $this->assertInternalType('array',$fields);
-    }
 
     ///////////////////////
     // Reports
     ///////////////////////
+
+    /** @test */
+    public function show_all_fields_of_a_report_type()
+    {
+        $ads = new GoogleAds();
+
+        $fields = $ads->fields()->of('CRITERIA_PERFORMANCE_REPORT')->asList();
+
+        $this->assertInternalType('array',$fields);
+    }
 
     /** @test */
     public function create_instance_of_report()
@@ -223,5 +205,20 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
             ->getAsObj();
 
         $this->assertInstanceOf(MyReport::class,$obj);
+    }
+
+    /** @test */
+    public function get_fields_of_a_report_type()
+    {
+        $ads = new GoogleAds();
+        $fields = $ads->report()->from('CRITERIA_PERFORMANCE_REPORT')->getFields();
+        $this->assertInternalType('array',$fields);
+    }
+
+    /** @test */
+    public function get_report_formats()
+    {
+        $ads = new GoogleAds();
+        $this->assertInternalType('array',$ads->report()->getFormats());
     }
 }

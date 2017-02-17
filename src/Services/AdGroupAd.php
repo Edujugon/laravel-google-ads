@@ -18,9 +18,8 @@ class AdGroupAd extends Service
 
     function __construct(AdWordsSession $session = null)
     {
-        parent::__construct($session);
+        parent::__construct(AdGroupAdService::class,$session);
 
         $this->fields = ['Id','Url'];
-        $this->service = $this->adWordsServices->get($this->session, AdGroupAdService::class);
     }
 }

@@ -17,6 +17,7 @@ use Google\AdsApi\AdWords\v201609\cm\ApiException;
 class Report
 {
 
+    protected $session;
     /**
      * @var ReportDownloader
      */
@@ -72,9 +73,9 @@ class Report
      */
     function __construct($session = null)
     {
-        $session = $session ? $session : (new AdwordsSession())->oAuth()->build();
+        $this->session = $session ? $session : (new AdwordsSession())->oAuth()->build();
 
-        $this->reportDownloader = new ReportDownloader($session);
+        $this->reportDownloader = new ReportDownloader($this->session);
 
         //Set the default format.
         $this->format = Format::get('csv');
@@ -348,7 +349,15 @@ class Report
      */
     public function getFields()
     {
-        return $this->fields;
+        return (new Fields($this->session))->of($this->type)->asList();
+    }
+
+    /**
+     * @return string
+     */
+    public function getFormats()
+    {
+        return Format::list();
     }
 
     /**

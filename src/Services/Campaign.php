@@ -17,10 +17,9 @@ class Campaign extends Service
 
     function __construct(AdWordsSession $session = null)
     {
-        parent::__construct($session);
+        parent::__construct(CampaignService::class,$session);
 
         $this->fields = ['Id', 'Name', 'Status', 'ServingStatus', 'StartDate', 'EndDate'];
-        $this->service = $this->adWordsServices->get($this->session, CampaignService::class);
     }
 
 
