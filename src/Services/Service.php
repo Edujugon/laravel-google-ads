@@ -46,24 +46,17 @@ class Service
     protected $fields;
 
     /**
-     * Service types allowed.
-     * @var array
-     */
-    protected $types = [
-      'campaign' => CampaignService::class,
-      'adGroup' => AdGroupService::class,
-      'adGroupAd' => AdGroupAdService::class
-    ];
-
-    /**
      * Service constructor.
+     * @param $service
      * @param \Google\AdsApi\AdWords\AdWordsSession $session
      */
-    function __construct(\Google\AdsApi\AdWords\AdWordsSession $session = null)
+    function __construct($service,\Google\AdsApi\AdWords\AdWordsSession $session = null)
     {
         $this->adWordsServices = new AdWordsServices();
 
         $this->session = $session ? $session : (new AdwordsSession())->build();
+
+        $this->setService($service);
     }
 
     /**
@@ -85,41 +78,6 @@ class Service
     public function limit($number, $offset = 0)
     {
         $this->postQuery .= " LIMIT $offset,$number";
-
-        return $this;
-    }
-
-    /**
-     * Set the service
-     *
-     * @param $service
-     * @return $this
-     * @throws \Edujugon\GoogleAds\Exceptions\Service
-     */
-    public function service($service)
-    {
-        try{
-            $this->service = $this->adWordsServices->get($this->session, $service);
-        }catch(\Exception $e)
-        {
-            throw new \Edujugon\GoogleAds\Exceptions\Service("The service '$service' is not available. Please pass a valid service");
-        }
-
-        return $this;
-    }
-
-    /**
-     * Set the service by name
-     * @param $name
-     * @return $this
-     * @throws \Edujugon\GoogleAds\Exceptions\Service
-     */
-    public function serviceByName($name)
-    {
-        if(in_array($name,array_keys($this->types)))
-            $this->service($this->types[$name]);
-        else
-            throw new \Edujugon\GoogleAds\Exceptions\Service("The name '$name' is not available. Available types: " . implode(', ',array_keys($this->types)));
 
         return $this;
     }
@@ -177,6 +135,24 @@ class Service
     {
         if (empty($fields))
             throw new Session('You have to select some fields before "call" all method. Call "select" method before.');
+    }
+
+    /**
+     * Set the service
+     *
+     * @param $service
+     * @return $this
+     * @throws \Edujugon\GoogleAds\Exceptions\Service
+     */
+    private function setService($service)
+    {
+        try{
+            $this->service = $this->adWordsServices->get($this->session, $service);
+        }catch(\Exception $e)
+        {
+            throw new \Edujugon\GoogleAds\Exceptions\Service("The service '$service' is not available. Please pass a valid service");
+        }
+
     }
 
 }

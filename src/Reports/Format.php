@@ -14,7 +14,7 @@ use Edujugon\GoogleAds\Exceptions\ReportFormat;
 use Google\AdsApi\AdWords\Reporting\v201609\DownloadFormat;
 use ReflectionClass;
 
-class Format
+abstract  class Format
 {
     /**
      * Load all constants from ReportDefinitionReportType

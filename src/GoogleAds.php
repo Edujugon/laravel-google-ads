@@ -77,10 +77,13 @@ class GoogleAds
      */
     public function session(array $data = [])
     {
-        $this->session = new AdwordsSession();
-
-        if(!$this->userCredentials)
+        if(!$this->userCredentials){
+            $this->session = new AdwordsSession();
             $this->session->oAuth($this->env);
+        }else{
+            $this->session = new AdwordsSession($this->userCredentials,$this->env);
+        }
+
 
         $this->session = $this->session->build($data);
 
@@ -109,20 +112,7 @@ class GoogleAds
      */
     public function service($service)
     {
-        $this->service = (new Service($this->session))->service($service);
-
-        return $this->service;
-    }
-
-    /**
-     * Set the google adwords service.
-     *
-     * @param $name
-     * @return Service
-     */
-    public function serviceByName($name)
-    {
-        $this->service = (new Service($this->session))->serviceByName($name);
+        $this->service = (new Service($service,$this->session));
 
         return $this->service;
     }

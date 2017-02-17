@@ -8,22 +8,10 @@ class ServicesTest extends PHPUnit_Framework_TestCase {
     /** @test */
     public function add_service()
     {
-        $service = (new \Edujugon\GoogleAds\Services\Service())->service(CampaignService::class);
+        $service = (new \Edujugon\GoogleAds\Services\Service(CampaignService::class));
         $this->assertInstanceOf(\Google\AdsApi\AdWords\v201609\cm\CampaignService::class,$service->getService());
     }
 
-    /** @test */
-    public function add_service_by_name()
-    {
-      $service = (new \Edujugon\GoogleAds\Services\Service())->serviceByName('campaign');
-      $this->assertInstanceOf(\Google\AdsApi\AdWords\v201609\cm\CampaignService::class,$service->getService());
-    }
-
-    /** @test */
-    public function load_oAuth()
-    {
-        $session = new Edujugon\GoogleAds\Services\Service();
-    }
 
     /** @test */
     public function campaing_all(){
