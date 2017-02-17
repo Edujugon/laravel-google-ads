@@ -78,17 +78,6 @@ php artisan googleads:token:generate
 
 >   Remember to copy that token in the correct section (test/production).Depends on your `env` value.
 
-
-##  Usage
-
-```
-$ads = new GoogleAds();
-```
->   Do not forget to put at the top of the file the use statement:
-```
-use Edujugon\GoogleAds\GoogleAds;
-```
-
 ## API List
 
 ### Environment
@@ -192,11 +181,11 @@ object getSession()
 ### Services
 
 - [service](https://github.com/edujugon/laravel-google-ads#service)
-    - [select](https://github.com/edujugon/laravel-google-ads#service/select)
-    - [limit](https://github.com/edujugon/laravel-google-ads#service/limit)
-    - [orderBy](https://github.com/edujugon/laravel-google-ads#service/orderby)
-    - [get](https://github.com/edujugon/laravel-google-ads#service/get)
-    - [getService](https://github.com/edujugon/laravel-google-ads#service/getservice)
+    - [select](https://github.com/edujugon/laravel-google-ads#serviceselect)
+    - [limit](https://github.com/edujugon/laravel-google-ads#servicelimit)
+    - [orderBy](https://github.com/edujugon/laravel-google-ads#serviceorderby)
+    - [get](https://github.com/edujugon/laravel-google-ads#serviceget)
+    - [getService](https://github.com/edujugon/laravel-google-ads#servicegetservice)
     
 #### service
 
@@ -271,30 +260,41 @@ Edujugon\GoogleAds\Services\Service object getService()
 ### Reports
 
 - [report](https://github.com/edujugon/laravel-google-ads#report)
-    - [select](https://github.com/edujugon/laravel-google-ads#report-select)
-    - [from](https://github.com/edujugon/laravel-google-ads#report-from)
-    - [during](https://github.com/edujugon/laravel-google-ads#report-during)
-    - [where](https://github.com/edujugon/laravel-google-ads#report-where)
-    - [getAsSimpleXMLObj](https://github.com/edujugon/laravel-google-ads#report-getassimplexmlobj)
-    - [getAsObj](https://github.com/edujugon/laravel-google-ads#report-getasobj)
-    - [getAsString](https://github.com/edujugon/laravel-google-ads#report-getasstring)
-    - [getStream](https://github.com/edujugon/laravel-google-ads#report-getstream)
-    - [saveToFile](https://github.com/edujugon/laravel-google-ads#report-savetofile)
-    - [getFormats](https://github.com/edujugon/laravel-google-ads#report-getformats)
-    - [getFields](https://github.com/edujugon/laravel-google-ads#report-getfields)
-    - [getTypes](https://github.com/edujugon/laravel-google-ads#report-gettypes)
-    - [format](https://github.com/edujugon/laravel-google-ads#report-format)
+    - [select](https://github.com/edujugon/laravel-google-ads#reportselect)
+    - [from](https://github.com/edujugon/laravel-google-ads#reportfrom)
+    - [during](https://github.com/edujugon/laravel-google-ads#reportduring)
+    - [where](https://github.com/edujugon/laravel-google-ads#reportwhere)
+    - [getAsSimpleXMLObj](https://github.com/edujugon/laravel-google-ads#reportgetassimplexmlobj)
+    - [getAsObj](https://github.com/edujugon/laravel-google-ads#reportgetasobj)
+    - [getAsString](https://github.com/edujugon/laravel-google-ads#reportgetasstring)
+    - [getStream](https://github.com/edujugon/laravel-google-ads#reportgetstream)
+    - [saveToFile](https://github.com/edujugon/laravel-google-ads#reportsavetofile)
+    - [getFormats](https://github.com/edujugon/laravel-google-ads#reportgetformats)
+    - [getFields](https://github.com/edujugon/laravel-google-ads#reportgetfields)
+    - [getTypes](https://github.com/edujugon/laravel-google-ads#reportgettypes)
+    - [format](https://github.com/edujugon/laravel-google-ads#reportformat)
     
 - [showReportTypes](https://github.com/edujugon/laravel-google-ads#showreporttypes)
 
 ### Fields
 
 - [fields](https://github.com/edujugon/laravel-google-ads#fields)
-    - [of](https://github.com/edujugon/laravel-google-ads#fields-of)
-    - [asObj](https://github.com/edujugon/laravel-google-ads#fields-asobj)
-    - [asList](https://github.com/edujugon/laravel-google-ads#fields-aslist)
-    - [asQuerySelector](https://github.com/edujugon/laravel-google-ads#fields-asqueryselector)
+    - [of](https://github.com/edujugon/laravel-google-ads#fieldsof)
+    - [asObj](https://github.com/edujugon/laravel-google-ads#fieldsasobj)
+    - [asList](https://github.com/edujugon/laravel-google-ads#fieldsaslist)
+    - [asQuerySelector](https://github.com/edujugon/laravel-google-ads#fieldsasqueryselector)
     
 ### Format
 
 - [showReportFormats](https://github.com/edujugon/laravel-google-ads#showreportformats)
+
+
+##  Usage samples
+
+```
+$ads = new GoogleAds();
+```
+>   Do not forget to put at the top of the file the use statement:
+```
+use Edujugon\GoogleAds\GoogleAds;
+```
