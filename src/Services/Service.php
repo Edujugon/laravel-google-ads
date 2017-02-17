@@ -71,7 +71,7 @@ class Service
     }
 
     /**
-     * @param $number
+     * @param int $number
      * @param int $offset
      * @return $this
      */
@@ -100,10 +100,8 @@ class Service
      * Get all items.
      *
      * @param array $fields
-     * @return \Google\AdsApi\AdWords\v201609\cm\Campaign |
-     * \Google\AdsApi\AdWords\v201609\cm\AdGroup |
-     * \Google\AdsApi\AdWords\v201609\cm\AdGroupAd
-     *
+     * @return \Google\AdsApi\AdWords\v201609\cm\*
+     * E.g. => Campaign | AdGroup | AdGroupAd | ...
      */
     public function get($fields = [])
     {
