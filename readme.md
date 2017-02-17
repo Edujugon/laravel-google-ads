@@ -96,6 +96,31 @@ use Edujugon\GoogleAds\GoogleAds;
 - [env](https://github.com/edujugon/laravel-google-ads#env)
 - [getEnv](https://github.com/edujugon/laravel-google-ads#getenv)
 
+#### env
+
+`env` method sets the environment to work with.
+
+Parameters:
+
+*   test
+*   production
+
+**Syntax**
+
+```php
+object env($env)
+```
+
+#### getEnv
+
+`getEnv` method gets the environment.
+
+**Syntax**
+
+```php
+string getEnv()
+```
+
 ### Authorization and Session
 
 - [oAuth](https://github.com/edujugon/laravel-google-ads#oauth)
@@ -103,24 +128,149 @@ use Edujugon\GoogleAds\GoogleAds;
 - [session](https://github.com/edujugon/laravel-google-ads#session)
 - [getSession](https://github.com/edujugon/laravel-google-ads#getsession)
 
+#### oAuth
+
+`oAuth` method generates User Credentials.
+
+Options:
+
+*   without parameters (It will take the google-ads config file values.)
+*   with an array of data like follows:
+```
+'clientId' => 'CLIENT-ID',
+'clientSecret' => 'CLIENT-SECRET',
+'refreshToken' => 'REFRESH-TOKEN'
+```
+
+**Syntax**
+
+```php
+object oAuth(array $data = [])
+```
+
+#### getUserCredentials
+
+`getUserCredentials` method gets UserRefreshCredentials.
+>   \Google\Auth\Credentials\UserRefreshCredentials
+
+**Syntax**
+
+```php
+object getUserCredentials()
+```
+
+#### session
+
+`session` method sets the session to work with.
+
+Options:
+
+*   without parameters (It will take the google-ads config file values.)
+*   with an array of data like follows:
+```
+'developerToken' => 'token',
+'clientCustomerId' => 'id'
+```
+
+**Syntax**
+
+```php
+object session(array $data = [])
+```
+
+#### getSession
+
+`getSession` method gets the session.
+>   \Edujugon\GoogleAds\Session\AdwordsSession
+
+**Syntax**
+
+```php
+object getSession()
+```
+
 ### Services
 
 - [service](https://github.com/edujugon/laravel-google-ads#service)
-- [getService](https://github.com/edujugon/laravel-google-ads#getservice)
-- [adGroupService](https://github.com/edujugon/laravel-google-ads#adgroupservice)
-- [adGroupAdService](https://github.com/edujugon/laravel-google-ads#adgroupadservice)
-- [campaignService](https://github.com/edujugon/laravel-google-ads#campaignservice)
+    - [select](https://github.com/edujugon/laravel-google-ads#service/select)
+    - [limit](https://github.com/edujugon/laravel-google-ads#service/limit)
+    - [orderBy](https://github.com/edujugon/laravel-google-ads#service/orderby)
+    - [get](https://github.com/edujugon/laravel-google-ads#service/get)
+    - [getService](https://github.com/edujugon/laravel-google-ads#service/getservice)
     
-    - [select](https://github.com/edujugon/laravel-google-ads#service-select)
-    - [limit](https://github.com/edujugon/laravel-google-ads#service-limit)
-    - [orderBy](https://github.com/edujugon/laravel-google-ads#service-orderby)
-    - [get](https://github.com/edujugon/laravel-google-ads#service-get)
-    
-    
+#### service
+
+`service` method sets and gets the google service.
+
+Parameter:
+
+*   \Google\AdsApi\AdWords\v201609\cm\*
+>   E.g. CampaignService::class / AdGroupService::class / ...
+
+**Syntax**
+
+```php
+object service($service)
+```
+
+##### service/select
+
+`select` method sets the fields to retrieve.
+
+**Syntax**
+
+```php
+Edujugon\GoogleAds\Services\Service object select($fields)
+```
+
+##### service/limit
+
+`limit` method sets the amount of items to retrieve.
+
+**Syntax**
+
+```php
+Edujugon\GoogleAds\Services\Service object limit($number, $offset = 0)
+```
+
+##### service/orderBy
+
+`orderBy` method sets the order by a field.
+
+**Syntax**
+
+```php
+Edujugon\GoogleAds\Services\Service object orderBy($field)
+```
+
+##### service/get
+
+`get` method gets the entries of the query.
+
+Optional:
+
+*   Accepts fields as parameter. In this case you don't need to call select method previously.
+
+**Syntax**
+
+```php
+Edujugon\GoogleAds\Services\Service object get($fields = [])
+```
+
+##### service/getService
+
+`getService` method gets the AdWordsService.
+
+**Syntax**
+
+```php
+Edujugon\GoogleAds\Services\Service object getService()
+```
+
+
 ### Reports
 
 - [report](https://github.com/edujugon/laravel-google-ads#report)
-
     - [select](https://github.com/edujugon/laravel-google-ads#report-select)
     - [from](https://github.com/edujugon/laravel-google-ads#report-from)
     - [during](https://github.com/edujugon/laravel-google-ads#report-during)
@@ -140,7 +290,6 @@ use Edujugon\GoogleAds\GoogleAds;
 ### Fields
 
 - [fields](https://github.com/edujugon/laravel-google-ads#fields)
-
     - [of](https://github.com/edujugon/laravel-google-ads#fields-of)
     - [asObj](https://github.com/edujugon/laravel-google-ads#fields-asobj)
     - [asList](https://github.com/edujugon/laravel-google-ads#fields-aslist)

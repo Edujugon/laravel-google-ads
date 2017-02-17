@@ -107,7 +107,7 @@ class GoogleAds
     /**
      * Set the google adwords service.
      *
-     * @param \Google\AdsApi\AdWords\v201609\cm\AdGroupService | \Google\AdsApi\AdWords\v201609\cm\AdGroupAdService | \Google\AdsApi\AdWords\v201609\cm\CampaignService  $service
+     * @param \Google\AdsApi\AdWords\v201609\cm\*  $service
      * @return \Edujugon\GoogleAds\Services\Service
      */
     public function service($service)
@@ -194,7 +194,7 @@ class GoogleAds
     /**
      * Get the session.
      *
-     * @return mixed
+     * @return \Edujugon\GoogleAds\Session\AdwordsSession
      */
     public function getSession()
     {
