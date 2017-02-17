@@ -84,7 +84,7 @@ php artisan googleads:token:generate
 ```
 $ads = new GoogleAds();
 ```
->   Do not forget the Class statement:
+>   Do not forget to put at the top of the file the use statement:
 ```
 use Edujugon\GoogleAds\GoogleAds;
 ```
