@@ -65,7 +65,7 @@ class Service
      */
     public function orderBy($field)
     {
-        $this->postQuery .= " ORDER BY $field";
+        $this->postQuery .= " ORDER BY $field ";
 
         return $this;
     }
@@ -77,7 +77,7 @@ class Service
      */
     public function limit($number, $offset = 0)
     {
-        $this->postQuery .= " LIMIT $offset,$number";
+        $this->postQuery .= " LIMIT $offset,$number ";
 
         return $this;
     }

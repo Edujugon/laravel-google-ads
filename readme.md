@@ -78,218 +78,13 @@ php artisan googleads:token:generate
 
 >   Remember to copy that token in the correct section (test/production).Depends on your `env` value.
 
-## API List
+##  API Documentation
 
-### Environment
-
-- [env](https://github.com/edujugon/laravel-google-ads#env)
-- [getEnv](https://github.com/edujugon/laravel-google-ads#getenv)
-
-#### env
-
-`env` method sets the environment to work with.
-
-Parameters:
-
-*   test
-*   production
-
-**Syntax**
-
-```php
-object env($env)
-```
-
-#### getEnv
-
-`getEnv` method gets the environment.
-
-**Syntax**
-
-```php
-string getEnv()
-```
-
-### Authorization and Session
-
-- [oAuth](https://github.com/edujugon/laravel-google-ads#oauth)
-- [getUserCredentials](https://github.com/edujugon/laravel-google-ads#getusercredentials)
-- [session](https://github.com/edujugon/laravel-google-ads#session)
-- [getSession](https://github.com/edujugon/laravel-google-ads#getsession)
-
-#### oAuth
-
-`oAuth` method generates User Credentials.
-
-Options:
-
-*   without parameters (It will take the google-ads config file values.)
-*   with an array of data like follows:
-```
-'clientId' => 'CLIENT-ID',
-'clientSecret' => 'CLIENT-SECRET',
-'refreshToken' => 'REFRESH-TOKEN'
-```
-
-**Syntax**
-
-```php
-object oAuth(array $data = [])
-```
-
-#### getUserCredentials
-
-`getUserCredentials` method gets UserRefreshCredentials.
->   \Google\Auth\Credentials\UserRefreshCredentials
-
-**Syntax**
-
-```php
-object getUserCredentials()
-```
-
-#### session
-
-`session` method sets the session to work with.
-
-Options:
-
-*   without parameters (It will take the google-ads config file values.)
-*   with an array of data like follows:
-```
-'developerToken' => 'token',
-'clientCustomerId' => 'id'
-```
-
-**Syntax**
-
-```php
-object session(array $data = [])
-```
-
-#### getSession
-
-`getSession` method gets the session.
->   \Edujugon\GoogleAds\Session\AdwordsSession
-
-**Syntax**
-
-```php
-object getSession()
-```
-
-### Services
-
-- [service](https://github.com/edujugon/laravel-google-ads#service)
-    - [select](https://github.com/edujugon/laravel-google-ads#serviceselect)
-    - [limit](https://github.com/edujugon/laravel-google-ads#servicelimit)
-    - [orderBy](https://github.com/edujugon/laravel-google-ads#serviceorderby)
-    - [get](https://github.com/edujugon/laravel-google-ads#serviceget)
-    - [getService](https://github.com/edujugon/laravel-google-ads#servicegetservice)
-    
-#### service
-
-`service` method sets and gets the google service.
-
-Parameter:
-
-*   \Google\AdsApi\AdWords\v201609\cm\*
->   E.g. CampaignService::class / AdGroupService::class / ...
-
-**Syntax**
-
-```php
-object service($service)
-```
-
-##### service/select
-
-`select` method sets the fields to retrieve.
-
-**Syntax**
-
-```php
-Edujugon\GoogleAds\Services\Service object select($fields)
-```
-
-##### service/limit
-
-`limit` method sets the amount of items to retrieve.
-
-**Syntax**
-
-```php
-Edujugon\GoogleAds\Services\Service object limit($number, $offset = 0)
-```
-
-##### service/orderBy
-
-`orderBy` method sets the order by a field.
-
-**Syntax**
-
-```php
-Edujugon\GoogleAds\Services\Service object orderBy($field)
-```
-
-##### service/get
-
-`get` method gets the entries of the query.
-
-Optional:
-
-*   Accepts fields as parameter. In this case you don't need to call select method previously.
-
-**Syntax**
-
-```php
-Edujugon\GoogleAds\Services\Service object get($fields = [])
-```
-
-##### service/getService
-
-`getService` method gets the AdWordsService.
-
-**Syntax**
-
-```php
-Edujugon\GoogleAds\Services\Service object getService()
-```
-
-
-### Reports
-
-- [report](https://github.com/edujugon/laravel-google-ads#report)
-    - [select](https://github.com/edujugon/laravel-google-ads#reportselect)
-    - [from](https://github.com/edujugon/laravel-google-ads#reportfrom)
-    - [during](https://github.com/edujugon/laravel-google-ads#reportduring)
-    - [where](https://github.com/edujugon/laravel-google-ads#reportwhere)
-    - [getAsSimpleXMLObj](https://github.com/edujugon/laravel-google-ads#reportgetassimplexmlobj)
-    - [getAsObj](https://github.com/edujugon/laravel-google-ads#reportgetasobj)
-    - [getAsString](https://github.com/edujugon/laravel-google-ads#reportgetasstring)
-    - [getStream](https://github.com/edujugon/laravel-google-ads#reportgetstream)
-    - [saveToFile](https://github.com/edujugon/laravel-google-ads#reportsavetofile)
-    - [getFormats](https://github.com/edujugon/laravel-google-ads#reportgetformats)
-    - [getFields](https://github.com/edujugon/laravel-google-ads#reportgetfields)
-    - [getTypes](https://github.com/edujugon/laravel-google-ads#reportgettypes)
-    - [format](https://github.com/edujugon/laravel-google-ads#reportformat)
-    
-- [showReportTypes](https://github.com/edujugon/laravel-google-ads#showreporttypes)
-
-### Fields
-
-- [fields](https://github.com/edujugon/laravel-google-ads#fields)
-    - [of](https://github.com/edujugon/laravel-google-ads#fieldsof)
-    - [asObj](https://github.com/edujugon/laravel-google-ads#fieldsasobj)
-    - [asList](https://github.com/edujugon/laravel-google-ads#fieldsaslist)
-    - [asQuerySelector](https://github.com/edujugon/laravel-google-ads#fieldsasqueryselector)
-    
-### Format
-
-- [showReportFormats](https://github.com/edujugon/laravel-google-ads#showreportformats)
-
+[Full API List](https://github.com/edujugon/laravel-google-ads/blob/master/api-documentation.md)
 
 ##  Usage samples
+
+Instance the main wrapper class:
 
 ```
 $ads = new GoogleAds();
@@ -297,4 +92,131 @@ $ads = new GoogleAds();
 >   Do not forget to put at the top of the file the use statement:
 ```
 use Edujugon\GoogleAds\GoogleAds;
+```
+
+All needed configuration data is took from `google-ads.php` config file. But you always may pass new values on the fly if required.
+
+You may override the default environment value calling the env method:
+
+```
+$ads->env('test');
+```
+
+Also, you may get the env value by getEnv method:
+
+```
+$ads->getEnv();
+```
+
+If need to override the oAuth details, just call the oAuth method like so:
+
+```
+$ads->oAuth([
+            'clientId' => 'test',
+            'clientSecret' => 'test',
+            'refreshToken' => 'TEST'
+
+        ]);
+```
+
+Same with session. If need to override the default values on the fly, just do it by calling session method:
+
+```
+$ads->session([
+    'developerToken' => 'token',
+    'clientCustomerId' => 'id'
+]);
+```
+
+All the above methods can be chained as follows:
+
+```
+$ads->env('test')
+    ->oAuth([
+        'clientId' => 'test',
+        'clientSecret' => 'test',
+        'refreshToken' => 'TEST'
+
+    ])
+    ->session([
+        'developerToken' => 'token',
+        'clientCustomerId' => 'id'
+    ]);
+```
+
+For Google Ads Services you only have to call the service method:
+
+```
+$ads->service(CampaignService::class);
+```
+
+or
+
+```
+$ads->service(AdGroupService::class);
+```
+
+or
+
+```
+$ads->service(AdGroupAdService::class);
+```
+
+or Any google ads services available under `Google\AdsApi\AdWords\v201609\cm` folder.
+
+
+> Notice that for now this package only retrieves data from those services through the package API. In further releases you'll be able to adds, updates, or removes any of those services through the package API.
+
+If you needed to add, update, or remove items, you can do so with the google service itself. So after calling the above service method, just need to call `getService` which will return the google service instance.
+
+```
+$googleService = $ads->getService();
+
+// Here just refere to google ads documentation to add, update, or remove items. 
+```
+
+To retrieve a list of campaigns, do like follows:
+
+```
+$ads->service(CampaignService::class)
+    ->select(['Id', 'Name', 'Status', 'ServingStatus', 'StartDate', 'EndDate'])
+    ->get();
+```
+
+> Notice the method `select` is required and you have to use it in order to set the fields you wanna get from the campaign.
+
+If need to limit your search you may use the `limit` method:
+
+```
+$ads->service(CampaignService::class)
+    ->select(['Id', 'Name', 'Status', 'ServingStatus', 'StartDate', 'EndDate'])
+    ->limit(5)
+    ->get();
+    
+```
+
+Also you can order by any field:
+
+```
+$ads->service(CampaignService::class)
+    ->select(['Id', 'Name', 'Status', 'ServingStatus', 'StartDate', 'EndDate'])
+    ->orderBy('Name')
+    ->limit(5)
+    ->get();
+
+```
+
+> Notice that limit method must be called orderBy method.
+
+
+Let's talk about reporting :)
+
+```
+$ads = new GoogleAds();
+
+$obj = $ads->report()->from('CRITERIA_PERFORMANCE_REPORT')
+    ->during('20170101','20170210')
+    ->where('CampaignId = 752331963')
+    ->select('CampaignId','AdGroupId','AdGroupName','Id', 'Criteria', 'CriteriaType','Impressions', 'Clicks', 'Cost', 'UrlCustomParameters')
+    ->getAsObj();
 ```

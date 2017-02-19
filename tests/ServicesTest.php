@@ -17,9 +17,8 @@ class ServicesTest extends PHPUnit_Framework_TestCase {
     public function campaing_all(){
         $campaign = new \Edujugon\GoogleAds\Services\Campaign();
         $this->assertInternalType('integer',$campaign->get(['Id'])[0]->getId());
-        $this->assertInternalType('string',$campaign->limit(2)->get()[0]->getName());
+        $this->assertInternalType('string',$campaign->orderBy('Name')->limit(2)->get()[0]->getName());
         //dd($campaign->all()->getEntries());
-
     }
 
     /** @test */
