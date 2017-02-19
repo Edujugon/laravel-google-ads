@@ -1,6 +1,6 @@
 #   API Documentation
 
-Laravel Google Ads API Documentation
+Laravel Google Ads Package API Documentation
 
 ## API List
 
