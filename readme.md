@@ -80,7 +80,7 @@ php artisan googleads:token:generate
 
 ##  API Documentation
 
-[Full API List](https://github.com/edujugon/laravel-google-ads/blob/master/api-documentation.md)
+[Full API List](https://github.com/edujugon/laravel-google-ads/blob/master/API-Documentation.md)
 
 ##  Usage samples
 
