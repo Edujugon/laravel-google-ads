@@ -59,9 +59,9 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
     {
         $ads = new GoogleAds();
 
-        $service = $ads->service(CampaignService::class);
+        $ads = $ads->service(CampaignService::class);
 
-        $this->assertInstanceOf(CampaignService::class,$service->getService());
+        $this->assertInstanceOf(CampaignService::class,$ads->getService());
     }
 
     /** @test */
