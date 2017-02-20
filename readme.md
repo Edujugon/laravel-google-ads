@@ -144,6 +144,8 @@ $ads->env('test')
     ]);
 ```
 
+### Google Services
+
 For Google Ads Services you only have to call the service method:
 
 ```
@@ -185,7 +187,7 @@ $ads->service(CampaignService::class)
 
 > Notice the method `select` is required and you have to use it in order to set the fields you wanna get from the campaign.
 
-If need to limit your search you may use the `limit` method:
+If need to limit your search you may use `limit` method:
 
 ```
 $ads->service(CampaignService::class)
@@ -195,7 +197,7 @@ $ads->service(CampaignService::class)
     
 ```
 
-Also you can order by any field:
+Also you can order by a field:
 
 ```
 $ads->service(CampaignService::class)
@@ -206,8 +208,10 @@ $ads->service(CampaignService::class)
 
 ```
 
-> Notice that limit method must be called orderBy method.
+> Notice that limit method must be called after orderBy method.
 
+
+### Google Reports
 
 Let's talk about reporting :)
 
