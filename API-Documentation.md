@@ -151,7 +151,7 @@ object getSession()
     
 #### service
 
-`service` method sets and gets the google service.
+`service` method sets a google service and gets an instance of Edujugon\GoogleAds\Services\Service.
 
 Parameter:
 
@@ -161,7 +161,7 @@ Parameter:
 **Syntax**
 
 ```php
-object service($service)
+Edujugon\GoogleAds\Services\Service object service($service)
 ```
 
 ##### service/select

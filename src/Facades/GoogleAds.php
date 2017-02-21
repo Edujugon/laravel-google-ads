@@ -1,5 +1,6 @@
 <?php namespace Edujugon\GoogleAds\Facades;
 
+use Edujugon\GoogleAds\GoogleAds as AliasGoogleAds;
 use Illuminate\Support\Facades\Facade;
 
 class GoogleAds extends Facade {
@@ -9,6 +10,6 @@ class GoogleAds extends Facade {
      *
      * @return string
      */
-    protected static function getFacadeAccessor() { return 'edujugonGoogleAds'; }
+    protected static function getFacadeAccessor() { return AliasGoogleAds::class; }
 
 }
