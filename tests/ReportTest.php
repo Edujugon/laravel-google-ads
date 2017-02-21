@@ -1,8 +1,6 @@
 <?php
 
 use Edujugon\GoogleAds\Reports\Report;
-use Google\AdsApi\AdWords\Reporting\v201609\DownloadFormat;
-use Google\AdsApi\AdWords\Reporting\v201609\ReportDownloader;
 
 class ReportTest extends PHPUnit_Framework_TestCase {
 
