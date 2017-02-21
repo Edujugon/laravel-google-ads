@@ -7,6 +7,42 @@
  *
  */
 use Edujugon\GoogleAds\Exceptions\Config;
+use Edujugon\GoogleAds\Reports\Fields;
+use Edujugon\GoogleAds\Reports\Report;
+use Edujugon\GoogleAds\Services\Service;
+
+/**
+ * Get an instance of Report
+ * @param null $session
+ * @return Report
+ */
+function report($session = null)
+{
+    return new Report($session);
+}
+
+/**
+ * Get an instance of Service
+ * @param $service
+ * @param null $session
+ * @return Service
+ */
+function service($service,$session = null)
+{
+    return new Service($service,$session);
+}
+
+
+/**
+ * Get an instance of Fields
+ *
+ * @param null $session
+ * @return Fields
+ */
+function reportFields($session = null)
+{
+    return new Fields($session);
+}
 
 /**
  * Get configuration array data.
