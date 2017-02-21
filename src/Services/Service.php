@@ -109,7 +109,7 @@ class Service
 
         $this->haveFields($fields);
 
-        $query = 'SELECT '. implode(',',$fields) . $this->postQuery;
+        $query = $this->createQuery($fields);
 
         return $this->service->query($query)->getEntries();
     }
@@ -123,6 +123,15 @@ class Service
     public function getService()
     {
         return $this->service;
+    }
+
+    /**
+     * @param $fields
+     * @return string
+     */
+    private function createQuery($fields)
+    {
+        return 'SELECT '. implode(',',$fields) . $this->postQuery;
     }
 
     /**
