@@ -213,14 +213,81 @@ $ads->service(CampaignService::class)
 
 ### Google Reports
 
-Let's talk about reporting :)
+To start with google reporting just call `report` method from the main wrapper:
 
 ```
-$ads = new GoogleAds();
-
-$obj = $ads->report()->from('CRITERIA_PERFORMANCE_REPORT')
-    ->during('20170101','20170210')
-    ->where('CampaignId = 752331963')
-    ->select('CampaignId','AdGroupId','AdGroupName','Id', 'Criteria', 'CriteriaType','Impressions', 'Clicks', 'Cost', 'UrlCustomParameters')
-    ->getAsObj();
+$report = $ads->report();
 ```
+
+It will return an instance of `Edujugon\GoogleAds\Reports\Report`
+
+Now, you have a set of method to prepare the google ads report:
+
+```
+$obj = $ads->report()
+            ->from('CRITERIA_PERFORMANCE_REPORT')
+            ->during('20170101','20170210')
+            ->where('CampaignId = 752331963')
+            ->select('CampaignId','AdGroupId','AdGroupName','Id', 'Criteria', 'CriteriaType','Impressions', 'Clicks', 'Cost', 'UrlCustomParameters')
+            ->getAsObj();
+```
+
+In the above methods, the mandatory ones are `from` and `select`
+
+>   Notice that in `during` method you have to pass the dates as concat string like YearMonthDay
+
+If want to see the retrieve items, just get so by `result` property of the object returned:
+
+```
+$items = $obj->result;
+```
+
+> Notice that it is a Collection. So you have all collection methods available.
+ 
+If need the report in another format, just call `format` method before getting the report:
+
+```
+$string = $ads->report()
+            ->format('CSVFOREXCEL')
+            ->select('CampaignId','AdGroupId','AdGroupName','Id', 'Criteria', 'CriteriaType','Impressions', 'Clicks', 'Cost', 'UrlCustomParameters')
+            ->from('CRITERIA_PERFORMANCE_REPORT')
+            ->getAsString();
+```
+
+To see the available report formats:
+
+```
+$ads->report()->getFormats()
+```
+
+To see what fields are available for a specific report type you can do like follows:
+
+```
+$fields = $ads->report()->from('CRITERIA_PERFORMANCE_REPORT')->getFields();
+```
+
+
+If want to know what report types are available, just do like follow:
+
+```
+$ads->report()->getTypes();
+```
+
+There are 3 output formats for the report. It can be as object, as stream, as string.
+
+```
+getAsString();
+getStream();
+getAsObj();
+```
+
+Also you can save the report in a file:
+
+```
+$saved = $ads->report()
+             ->select('CampaignId','AdGroupId','AdGroupName','Id', 'Criteria', 'CriteriaType','Impressions', 'Clicks', 'Cost', 'UrlCustomParameters')
+             ->from('CRITERIA_PERFORMANCE_REPORT')
+             ->saveToFile($filePath)
+```
+
+> The above code will create a file in the passed path returning true if everything was fine. 
