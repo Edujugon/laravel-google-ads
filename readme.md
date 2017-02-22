@@ -1,7 +1,5 @@
 # Google Adwords Package
 
-> **Note:** This library is under development
-
 Laravel package for Google Adwords. Wrapper of [`googleads/googleads-php-lib`](https://github.com/googleads/googleads-php-lib) for Laravel.
 
 ##  Installation
