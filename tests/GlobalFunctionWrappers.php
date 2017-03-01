@@ -31,13 +31,13 @@ class GlobalFunctionWrappers extends PHPUnit_Framework_TestCase {
     /** @test */
     public function get_report_field_class_by_global_function_wrapper()
     {
-        $this->assertInstanceOf(\Edujugon\GoogleAds\Reports\Fields::class,reportFields());
+        $this->assertInstanceOf(\Edujugon\GoogleAds\Reports\Fields::class,report_fields());
     }
 
     /** @test */
     public function get_report_format_class_by_global_function_wrapper()
     {
 
-        $this->assertInstanceOf(\Edujugon\GoogleAds\Reports\Format::class,reportFields());
+        $this->assertInstanceOf(\Edujugon\GoogleAds\Reports\Format::class,report_fields());
     }
 }
