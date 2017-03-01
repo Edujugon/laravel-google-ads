@@ -36,7 +36,7 @@ class AdwordsSession
         if($oAuth2Credential)
             $this->oAuth2Credential = $oAuth2Credential;
 
-        $this->adsConfig = eConfigGoogleAds($env);
+        $this->adsConfig = e_ads_config_google_ads($env);
     }
 
     /**
