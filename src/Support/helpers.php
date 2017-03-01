@@ -39,7 +39,7 @@ function service($service,$session = null)
  * @param null $session
  * @return Fields
  */
-function reportFields($session = null)
+function report_fields($session = null)
 {
     return new Fields($session);
 }
@@ -49,7 +49,7 @@ function reportFields($session = null)
  *
  * @return array
  */
-function eConfig()
+function e_ads_config()
 {
     if(function_exists('config_path'))
     {
@@ -74,9 +74,9 @@ function eConfig()
  * @return mixed
  * @throws Config
  */
-function eConfigGoogleAds($env = null)
+function e_ads_config_google_ads($env = null)
 {
-    $config = eConfig();
+    $config = e_ads_config();
 
 
     if($env && !array_key_exists($env,$config))
@@ -89,9 +89,9 @@ function eConfigGoogleAds($env = null)
  * Get the oAuth2 configuration
  * @return mixed
  */
-function eConfigOAuth()
+function e_config_oauth()
 {
-    $config = eConfig();
+    $config = e_ads_config();
 
     return $config['oAuth2'];
 }

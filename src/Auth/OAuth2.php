@@ -30,8 +30,8 @@ class OAuth2
      */
     function __construct($env = null)
     {
-        $this->adsConfig = eConfigGoogleAds($env);
-        $this->oAuthConfig = eConfigOAuth();
+        $this->adsConfig = e_ads_config_google_ads($env);
+        $this->oAuthConfig = e_config_oauth();
     }
 
     /**

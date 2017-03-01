@@ -53,7 +53,7 @@ class GoogleAds
      */
     public function __construct($env = null)
     {
-        $this->config = eConfig();
+        $this->config = e_ads_config();
 
         $this->env = $env ? $env : $this->config['env'] ;
     }
