@@ -6,55 +6,55 @@ Laravel Google Ads Package API Documentation
 
 ### Environment
 
-- [env](https://edujugon.github.io/API-Documentation.md#env)
-- [getEnv](https://edujugon.github.io/API-Documentation.md#getenv)
+- [env](https://edujugon.github.io/laravel-google-ads/API-Documentation#env)
+- [getEnv](https://edujugon.github.io/laravel-google-ads/API-Documentation#getenv)
 
 ### Authorization and Session
 
-- [oAuth](https://edujugon.github.io/API-Documentation.md#oauth)
-- [getUserCredentials](https://edujugon.github.io/API-Documentation.md#getusercredentials)
-- [session](https://edujugon.github.io/API-Documentation.md#session)
-- [getSession](https://edujugon.github.io/API-Documentation.md#getsession)
+- [oAuth](https://edujugon.github.io/laravel-google-ads/API-Documentation#oauth)
+- [getUserCredentials](https://edujugon.github.io/laravel-google-ads/API-Documentation#getusercredentials)
+- [session](https://edujugon.github.io/laravel-google-ads/API-Documentation#session)
+- [getSession](https://edujugon.github.io/laravel-google-ads/API-Documentation#getsession)
 
 ### Services
 
-- [service](https://edujugon.github.io/API-Documentation.md#service)
-    - [select](https://edujugon.github.io/API-Documentation.md#serviceselect)
-    - [limit](https://edujugon.github.io/API-Documentation.md#servicelimit)
-    - [orderBy](https://edujugon.github.io/API-Documentation.md#serviceorderby)
-    - [get](https://edujugon.github.io/API-Documentation.md#serviceget)
-    - [getService](https://edujugon.github.io/API-Documentation.md#servicegetservice)
+- [service](https://edujugon.github.io/laravel-google-ads/API-Documentation#service)
+    - [select](https://edujugon.github.io/laravel-google-ads/API-Documentation#serviceselect)
+    - [limit](https://edujugon.github.io/laravel-google-ads/API-Documentation#servicelimit)
+    - [orderBy](https://edujugon.github.io/laravel-google-ads/API-Documentation#serviceorderby)
+    - [get](https://edujugon.github.io/laravel-google-ads/API-Documentation#serviceget)
+    - [getService](https://edujugon.github.io/laravel-google-ads/API-Documentation#servicegetservice)
     
 ### Reports
 
-- [report](https://edujugon.github.io/API-Documentation.md#report)
-    - [select](https://edujugon.github.io/API-Documentation.md#reportselect)
-    - [from](https://edujugon.github.io/API-Documentation.md#reportfrom)
-    - [during](https://edujugon.github.io/API-Documentation.md#reportduring)
-    - [where](https://edujugon.github.io/API-Documentation.md#reportwhere)
-    - [getAsSimpleXMLObj](https://edujugon.github.io/API-Documentation.md#reportgetassimplexmlobj)
-    - [getAsObj](https://edujugon.github.io/API-Documentation.md#reportgetasobj)
-    - [getAsString](https://edujugon.github.io/API-Documentation.md#reportgetasstring)
-    - [getStream](https://edujugon.github.io/API-Documentation.md#reportgetstream)
-    - [saveToFile](https://edujugon.github.io/API-Documentation.md#reportsavetofile)
-    - [getFormats](https://edujugon.github.io/API-Documentation.md#reportgetformats)
-    - [getFields](https://edujugon.github.io/API-Documentation.md#reportgetfields)
-    - [getTypes](https://edujugon.github.io/API-Documentation.md#reportgettypes)
-    - [format](https://edujugon.github.io/API-Documentation.md#reportformat)
+- [report](https://edujugon.github.io/laravel-google-ads/API-Documentation#report)
+    - [select](https://edujugon.github.io/laravel-google-ads/API-Documentation#reportselect)
+    - [from](https://edujugon.github.io/laravel-google-ads/API-Documentation#reportfrom)
+    - [during](https://edujugon.github.io/laravel-google-ads/API-Documentation#reportduring)
+    - [where](https://edujugon.github.io/laravel-google-ads/API-Documentation#reportwhere)
+    - [getAsSimpleXMLObj](https://edujugon.github.io/laravel-google-ads/API-Documentation#reportgetassimplexmlobj)
+    - [getAsObj](https://edujugon.github.io/laravel-google-ads/API-Documentation#reportgetasobj)
+    - [getAsString](https://edujugon.github.io/laravel-google-ads/API-Documentation#reportgetasstring)
+    - [getStream](https://edujugon.github.io/laravel-google-ads/API-Documentation#reportgetstream)
+    - [saveToFile](https://edujugon.github.io/laravel-google-ads/API-Documentation#reportsavetofile)
+    - [getFormats](https://edujugon.github.io/laravel-google-ads/API-Documentation#reportgetformats)
+    - [getFields](https://edujugon.github.io/laravel-google-ads/API-Documentation#reportgetfields)
+    - [getTypes](https://edujugon.github.io/laravel-google-ads/API-Documentation#reportgettypes)
+    - [format](https://edujugon.github.io/laravel-google-ads/API-Documentation#reportformat)
     
-- [showReportTypes](https://edujugon.github.io/API-Documentation.md#showreporttypes)
+- [showReportTypes](https://edujugon.github.io/laravel-google-ads/API-Documentation#showreporttypes)
 
 ### Fields
 
-- [fields](https://edujugon.github.io/API-Documentation.md#fields)
-    - [of](https://edujugon.github.io/API-Documentation.md#fieldsof)
-    - [asObj](https://edujugon.github.io/API-Documentation.md#fieldsasobj)
-    - [asList](https://edujugon.github.io/API-Documentation.md#fieldsaslist)
-    - [asQuerySelector](https://edujugon.github.io/API-Documentation.md#fieldsasqueryselector)
+- [fields](https://edujugon.github.io/laravel-google-ads/API-Documentation#fields)
+    - [of](https://edujugon.github.io/laravel-google-ads/API-Documentation#fieldsof)
+    - [asObj](https://edujugon.github.io/laravel-google-ads/API-Documentation#fieldsasobj)
+    - [asList](https://edujugon.github.io/laravel-google-ads/API-Documentation#fieldsaslist)
+    - [asQuerySelector](https://edujugon.github.io/laravel-google-ads/API-Documentation#fieldsasqueryselector)
     
 ### Format
 
-- [showReportFormats](https://edujugon.github.io/API-Documentation.md#showreportformats)
+- [showReportFormats](https://edujugon.github.io/laravel-google-ads/API-Documentation#showreportformats)
   
 
 ### Environment
