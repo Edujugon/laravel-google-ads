@@ -46,7 +46,7 @@ Laravel Google Ads Package API Documentation
 
 ### Fields
 
-- [fields](https://edujugon.github.io/laravel-google-ads/API-Documentation#fields)
+- [fields](https://edujugon.github.io/laravel-google-ads/API-Documentation#field)
     - [of](https://edujugon.github.io/laravel-google-ads/API-Documentation#fieldsof)
     - [asObj](https://edujugon.github.io/laravel-google-ads/API-Documentation#fieldsasobj)
     - [asList](https://edujugon.github.io/laravel-google-ads/API-Documentation#fieldsaslist)
@@ -219,3 +219,227 @@ Edujugon\GoogleAds\Services\Service object getService()
 ```
 
 ### Reports
+
+#### report
+
+`report` method gets an instance of Edujugon\GoogleAds\Reports\Report.
+
+**Syntax**
+
+```php
+Edujugon\GoogleAds\Reports\Report object report()
+```
+
+##### report/select
+
+`select` method sets the fields to retrieve.
+
+**Syntax**
+
+```php
+Edujugon\GoogleAds\Reports\Report object select($fields)
+```
+
+##### report/from
+
+`from` method sets the report type.
+
+**Syntax**
+
+```php
+Edujugon\GoogleAds\Reports\Report object from($reportType)
+```
+
+##### report/during
+
+`during` method sets the starting and ending dates.
+> dates format 'Ymd' => e.g. 20170112,20171020
+
+**Syntax**
+
+```php
+Edujugon\GoogleAds\Reports\Report object during($starting,$ending)
+```
+
+##### report/where
+
+`where` method sets where condition.
+>   Available Operators: 
+
+```
+= | != | > | >= | < | <= | IN | NOT_IN | STARTS_WITH | STARTS_WITH_IGNORE_CASE |
+CONTAINS | CONTAINS_IGNORE_CASE | DOES_NOT_CONTAIN | DOES_NOT_CONTAIN_IGNORE_CASE |
+CONTAINS_ANY | CONTAINS_NONE | CONTAINS_ALL
+```
+
+**Syntax**
+
+```php
+Edujugon\GoogleAds\Reports\Report object where($condition)
+```
+
+##### report/getAsSimpleXMLObj
+
+`getAsSimpleXMLObj` method gets the report as a SimpleXMLObj.
+
+**Syntax**
+
+```php
+\SimpleXMLElement object getAsSimpleXMLObj()
+```
+
+##### report/getAsObj
+
+`getAsObj` method gets the report as a object.
+
+**Syntax**
+
+```php
+\Edujugon\GoogleAds\Reports\MyReport object getAsObj()
+```
+
+##### report/getAsString
+
+`getAsString` method gets the report as a string.
+
+**Syntax**
+
+```php
+string getAsString()
+```
+
+##### report/getStream
+
+`getStream` method gets the report as a stream.
+
+**Syntax**
+
+```php
+Stream getStream()
+```
+
+##### report/saveToFile
+
+`saveToFile` method saves the report in a file.
+
+> The second parameter is not required. But you can override it if wanna get it in another format.
+
+**Syntax**
+
+```php
+bool saveToFile($filePath,$format = 'csvforexcel')
+```
+
+##### report/getFormats
+
+`getFormats` method gets a list of report formats.
+
+**Syntax**
+
+```php
+array getFormats()
+```
+
+##### report/getFields
+
+`getFields` method gets a list of report type fields.
+
+**Syntax**
+
+```php
+array getFields()
+```
+
+##### report/getTypes
+
+`getTypes` method gets a list of report types.
+
+**Syntax**
+
+```php
+array getTypes()
+```
+
+##### report/format
+
+`format` method sets the format for the report.
+
+**Syntax**
+
+```php
+Edujugon\GoogleAds\Reports\Report format($format)
+```
+
+### showReportTypes
+
+`showReportTypes` method gets a list of report types.
+
+**Syntax**
+
+```php
+array showReportTypes()
+```
+
+### fields
+
+##### field
+
+`fields` method gets an instance of Fields.
+
+**Syntax**
+
+```php
+Edujugon\GoogleAds\Reports\Fields fields()
+```
+
+##### fields/of
+
+`format` method sets the report type
+
+**Syntax**
+
+```php
+Edujugon\GoogleAds\Reports\Report of($reportType)
+```
+
+##### fields/asObj
+
+`asObj` method gets fields as object
+
+> The object properties will be the fields names and each property is an array with type and accepted values.
+
+**Syntax**
+
+```php
+\stdClass object asObj()
+```
+
+##### fields/asList
+
+`asList` method gets array of fields names.
+
+**Syntax**
+
+```php
+array asList()
+```
+
+##### fields/asQuerySelector
+
+`asQuerySelector` method gets a string of fields separated by commas.
+
+**Syntax**
+
+```php
+string asQuerySelector()
+```
+
+### showReportFormats
+
+`showReportFormats` method gets a list of report formats.
+
+**Syntax**
+
+```php
+array showReportFormats()
+```

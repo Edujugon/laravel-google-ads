@@ -203,8 +203,8 @@ class Report
     }
 
     /**
-     *
-     * @return mixed
+     * Get report as string
+     * @return string
      */
     public function getAsString()
     {
@@ -214,7 +214,8 @@ class Report
     }
 
     /**
-     * @return mixed
+     *  Get report as stream
+     * @return Stream
      */
     public function getStream()
     {
@@ -224,6 +225,7 @@ class Report
     }
 
     /**
+     * Save the report in a file.
      * @param $filePath
      * @param string $format
      * @return bool
@@ -352,7 +354,7 @@ class Report
     }
 
     /**
-     * @return string
+     * @return array
      */
     public function getFields()
     {
@@ -360,7 +362,9 @@ class Report
     }
 
     /**
-     * @return string
+     * Get a list of the report formats.
+     *
+     * @return array
      */
     public function getFormats()
     {
