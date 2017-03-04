@@ -394,7 +394,7 @@ Edujugon\GoogleAds\Reports\Fields fields()
 
 ##### fields/of
 
-`format` method sets the report type
+`of` method sets the report type
 
 **Syntax**
 
