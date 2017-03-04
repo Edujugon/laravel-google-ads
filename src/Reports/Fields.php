@@ -78,7 +78,7 @@ class Fields
     /**
      * Get fields as object
      *
-     * The properties will be the filter name.
+     * The properties will be the fields name.
      * Each property is an array with type and accepted values.
      *
      * @return \stdClass
@@ -89,7 +89,7 @@ class Fields
     }
 
     /**
-     * Get array of filter names.
+     * Get array of fields names.
      *
      * @return array
      */

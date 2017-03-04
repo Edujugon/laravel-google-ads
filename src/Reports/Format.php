@@ -36,7 +36,7 @@ abstract  class Format
     }
 
     /**
-     * Get the list of the report formats.
+     * Get a list of the report formats.
      *
      * @return array
      */
