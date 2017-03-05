@@ -126,25 +126,21 @@ class Report
     }
 
     /**
-     * Set the during clause.
+     * Set the starting and ending dates for the report.
      *
      * dates format 'Ymd' => e.g. 20170112,20171020
      *
-     * @param $dates
+     * @param $starting
+     * @param $ending
      * @return $this
      * @throws \Edujugon\GoogleAds\Exceptions\Report
      */
-    public function during($dates)
+    public function during($starting,$ending)
     {
-        if(func_num_args() != 2)
-            throw new \Edujugon\GoogleAds\Exceptions\Report('During clause only accepts 2 parameters. if dates, the format should be as follow: 20170112,20171020');
+        if(! is_numeric($starting) || ! is_numeric($ending))
+            throw new \Edujugon\GoogleAds\Exceptions\Report('During clause only accepts the following date format: "Ymd" => e.g. 20170112');
 
-        $dates = func_get_args();
-
-        if( ! empty(preg_grep("/ /", $dates)) )
-            throw new \Edujugon\GoogleAds\Exceptions\Report('During clause only accepts the following format for dates: "Ymd" => e.g. 20170112');
-
-        $this->during = $dates;
+        $this->during = [$starting,$ending];
 
         return $this;
     }
