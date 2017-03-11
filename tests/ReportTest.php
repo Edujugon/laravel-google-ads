@@ -76,4 +76,19 @@ class ReportTest extends PHPUnit_Framework_TestCase {
 
         $this->assertInternalType('array',$report->getTypes());
     }
+
+    /** @test */
+    public function many_wheres(){
+        $report = new Report();
+        $obj = $report->select('AccountCurrencyCode','CampaignId','AdGroupId','AdGroupName','Id', 'Criteria', 'CriteriaType','Impressions', 'Clicks', 'Cost', 'UrlCustomParameters')
+            ->from('CRITERIA_PERFORMANCE_REPORT')
+            ->during('20170101','20170210')
+            ->format('XML')
+            ->where('CampaignId = 752331963')
+            ->where('Clicks > 1')
+            ->where('Cost > 1')
+            ->getAsObj();
+
+        $this->assertInstanceOf(\Edujugon\GoogleAds\Reports\MyReport::class,$obj);
+    }
 }
