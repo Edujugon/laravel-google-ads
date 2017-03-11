@@ -153,7 +153,7 @@ class Report
      */
     public function where($condition)
     {
-        $this->where = $condition;
+        $this->where = ! $this->where ? $condition : $this->where . ' and ' . $condition;
 
         return $this;
     }
