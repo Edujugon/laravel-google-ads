@@ -263,7 +263,8 @@ Edujugon\GoogleAds\Reports\Report object during($starting,$ending)
 
 ##### report/where
 
-`where` method sets where condition.
+`where` method sets where condition. It can be called many times so all conditions will be set for the query.
+
 >   Available Operators: 
 
 ```

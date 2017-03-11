@@ -232,7 +232,19 @@ $obj = $ads->report()
 
 In the above methods, the mandatory ones are `from` and `select`
 
->   Notice that in `during` method you have to pass the dates as concat string like YearMonthDay
+>   Notice that in `during` method you have to pass the dates as a string like YearMonthDay
+
+You may also want to set more than one condition. Use Where clause as many times as you need like follows:
+
+```
+$obj = $ads->report()
+            ->from('CRITERIA_PERFORMANCE_REPORT')
+            ->where('Clicks > 10')
+            ->where('Cost > 10')
+            ->where('Impressions > 1')
+            ->select('CampaignId','AdGroupId','AdGroupName','Id', 'Criteria', 'CriteriaType','Impressions', 'Clicks', 'Cost', 'UrlCustomParameters')
+            ->getAsObj();
+```
 
 If want to see the retrieve items, just get so by `result` property of the object returned:
 
