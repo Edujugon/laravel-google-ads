@@ -296,7 +296,7 @@ class Report
      * @param $excepts
      * @return $this
      */
-    private function except($excepts)
+    public function except($excepts)
     {
         $excepts = is_array($excepts) ? $excepts : func_get_args();
 
