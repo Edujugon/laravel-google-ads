@@ -246,6 +246,17 @@ $obj = $ads->report()
             ->getAsObj();
 ```
 
+Want to exclude any field? Just do it like follows:
+
+```
+$obj = $ads->report()
+           ->from('SHOPPING_PERFORMANCE_REPORT')
+           ->select(\Edujugon\GoogleAds\Facades\GoogleAds::fields()->of('SHOPPING_PERFORMANCE_REPORT')->asList())
+           ->except('SearchImpressionShare','ExternalConversionSource','Ctr','Cost','Date','Week','Year','AverageCpc','Clicks','ClickType','ConversionCategoryName','ConversionTrackerId','ConversionTypeName')
+            ->getAsObj();
+```
+
+
 If want to see the retrieve items, just get so by `result` property of the object returned:
 
 ```

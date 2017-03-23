@@ -29,6 +29,7 @@ Laravel Google Ads Package API Documentation
 
 - [report](https://edujugon.github.io/laravel-google-ads/API-Documentation#report)
     - [select](https://edujugon.github.io/laravel-google-ads/API-Documentation#reportselect)
+    - [except](https://edujugon.github.io/laravel-google-ads/API-Documentation#reportexcept)
     - [from](https://edujugon.github.io/laravel-google-ads/API-Documentation#reportfrom)
     - [during](https://edujugon.github.io/laravel-google-ads/API-Documentation#reportduring)
     - [where](https://edujugon.github.io/laravel-google-ads/API-Documentation#reportwhere)
@@ -238,6 +239,16 @@ Edujugon\GoogleAds\Reports\Report object report()
 
 ```php
 Edujugon\GoogleAds\Reports\Report object select($fields)
+```
+
+##### report/except
+
+`except` method pull out any field you pass from the filed list.
+
+**Syntax**
+
+```php
+Edujugon\GoogleAds\Reports\Report object except($excepts)
 ```
 
 ##### report/from
