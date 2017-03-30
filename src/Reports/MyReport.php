@@ -102,10 +102,23 @@ class MyReport
         {
             foreach ($my_std_class->table->row as $row)
             {
-                $this->result->push($this->convertToArray($row));
+                $this->result->push($this->convertToStdClass($row));
             }
         }
 
+    }
+
+    /**
+     * Remove the @attributes property Cleaning the stdClass.
+     * @param $stdClass
+     * @return mixed
+     */
+    private function convertToStdClass($stdClass)
+    {
+        if(!property_exists($stdClass,'@attributes'))
+            return get_object_vars($stdClass);
+
+        return $stdClass->{'@attributes'};
     }
 
     /**
