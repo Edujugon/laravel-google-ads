@@ -141,7 +141,7 @@ class Service
     private function haveFields($fields)
     {
         if (empty($fields))
-            throw new Session('You have to select some fields before "call" all method. Call "select" method before.');
+            throw new Session('You have to select some fields before calling get method. To do so, call select($fields) method before.');
     }
 
     /**
