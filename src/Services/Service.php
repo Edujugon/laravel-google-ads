@@ -100,7 +100,7 @@ class Service
      * Get all items.
      *
      * @param array $fields
-     * @return \Google\AdsApi\AdWords\v201609\cm\*
+     * @return \Illuminate\Support\Collection
      * E.g. => Campaign | AdGroup | AdGroupAd | ...
      */
     public function get($fields = [])
@@ -111,7 +111,7 @@ class Service
 
         $query = $this->createQuery($fields);
 
-        return $this->service->query($query)->getEntries();
+        return collect($this->service->query($query)->getEntries());
     }
 
 
