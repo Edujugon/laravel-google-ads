@@ -14,6 +14,10 @@ use Google\AdsApi\AdWords\v201609\cm\Operator;
 
 class ServicesTest extends PHPUnit_Framework_TestCase {
 
+
+    protected $testedCampaignId = 795625088;
+
+
     /** @test */
     public function add_service()
     {
@@ -26,7 +30,7 @@ class ServicesTest extends PHPUnit_Framework_TestCase {
     public function campaing_all(){
         $campaign = new \Edujugon\GoogleAds\Services\Campaign();
         $this->assertInternalType('integer',$campaign->get(['Id'])[0]->getId());
-        $this->assertInternalType('string',$campaign->orderBy('Name')->limit(2)->get()[0]->getName());
+        $this->assertInternalType('string',$campaign->orderBy('Name')->limit(2)->get()->first()->getName());
         //dd($campaign->all()->getEntries());
     }
 
@@ -41,9 +45,80 @@ class ServicesTest extends PHPUnit_Framework_TestCase {
     /** @test */
     public function ads_all(){
         $ads = new \Edujugon\GoogleAds\Services\AdGroupAd();
-        $this->assertInternalType('integer',$ads->limit(1)->get(['Id'])[0]->getAd()->getId());
+        $this->assertInternalType('integer',$ads->limit(1)->get(['Id'])->first()->getAd()->getId());
         //dd($ads->limit(1)->all()->getEntries());
 
+    }
+
+    /** @test */
+    public function get_service_collection_of_campaigns()
+    {
+        $campaignService = (new \Edujugon\GoogleAds\Services\Service(CampaignService::class));
+
+        $results = $campaignService->select('CampaignId','CampaignName')->get();
+
+        $this->assertInstanceOf(\Edujugon\GoogleAds\Services\ServiceCollection::class,$results);
+        //dd($results->where('id',$this->testedCampaignId));
+    }
+
+    /** @test */
+    public function get_campaign_based_on_id()
+    {
+        $campaignService = (new \Edujugon\GoogleAds\Services\Service(CampaignService::class));
+
+        $results = $campaignService->select('CampaignId','CampaignName')->get();
+
+        $campaign = $results->where('id',$this->testedCampaignId);
+
+        if(! $campaign->isEmpty()) {
+            $this->assertInstanceOf(\Edujugon\GoogleAds\Services\ServiceCollection::class, $campaign);
+            $this->assertEquals(0, $campaign->count());
+        }
+    }
+
+    /** @test */
+    public function get_campaign_except_a_specific_id()
+    {
+        $campaignService = (new \Edujugon\GoogleAds\Services\Service(CampaignService::class));
+
+        $results = $campaignService->select('CampaignId','CampaignName')->get();
+
+        $campaign = $results->where('id',$this->testedCampaignId,true);
+
+        if(! $campaign->isEmpty()) {
+            $this->assertInstanceOf(\Edujugon\GoogleAds\Services\ServiceCollection::class, $campaign);
+            $this->assertNotEmpty($campaign->count());
+        }
+    }
+
+    /** @test */
+    public function set_new_name_to_a_campaign()
+    {
+        $campaignService = (new \Edujugon\GoogleAds\Services\Service(CampaignService::class));
+
+        $results = $campaignService->select('CampaignId','CampaignName')->get();
+
+        $campaign = $results->where('id',$this->testedCampaignId)->set('name','hello :)');
+
+        if(! $campaign->isEmpty())
+        {
+            $this->assertInstanceOf(\Edujugon\GoogleAds\Services\ServiceCollection::class,$campaign);
+
+            $this->assertEquals('hello :)',$campaign->first()->getName());
+        }
+
+    }
+
+    /** @test */
+    public function update_campaign_name()
+    {
+        $campaignService = (new \Edujugon\GoogleAds\Services\Service(CampaignService::class));
+
+        $results = $campaignService->select('CampaignId','CampaignName')->get();
+
+        $campaign = $results->where('id',$this->testedCampaignId)->set('name','hello :)');
+
+        dd($campaign->update());
     }
 
     /** @test */
