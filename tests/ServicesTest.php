@@ -118,7 +118,14 @@ class ServicesTest extends PHPUnit_Framework_TestCase {
 
         $campaign = $results->where('id',$this->testedCampaignId)->set('name','hello :)');
 
-        dd($campaign->update());
+        $campaign = $campaign->update();
+
+        if($campaign)
+        {
+            $this->assertInstanceOf(\Google\AdsApi\AdWords\v201609\cm\CampaignReturnValue::class,$campaign);
+
+            $this->assertEquals('hello :)',$campaign->getValue()[0]->getName());
+        }
     }
 
     /** @test */

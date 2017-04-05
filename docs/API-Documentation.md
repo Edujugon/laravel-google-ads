@@ -197,7 +197,7 @@ Edujugon\GoogleAds\Services\Service object orderBy($field)
 
 ##### service/get
 
-`get` method gets the entries of the query.
+`get` method gets the entries of the query as a collection.
 
 Optional:
 
@@ -206,7 +206,7 @@ Optional:
 **Syntax**
 
 ```php
-Edujugon\GoogleAds\Services\Service object get($fields = [])
+Illuminate\Support\Collection object get($fields = [])
 ```
 
 ##### service/getService

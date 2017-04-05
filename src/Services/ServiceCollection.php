@@ -27,12 +27,6 @@ class ServiceCollection
     protected $adWordsServices;
 
     /**
-     * The google operator to be mutated
-     * @var
-     */
-    protected $operator;
-
-    /**
      * List of items
      * @var \Illuminate\Support\Collection
      */
@@ -159,7 +153,12 @@ class ServiceCollection
     }
 
 
-
+    /**
+     * If any method call is available in Collection class it will be fired for the items since it's a Collection instance.
+     * @param $name
+     * @param $arguments
+     * @return mixed
+     */
     function __call($name, $arguments)
     {
         if(method_exists(Collection::class,$name))

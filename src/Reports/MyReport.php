@@ -116,7 +116,7 @@ class MyReport
     private function convertToStdClass($stdClass)
     {
         if(!property_exists($stdClass,'@attributes'))
-            return get_object_vars($stdClass);
+            return $stdClass;
 
         return $stdClass->{'@attributes'};
     }

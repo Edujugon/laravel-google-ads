@@ -91,4 +91,16 @@ class ReportTest extends PHPUnit_Framework_TestCase {
 
         $this->assertInstanceOf(\Edujugon\GoogleAds\Reports\MyReport::class,$obj);
     }
+
+    /** @test */
+    public function report_results_has_method_to_convert_items_into_google_types()
+    {
+        $report = new Report();
+        $obj = $report->select('OfferId',
+            'CampaignId',
+            'AdGroupId')
+            ->from('SHOPPING_PERFORMANCE_REPORT')
+            ->getAsObj();
+        dd($obj);
+    }
 }
