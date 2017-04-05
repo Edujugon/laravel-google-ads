@@ -86,7 +86,7 @@ class MyReport
         {
             foreach ($my_std_class->table->columns->column as $column)
             {
-                $this->fields->push($this->convertToArray($column));
+                $this->fields->push($this->convertToStdClass($column));
             }
         }
 
