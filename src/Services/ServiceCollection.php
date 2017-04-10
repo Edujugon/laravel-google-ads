@@ -114,10 +114,10 @@ class ServiceCollection
     }
 
     /**
-     * Update values in google.
+     * Persist values in google.
      * @return mixed
      */
-    public function update()
+    public function save()
     {
         $operations = [];
 
