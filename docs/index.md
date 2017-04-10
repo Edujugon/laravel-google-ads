@@ -164,17 +164,6 @@ $ads->service(AdGroupAdService::class);
 
 or Any google ads services available under `Google\AdsApi\AdWords\v201609\cm` folder.
 
-
-> Notice that for now this package only retrieves data from those services through the package API. In further releases you'll be able to adds, updates, or removes any of those services through the package API.
-
-If you needed to add, update, or remove items, you can do so with the google service itself. So after calling the above service method, just need to call `getService` which will return the google service instance.
-
-```
-$googleService = $ads->getService();
-
-// Here just refere to google ads documentation to add, update, or remove items. 
-```
-
 To retrieve a list of campaigns, do like follows:
 
 ```
@@ -206,8 +195,38 @@ $ads->service(CampaignService::class)
 
 ```
 
-> Notice that limit method must be called after orderBy method.
+> Limit method must be called after orderBy method.
 
+
+Notice that the `get` method returns an instance of ServiceCollection. 
+That custom collection has its own methods.
+
+Once you have the collection, you can filter with the where method
+
+```
+$campaignService = $ads->service(CampaignService::class);
+
+$results = $campaignService->select('CampaignId','CampaignName')->get();
+
+//NOW YOU CAN FILTER WITH WHERE METHOD.
+$campaign = $results->where('id',1341312);
+
+```
+
+Also you can call the `set` method to change any value
+
+```
+$campaign = $results->where('id',$this->testedCampaignId)->set('name','hello !!');
+
+```
+
+Finally you can persist those changes with the `save` method:
+
+```
+$campaign = $campaign->save();
+```
+
+> Important!! notice that it will persist all elements that matched in where condition.
 
 ### Google Reports
 
