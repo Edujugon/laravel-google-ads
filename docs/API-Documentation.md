@@ -58,6 +58,16 @@ Laravel Google Ads Package API Documentation
 - [showReportFormats](https://edujugon.github.io/laravel-google-ads/API-Documentation#showreportformats)
   
 
+### Global Functions
+
+- [google_report](https://edujugon.github.io/laravel-google-ads/API-Documentation#globalfunctiongoogle_report)
+- [google_service](https://edujugon.github.io/laravel-google-ads/API-Documentation#globalfunctiongoogle_service)
+- [google_report_fields](https://edujugon.github.io/laravel-google-ads/API-Documentation#globalfunctiongoogle_report_fields)
+- [e_ads_config](https://edujugon.github.io/laravel-google-ads/API-Documentation#globalfunctione_ads_config)
+- [e_ads_config_google_ads](https://edujugon.github.io/laravel-google-ads/API-Documentation#globalfunctione_ads_config_google_ads)
+- [e_config_oauth](https://edujugon.github.io/laravel-google-ads/API-Documentation#globalfunctione_config_oauth)
+  
+
 ### Environment
 
 #### env
@@ -454,4 +464,16 @@ string asQuerySelector()
 
 ```php
 array showReportFormats()
+```
+
+### Global functions
+    
+#### globalfunctions/google_report
+
+`google_report` function gets an instance of Report.
+
+**Syntax**
+
+```php
+Edujugon\GoogleAds\Reports\Report google_report($session = null)
 ```
