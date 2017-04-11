@@ -164,6 +164,12 @@ $ads->service(AdGroupAdService::class);
 
 or Any google ads services available under `Google\AdsApi\AdWords\v201609\cm` folder.
 
+Also you can use the global helper in order the get an instance of Service.
+
+```
+$service = google_service(CampaignService::class)
+```
+
 To retrieve a list of campaigns, do like follows:
 
 ```
@@ -234,6 +240,12 @@ To start with google reporting just call `report` method from the main wrapper:
 
 ```
 $report = $ads->report();
+```
+
+or use the global helper like follows:
+
+```
+$report = google_report();
 ```
 
 It will return an instance of `Edujugon\GoogleAds\Reports\Report`
