@@ -47,7 +47,7 @@ class Service
 
     /**
      * Service constructor.
-     * @param $service
+     * @param Google Service $service
      * @param \Google\AdsApi\AdWords\AdWordsSession $session
      */
     function __construct($service,\Google\AdsApi\AdWords\AdWordsSession $session = null)

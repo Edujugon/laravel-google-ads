@@ -23,7 +23,7 @@ function google_report($session = null)
 
 /**
  * Get an instance of Service
- * @param $service
+ * @param Google Service $service
  * @param null $session
  * @return Service
  */
