@@ -1,7 +1,7 @@
 <?php
 namespace Edujugon\GoogleAds\Reports;
 
-use Google\AdsApi\AdWords\v201609\cm\ReportDefinitionReportType;
+use Google\AdsApi\AdWords\v201702\cm\ReportDefinitionReportType;
 use Edujugon\GoogleAds\Exceptions\ReportTypes as ReportException;
 use ReflectionClass;
 

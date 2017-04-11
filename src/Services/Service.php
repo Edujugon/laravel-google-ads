@@ -13,9 +13,6 @@ namespace Edujugon\GoogleAds\Services;
 use Edujugon\GoogleAds\Exceptions\Session;
 use Edujugon\GoogleAds\Session\AdwordsSession;
 use Google\AdsApi\AdWords\AdWordsServices;
-use Google\AdsApi\AdWords\v201609\cm\AdGroupAdService;
-use Google\AdsApi\AdWords\v201609\cm\AdGroupService;
-use Google\AdsApi\AdWords\v201609\cm\CampaignService;
 
 class Service
 {

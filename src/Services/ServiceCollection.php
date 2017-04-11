@@ -9,12 +9,12 @@
 
 namespace Edujugon\GoogleAds\Services;
 
-use Google\AdsApi\AdWords\v201609\cm\AdGroupAdOperation;
-use Google\AdsApi\AdWords\v201609\cm\AdGroupAdService;
-use Google\AdsApi\AdWords\v201609\cm\AdGroupOperation;
-use Google\AdsApi\AdWords\v201609\cm\AdGroupService;
-use Google\AdsApi\AdWords\v201609\cm\CampaignOperation;
-use Google\AdsApi\AdWords\v201609\cm\CampaignService;
+use Google\AdsApi\AdWords\v201702\cm\AdGroupAdOperation;
+use Google\AdsApi\AdWords\v201702\cm\AdGroupAdService;
+use Google\AdsApi\AdWords\v201702\cm\AdGroupOperation;
+use Google\AdsApi\AdWords\v201702\cm\AdGroupService;
+use Google\AdsApi\AdWords\v201702\cm\CampaignOperation;
+use Google\AdsApi\AdWords\v201702\cm\CampaignService;
 use Illuminate\Support\Collection;
 
 class ServiceCollection
