@@ -60,13 +60,8 @@ Laravel Google Ads Package API Documentation
 
 ### Global Functions
 
-- [google_report](https://edujugon.github.io/laravel-google-ads/API-Documentation#globalfunctiongoogle_report)
-- [google_service](https://edujugon.github.io/laravel-google-ads/API-Documentation#globalfunctiongoogle_service)
-- [google_report_fields](https://edujugon.github.io/laravel-google-ads/API-Documentation#globalfunctiongoogle_report_fields)
-- [e_ads_config](https://edujugon.github.io/laravel-google-ads/API-Documentation#globalfunctione_ads_config)
-- [e_ads_config_google_ads](https://edujugon.github.io/laravel-google-ads/API-Documentation#globalfunctione_ads_config_google_ads)
-- [e_config_oauth](https://edujugon.github.io/laravel-google-ads/API-Documentation#globalfunctione_config_oauth)
-  
+- [google_report](https://edujugon.github.io/laravel-google-ads/API-Documentation#globalfunctionsgoogle_report)
+- [google_service](https://edujugon.github.io/laravel-google-ads/API-Documentation#globalfunctionsgoogle_service)
 
 ### Environment
 
@@ -468,7 +463,7 @@ array showReportFormats()
 
 ### Global functions
     
-#### globalfunctions/google_report
+##### globalfunctions/google_report
 
 `google_report` function gets an instance of Report.
 
@@ -476,4 +471,14 @@ array showReportFormats()
 
 ```php
 Edujugon\GoogleAds\Reports\Report google_report($session = null)
+```
+
+##### globalfunctions/google_service
+
+`google_service` function gets an instance of Service.
+
+**Syntax**
+
+```php
+Edujugon\GoogleAds\Services\Service google_service($service,$session = null)
 ```
