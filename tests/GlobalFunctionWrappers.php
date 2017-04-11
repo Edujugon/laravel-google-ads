@@ -13,13 +13,7 @@ class GlobalFunctionWrappers extends PHPUnit_Framework_TestCase {
     /** @test */
     public function get_report_by_global_function_wrapper()
     {
-        $obj = google_report()->from('CRITERIA_PERFORMANCE_REPORT')
-            ->during('20170101','20170210')
-            ->where('CampaignId = 752331963')
-            ->select('CampaignId','AdGroupId','AdGroupName','Id', 'Criteria', 'CriteriaType','Impressions', 'Clicks', 'Cost', 'UrlCustomParameters')
-            ->getAsObj();
-
-        $this->assertInstanceOf(MyReport::class,$obj);
+        $this->assertInstanceOf(\Edujugon\GoogleAds\Reports\Report::class,google_report());
     }
 
     /** @test */
