@@ -16,7 +16,7 @@ use Edujugon\GoogleAds\Services\Service;
  * @param null $session
  * @return Report
  */
-function report($session = null)
+function google_report($session = null)
 {
     return new Report($session);
 }
@@ -27,7 +27,7 @@ function report($session = null)
  * @param null $session
  * @return Service
  */
-function service($service,$session = null)
+function google_service($service,$session = null)
 {
     return new Service($service,$session);
 }
@@ -39,7 +39,7 @@ function service($service,$session = null)
  * @param null $session
  * @return Fields
  */
-function report_fields($session = null)
+function google_report_fields($session = null)
 {
     return new Fields($session);
 }
