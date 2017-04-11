@@ -3,8 +3,8 @@
 
 use Edujugon\GoogleAds\GoogleAds;
 use Edujugon\GoogleAds\Reports\MyReport;
-use Google\AdsApi\AdWords\v201609\cm\AdGroupService;
-use Google\AdsApi\AdWords\v201609\cm\CampaignService;
+use Google\AdsApi\AdWords\v201702\cm\AdGroupService;
+use Google\AdsApi\AdWords\v201702\cm\CampaignService;
 
 class GoogleAdsTest extends PHPUnit_Framework_TestCase {
 

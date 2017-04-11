@@ -11,7 +11,7 @@ namespace Edujugon\GoogleAds\Reports;
 
 
 use Edujugon\GoogleAds\Exceptions\ReportFormat;
-use Google\AdsApi\AdWords\Reporting\v201609\DownloadFormat;
+use Google\AdsApi\AdWords\Reporting\v201702\DownloadFormat;
 use ReflectionClass;
 
 abstract  class Format

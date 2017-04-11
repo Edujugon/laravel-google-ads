@@ -8,7 +8,7 @@ use Google\AdsApi\AdWords\v201609\cm\Budget;
 use Google\AdsApi\AdWords\v201609\cm\BudgetBudgetDeliveryMethod;
 use Google\AdsApi\AdWords\v201609\cm\BudgetOperation;
 use Google\AdsApi\AdWords\v201609\cm\CampaignOperation;
-use Google\AdsApi\AdWords\v201609\cm\CampaignService;
+use Google\AdsApi\AdWords\v201702\cm\CampaignService;
 use Google\AdsApi\AdWords\v201609\cm\Money;
 use Google\AdsApi\AdWords\v201609\cm\Operator;
 
@@ -22,7 +22,7 @@ class ServicesTest extends PHPUnit_Framework_TestCase {
     public function add_service()
     {
         $service = (new \Edujugon\GoogleAds\Services\Service(CampaignService::class));
-        $this->assertInstanceOf(\Google\AdsApi\AdWords\v201609\cm\CampaignService::class,$service->getService());
+        $this->assertInstanceOf(\Google\AdsApi\AdWords\v201702\cm\CampaignService::class,$service->getService());
     }
 
 
@@ -117,15 +117,18 @@ class ServicesTest extends PHPUnit_Framework_TestCase {
         $results = $campaignService->select('CampaignId','CampaignName')->get();
 
         $campaign = $results->where('id',$this->testedCampaignId)->set('name','hello !!');
+        if(! $campaign->isEmpty()){
 
-        $campaign = $campaign->save();
+            $changed = $campaign->save();
 
-        if($campaign)
-        {
-            $this->assertInstanceOf(\Google\AdsApi\AdWords\v201609\cm\CampaignReturnValue::class,$campaign);
+            if($changed)
+            {
+                $this->assertInstanceOf(\Google\AdsApi\AdWords\v201702\cm\CampaignReturnValue::class,$changed);
 
-            $this->assertEquals('hello !!',$campaign->getValue()[0]->getName());
+                $this->assertEquals('hello !!',$changed->getValue()[0]->getName());
+            }
         }
+
     }
 
     /** @test */
@@ -134,16 +137,16 @@ class ServicesTest extends PHPUnit_Framework_TestCase {
 //        $campaignService = (new \Edujugon\GoogleAds\Services\Service(CampaignService::class))->getService();
 //
 //        //Create the campaign
-//        $campaign = new \Google\AdsApi\AdWords\v201609\cm\Campaign();
+//        $campaign = new \Google\AdsApi\AdWords\v201702\cm\Campaign();
 //        $campaign->setName('My first campaign');
-//        $campaign->setStatus(\Google\AdsApi\AdWords\v201609\cm\CampaignStatus::PAUSED);
+//        $campaign->setStatus(\Google\AdsApi\AdWords\v201702\cm\CampaignStatus::PAUSED);
 //
 //        $biddingStrategyConfiguration = new BiddingStrategyConfiguration();
 //        $biddingStrategyConfiguration->setBiddingStrategyType(BiddingStrategyType::MANUAL_CPC);
 //        $campaign->setBiddingStrategyConfiguration($biddingStrategyConfiguration);
 //
 //        //Budget
-//        $budgetService = (new \Edujugon\GoogleAds\Services\Service(\Google\AdsApi\AdWords\v201609\cm\BudgetService::class))->getService();
+//        $budgetService = (new \Edujugon\GoogleAds\Services\Service(\Google\AdsApi\AdWords\v201702\cm\BudgetService::class))->getService();
 //        $sharedBudget = new Budget();
 //        $budget = new Budget();
 //
