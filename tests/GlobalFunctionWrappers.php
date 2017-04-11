@@ -13,7 +13,7 @@ class GlobalFunctionWrappers extends PHPUnit_Framework_TestCase {
     /** @test */
     public function get_report_by_global_function_wrapper()
     {
-        $obj = report()->from('CRITERIA_PERFORMANCE_REPORT')
+        $obj = google_report()->from('CRITERIA_PERFORMANCE_REPORT')
             ->during('20170101','20170210')
             ->where('CampaignId = 752331963')
             ->select('CampaignId','AdGroupId','AdGroupName','Id', 'Criteria', 'CriteriaType','Impressions', 'Clicks', 'Cost', 'UrlCustomParameters')
@@ -25,13 +25,13 @@ class GlobalFunctionWrappers extends PHPUnit_Framework_TestCase {
     /** @test */
     public function get_service_by_global_function_wrapper()
     {
-        $this->assertInstanceOf(\Edujugon\GoogleAds\Services\Service::class,service(\Google\AdsApi\AdWords\v201609\cm\CampaignService::class));
+        $this->assertInstanceOf(\Edujugon\GoogleAds\Services\Service::class,google_service(\Google\AdsApi\AdWords\v201609\cm\CampaignService::class));
     }
 
     /** @test */
     public function get_report_field_class_by_global_function_wrapper()
     {
-        $this->assertInstanceOf(\Edujugon\GoogleAds\Reports\Fields::class,report_fields());
+        $this->assertInstanceOf(\Edujugon\GoogleAds\Reports\Fields::class,google_report_fields());
     }
 
 }

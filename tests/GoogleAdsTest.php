@@ -71,7 +71,7 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
 
         $campaigns = $ads->service(CampaignService::class)->select(['Id'])->get();
 
-        $this->assertInternalType('array',$campaigns);
+        $this->assertInstanceOf(\Edujugon\GoogleAds\Services\ServiceCollection::class,$campaigns);
     }
 
     /** @test */
@@ -91,7 +91,7 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
 
         $adGroup = $ads->session()->adGroupService()->get();
 
-        $this->assertInternalType('array',$adGroup);
+        $this->assertInstanceOf(\Edujugon\GoogleAds\Services\ServiceCollection::class,$adGroup);
     }
 
     /** @test */
@@ -101,7 +101,7 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
 
         $adGroup = $ads->adGroupAdService()->get();
 
-        $this->assertInternalType('array',$adGroup);
+        $this->assertInstanceOf(\Edujugon\GoogleAds\Services\ServiceCollection::class,$adGroup);
     }
 
     /** @test */
@@ -111,7 +111,7 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
 
         $adGroup = $ads->campaignService()->get();
 
-        $this->assertInternalType('array',$adGroup);
+        $this->assertInstanceOf(\Edujugon\GoogleAds\Services\ServiceCollection::class,$adGroup);
     }
 
 
@@ -179,19 +179,6 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
             ->getAsString();
 
         $this->assertInternalType('string',$string);
-    }
-
-    /** @test */
-    public function get_report_with_magic_select_method()
-    {
-        $ads = new GoogleAds();
-        $obj = $ads->report()->from('CRITERIA_PERFORMANCE_REPORT')
-            ->during('20170101','20170210')
-            ->where('CampaignId = 752331963')
-            ->magicSelect()
-            ->getAsSimpleXMLObj();
-
-        $this->assertInstanceOf(SimpleXMLElement::class,$obj);
     }
 
     /** @test */
