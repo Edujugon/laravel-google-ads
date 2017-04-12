@@ -115,7 +115,7 @@ class ServiceCollection
 
     /**
      * Persist values in google.
-     * @return mixed
+     * @return false|mixed
      */
     public function save()
     {
@@ -128,6 +128,9 @@ class ServiceCollection
 
           $operations[] = $operation;
         });
+
+        if(empty($operations))
+            return false;
 
         return $this->adWordsServices->mutate($operations);
     }
