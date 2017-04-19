@@ -123,7 +123,7 @@ class ServicesTest extends PHPUnit_Framework_TestCase {
 
             if($changed)
             {
-                $this->assertInstanceOf(\Google\AdsApi\AdWords\v201702\cm\CampaignReturnValue::class,$changed);
+                $this->assertInternalType('array',$changed);
 
                 $this->assertEquals('hello !!',$changed->getValue()[0]->getName());
             }

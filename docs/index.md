@@ -232,6 +232,8 @@ Finally you can persist those changes with the `save` method:
 $campaign = $campaign->save();
 ```
 
+Save method returns an array of updated elements or false if nothing updated.
+
 > Important!! notice that it will persist all elements that matched in where condition.
 
 ### Google Reports

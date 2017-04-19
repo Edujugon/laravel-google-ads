@@ -24,7 +24,16 @@ Laravel Google Ads Package API Documentation
     - [orderBy](https://edujugon.github.io/laravel-google-ads/API-Documentation#serviceorderby)
     - [get](https://edujugon.github.io/laravel-google-ads/API-Documentation#serviceget)
     - [getService](https://edujugon.github.io/laravel-google-ads/API-Documentation#servicegetservice)
-    
+    - [where](https://edujugon.github.io/laravel-google-ads/API-Documentation#servicewhere)
+
+### ServiceCollection
+>   After calling the `get` service method you are getting a serviceCollection
+
+- [where](https://edujugon.github.io/laravel-google-ads/API-Documentation#servicecollectionwhere)
+- [set](https://edujugon.github.io/laravel-google-ads/API-Documentation#servicecollectionset)
+- [save](https://edujugon.github.io/laravel-google-ads/API-Documentation#servicecollectionsave)
+- [items](https://edujugon.github.io/laravel-google-ads/API-Documentation#servicecollectionitems)
+
 ### Reports
 
 - [report](https://edujugon.github.io/laravel-google-ads/API-Documentation#report)
@@ -202,7 +211,7 @@ Edujugon\GoogleAds\Services\Service object orderBy($field)
 
 ##### service/get
 
-`get` method gets the entries of the query as a collection.
+`get` method gets the entries of the query as a ServiceCollection.
 
 Optional:
 
@@ -211,7 +220,7 @@ Optional:
 **Syntax**
 
 ```php
-Illuminate\Support\Collection object get($fields = [])
+Edujugon\GoogleAds\Services\ServiceCollection object get($fields = [])
 ```
 
 ##### service/getService
@@ -222,6 +231,49 @@ Illuminate\Support\Collection object get($fields = [])
 
 ```php
 Edujugon\GoogleAds\Services\Service object getService()
+```
+
+### ServiceCollection
+
+#### servicecollection/where
+
+`where` method filters the list matching the field with the passed value.
+You can do the opposite matching passing `true` as third parameter.
+
+**Syntax**
+
+```php
+Edujugon\GoogleAds\Services\ServiceCollection object where($field, $value,$opposite = false)
+```
+
+#### servicecollection/set
+
+`set` method updates all items of the list the passed field with the passed value.
+
+**Syntax**
+
+```php
+Edujugon\GoogleAds\Services\ServiceCollection object set($field, $value)
+```
+
+#### servicecollection/save
+
+`save` method persists the data of list items in google.
+
+**Syntax**
+
+```php
+false | array save()
+```
+
+#### servicecollection/items
+
+`items` method gets the items as Illuminate collection.
+
+**Syntax**
+
+```php
+Illuminate\Support\Collection object items()
 ```
 
 ### Reports
