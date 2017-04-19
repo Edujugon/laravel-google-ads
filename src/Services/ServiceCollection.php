@@ -132,7 +132,16 @@ class ServiceCollection
         if(empty($operations))
             return false;
 
-        return $this->adWordsServices->mutate($operations);
+        return $this->adWordsServices->mutate($operations)->getValue();
+    }
+
+    /**
+     * Get item list.
+     * @return Collection
+     */
+    public function items()
+    {
+        return $this->items;
     }
 
     /**
