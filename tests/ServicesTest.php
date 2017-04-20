@@ -51,6 +51,16 @@ class ServicesTest extends PHPUnit_Framework_TestCase {
     }
 
     /** @test */
+    public function get_campaigns_based_id()
+    {
+        $service = (new \Edujugon\GoogleAds\Services\Service(CampaignService::class));
+
+        $campaigns = $service->select('Id')->where('Id IN [752331963,795625088]')->get();
+
+        $this->assertInstanceOf(\Edujugon\GoogleAds\Services\ServiceCollection::class,$campaigns);
+    }
+
+    /** @test */
     public function get_service_collection_of_campaigns()
     {
         $campaignService = (new \Edujugon\GoogleAds\Services\Service(CampaignService::class));
