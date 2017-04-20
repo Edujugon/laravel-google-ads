@@ -225,9 +225,6 @@ $ads->service(CampaignService::class)
 
 ```
 
-> Limit method must be called after orderBy method.
-
-
 Notice that the `get` method returns an instance of ServiceCollection. 
 That custom collection has its own methods.
 
