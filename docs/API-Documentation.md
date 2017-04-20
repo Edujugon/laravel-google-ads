@@ -20,11 +20,11 @@ Laravel Google Ads Package API Documentation
 
 - [service](https://edujugon.github.io/laravel-google-ads/API-Documentation#service)
     - [select](https://edujugon.github.io/laravel-google-ads/API-Documentation#serviceselect)
-    - [limit](https://edujugon.github.io/laravel-google-ads/API-Documentation#servicelimit)
+    - [where](https://edujugon.github.io/laravel-google-ads/API-Documentation#servicewhere)
     - [orderBy](https://edujugon.github.io/laravel-google-ads/API-Documentation#serviceorderby)
+    - [limit](https://edujugon.github.io/laravel-google-ads/API-Documentation#servicelimit)
     - [get](https://edujugon.github.io/laravel-google-ads/API-Documentation#serviceget)
     - [getService](https://edujugon.github.io/laravel-google-ads/API-Documentation#servicegetservice)
-    - [where](https://edujugon.github.io/laravel-google-ads/API-Documentation#servicewhere)
 
 ### ServiceCollection
 >   After calling the `get` service method you are getting a serviceCollection
@@ -189,6 +189,24 @@ Edujugon\GoogleAds\Services\Service object service($service)
 Edujugon\GoogleAds\Services\Service object select($fields)
 ```
 
+##### service/where
+
+`where` method sets where condition. It can be called as many times as you need so all conditions will be set for the query.
+
+>   Available Operators: 
+
+```
+= | != | > | >= | < | <= | IN | NOT_IN | STARTS_WITH | STARTS_WITH_IGNORE_CASE |
+CONTAINS | CONTAINS_IGNORE_CASE | DOES_NOT_CONTAIN | DOES_NOT_CONTAIN_IGNORE_CASE |
+CONTAINS_ANY | CONTAINS_NONE | CONTAINS_ALL
+```
+
+**Syntax**
+
+```php
+Edujugon\GoogleAds\Services\Service object where($condition)
+```
+
 ##### service/limit
 
 `limit` method sets the amount of items to retrieve.
@@ -331,7 +349,7 @@ Edujugon\GoogleAds\Reports\Report object during($starting,$ending)
 
 ##### report/where
 
-`where` method sets where condition. It can be called many times so all conditions will be set for the query.
+`where` method sets where condition. It can be called as many times as you need so all conditions will be set for the query.
 
 >   Available Operators: 
 

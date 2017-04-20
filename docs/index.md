@@ -180,6 +180,30 @@ $ads->service(CampaignService::class)
 
 > Notice the method `select` is required and you have to use it in order to set the fields you wanna get from the campaign.
 
+If need to add a condition to your search you can use the `where` method like follows:
+
+```
+$ads->service(CampaignService::class)
+    ->select(['Id', 'Name', 'Status', 'ServingStatus', 'StartDate', 'EndDate'])
+    ->where('Id IN [752331963,795625088]')
+    ->get();
+or
+
+$ads->service(CampaignService::class)
+    ->select(['Id', 'Name', 'Status', 'ServingStatus', 'StartDate', 'EndDate'])
+    ->where('Id = 752331963')
+    ->get();
+```
+> Notice! You may also set more than one condition. Do so calling `where` method as many times as you need.
+
+Available Operators: 
+
+```
+= | != | > | >= | < | <= | IN | NOT_IN | STARTS_WITH | STARTS_WITH_IGNORE_CASE |
+CONTAINS | CONTAINS_IGNORE_CASE | DOES_NOT_CONTAIN | DOES_NOT_CONTAIN_IGNORE_CASE |
+CONTAINS_ANY | CONTAINS_NONE | CONTAINS_ALL
+```
+
 If need to limit your search you may use `limit` method:
 
 ```
@@ -207,14 +231,14 @@ $ads->service(CampaignService::class)
 Notice that the `get` method returns an instance of ServiceCollection. 
 That custom collection has its own methods.
 
-Once you have the collection, you can filter with the where method
+Once you have the collection, you can again filter with the where method
 
 ```
 $campaignService = $ads->service(CampaignService::class);
 
 $results = $campaignService->select('CampaignId','CampaignName')->get();
 
-//NOW YOU CAN FILTER WITH WHERE METHOD.
+//You can also add any where condition on the list.
 $campaign = $results->where('id',1341312);
 
 ```
@@ -234,7 +258,9 @@ $campaign = $campaign->save();
 
 Save method returns an array of updated elements or false if nothing updated.
 
-> Important!! notice that it will persist all elements that matched in where condition.
+> Important!! notice that it will persist all elements that are in the collection.
+
+You can get the list as illuminate collection simply calling `items` method.
 
 ### Google Reports
 
@@ -277,6 +303,13 @@ $obj = $ads->report()
             ->where('Impressions > 1')
             ->select('CampaignId','AdGroupId','AdGroupName','Id', 'Criteria', 'CriteriaType','Impressions', 'Clicks', 'Cost', 'UrlCustomParameters')
             ->getAsObj();
+```
+Available Operators: 
+
+```
+= | != | > | >= | < | <= | IN | NOT_IN | STARTS_WITH | STARTS_WITH_IGNORE_CASE |
+CONTAINS | CONTAINS_IGNORE_CASE | DOES_NOT_CONTAIN | DOES_NOT_CONTAIN_IGNORE_CASE |
+CONTAINS_ANY | CONTAINS_NONE | CONTAINS_ALL
 ```
 
 Want to exclude any field? Just do it like follows:

@@ -18,9 +18,23 @@ class Service
 {
 
     /**
+     * Where Condition
+     *
      * @var string
      */
-    protected $postQuery = '';
+    protected $where = '';
+
+    /**
+     * Order By clause
+     * @var string
+     */
+    protected $orderBy = '';
+
+    /**
+     * Limit clause
+     * @var string
+     */
+    protected $limit = '';
 
     /**
      * @var mixed
@@ -47,7 +61,7 @@ class Service
      * @param Google Service $service
      * @param \Google\AdsApi\AdWords\AdWordsSession $session
      */
-    function __construct($service,\Google\AdsApi\AdWords\AdWordsSession $session = null)
+    function __construct($service, \Google\AdsApi\AdWords\AdWordsSession $session = null)
     {
         $this->adWordsServices = new AdWordsServices();
 
@@ -62,7 +76,7 @@ class Service
      */
     public function orderBy($field)
     {
-        $this->postQuery .= " ORDER BY $field ";
+        $this->orderBy = " ORDER BY $field ";
 
         return $this;
     }
@@ -74,7 +88,7 @@ class Service
      */
     public function limit($number, $offset = 0)
     {
-        $this->postQuery .= " LIMIT $offset,$number ";
+        $this->limit = " LIMIT $offset,$number ";
 
         return $this;
     }
@@ -94,6 +108,19 @@ class Service
 
 
     /**
+     * Set where condition
+     *
+     * @param $condition
+     * @return $this
+     */
+    public function where($condition)
+    {
+        $this->where = ! $this->where ? $condition : $this->where . ' AND ' . $condition;
+
+        return $this;
+    }
+
+    /**
      * Get all items.
      *
      * @param array $fields
@@ -108,7 +135,7 @@ class Service
 
         $query = $this->createQuery($fields);
 
-        return new ServiceCollection($this->getService(),$this->service->query($query)->getEntries());
+        return new ServiceCollection($this->getService(), $this->service->query($query)->getEntries());
     }
 
 
@@ -128,7 +155,16 @@ class Service
      */
     private function createQuery($fields)
     {
-        return 'SELECT '. implode(',',$fields) . $this->postQuery;
+        $query = 'SELECT ' . implode(',', $fields);
+
+        if(!empty($this->where))
+            $query .= ' WHERE ' . $this->where;
+        if(!empty($this->orderBy))
+            $query .= $this->orderBy;
+        if(!empty($this->limit))
+            $query .= $this->limit;
+
+        return $query;
     }
 
     /**
@@ -150,10 +186,9 @@ class Service
      */
     private function setService($service)
     {
-        try{
+        try {
             $this->service = $this->adWordsServices->get($this->session, $service);
-        }catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             throw new \Edujugon\GoogleAds\Exceptions\Service("The service '$service' is not available. Please pass a valid service");
         }
 
