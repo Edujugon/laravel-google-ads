@@ -40,7 +40,7 @@ abstract  class Format
      *
      * @return array
      */
-    public static function list()
+    public static function getList()
     {
         return array_values(static::loadConstants());
     }

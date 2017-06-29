@@ -346,7 +346,7 @@ class Report
      */
     public function getTypes()
     {
-        return ReportTypes::list();
+        return ReportTypes::getList();
     }
 
     /**
@@ -364,7 +364,7 @@ class Report
      */
     public function getFormats()
     {
-        return Format::list();
+        return Format::getList();
     }
 
     /**
