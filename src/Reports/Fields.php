@@ -115,7 +115,7 @@ class Fields
      */
     public function reportTypes()
     {
-        return ReportTypes::list();
+        return ReportTypes::getList();
     }
 
     /**
