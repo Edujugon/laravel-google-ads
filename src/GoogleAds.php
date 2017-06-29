@@ -165,7 +165,7 @@ class GoogleAds
      */
     public function showReportTypes()
     {
-        return ReportTypes::list();
+        return ReportTypes::getList();
     }
 
     /**
@@ -174,7 +174,7 @@ class GoogleAds
      */
     public function showReportFormats()
     {
-        return Format::list();
+        return Format::getList();
     }
 
     /////////////////////////////////

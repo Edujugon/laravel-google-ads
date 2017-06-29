@@ -18,7 +18,7 @@ class ReportTest extends PHPUnit_Framework_TestCase {
     /** @test */
     public function format()
     {
-        $this->assertInternalType('array',\Edujugon\GoogleAds\Reports\Format::list());
+        $this->assertInternalType('array',\Edujugon\GoogleAds\Reports\Format::getList());
         $this->assertEquals('CSV',\Edujugon\GoogleAds\Reports\Format::get('csv'));
     }
 
