@@ -130,12 +130,11 @@ class ServicesTest extends PHPUnit_Framework_TestCase {
         if(! $campaign->isEmpty()){
 
             $changed = $campaign->save();
-
             if($changed)
             {
                 $this->assertInternalType('array',$changed);
 
-                $this->assertEquals('hello !!',$changed->getValue()[0]->getName());
+                $this->assertEquals('hello !!',$changed[0]->getName());
             }
         }
 
