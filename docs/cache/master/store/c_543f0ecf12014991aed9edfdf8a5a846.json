@@ -1,0 +1,155 @@
+{
+    "name": "Edujugon\\GoogleAds\\Auth\\RefreshToken",
+    "line": 16,
+    "short_desc": "Command line example that prompts you for the required OAuth2 credentials\nto generate an offline refresh token for installed application flows.",
+    "long_desc": "<p>You can then use this refresh token to generate access tokens to\nauthenticate against the ads API(s) you're using.",
+    "hint": null,
+    "tags": [],
+    "namespace": "Edujugon\\GoogleAds\\Auth",
+    "file": "\/Users\/Edujugon\/Code\/Documentation\/Documentator\/google-ads\/..\/..\/..\/OpenSource\/google-ads\/src\/Auth\/RefreshToken.php",
+    "relative_file": "\/src\/Auth\/RefreshToken.php",
+    "hash": "1f3398b08cf9cef9876ffbc622a038b114c51ad4",
+    "parent": null,
+    "modifiers": null,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "CredentialsLoader": "Google\\Auth\\CredentialsLoader",
+        "OAuth2": "Google\\Auth\\OAuth2"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "adwods_api_scope": {
+            "name": "adwods_api_scope",
+            "line": 22,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "the OAuth2 scope for the AdWords API",
+            "tags": {
+                "see": [
+                    [
+                        "https:\/\/developers.google.com\/adwords\/api\/docs\/guides\/authentication#scope"
+                    ]
+                ]
+            },
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Scalar_String",
+                "value": "https:\/\/www.googleapis.com\/auth\/adwords",
+                "attributes": {
+                    "startLine": 22,
+                    "endLine": 22,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        },
+        "authorization_uri": {
+            "name": "authorization_uri",
+            "line": 28,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "the Google OAuth2 authorization URI for OAuth2 requests",
+            "tags": {
+                "see": [
+                    [
+                        "https:\/\/developers.google.com\/identity\/protocols\/OAuth2InstalledApp#formingtheurl"
+                    ]
+                ]
+            },
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Scalar_String",
+                "value": "https:\/\/accounts.google.com\/o\/oauth2\/v2\/auth",
+                "attributes": {
+                    "startLine": 28,
+                    "endLine": 28,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        },
+        "redirect_uri": {
+            "name": "redirect_uri",
+            "line": 34,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "the redirect URI for OAuth2 installed application flows",
+            "tags": {
+                "see": [
+                    [
+                        "https:\/\/developers.google.com\/identity\/protocols\/OAuth2InstalledApp#formingtheurl"
+                    ]
+                ]
+            },
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Scalar_String",
+                "value": "urn:ietf:wg:oauth:2.0:oob",
+                "attributes": {
+                    "startLine": 34,
+                    "endLine": 34,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        },
+        "scope": {
+            "name": "scope",
+            "line": 36,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Scalar_String",
+                "value": "https:\/\/www.googleapis.com\/auth\/adwords",
+                "attributes": {
+                    "startLine": 36,
+                    "endLine": 36,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        }
+    },
+    "methods": {
+        "byConsole": {
+            "name": "byConsole",
+            "line": 38,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

@@ -1,0 +1,400 @@
+{
+    "name": "Edujugon\\GoogleAds\\Services\\ServiceCollection",
+    "line": 20,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Edujugon\\GoogleAds\\Services",
+    "file": "\/Users\/Edujugon\/Code\/Documentation\/Documentator\/google-ads\/..\/..\/..\/OpenSource\/google-ads\/src\/Services\/ServiceCollection.php",
+    "relative_file": "\/src\/Services\/ServiceCollection.php",
+    "hash": "2dbafc96e1c2e9be1d2e32d2686cc66c321361c9",
+    "parent": null,
+    "modifiers": null,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "AdGroupAdOperation": "Google\\AdsApi\\AdWords\\v201702\\cm\\AdGroupAdOperation",
+        "AdGroupAdService": "Google\\AdsApi\\AdWords\\v201702\\cm\\AdGroupAdService",
+        "AdGroupOperation": "Google\\AdsApi\\AdWords\\v201702\\cm\\AdGroupOperation",
+        "AdGroupService": "Google\\AdsApi\\AdWords\\v201702\\cm\\AdGroupService",
+        "CampaignOperation": "Google\\AdsApi\\AdWords\\v201702\\cm\\CampaignOperation",
+        "CampaignService": "Google\\AdsApi\\AdWords\\v201702\\cm\\CampaignService",
+        "Collection": "Illuminate\\Support\\Collection"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "adWordsServices": {
+            "name": "adWordsServices",
+            "line": 27,
+            "short_desc": "Adwords service",
+            "long_desc": "",
+            "hint": [],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "items": {
+            "name": "items",
+            "line": 33,
+            "short_desc": "List of items",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Illuminate\\Support\\Collection",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "preGetterMethod": {
+            "name": "preGetterMethod",
+            "line": 41,
+            "short_desc": "Google pre getter Method label\ni.e. getId,getName,etc.",
+            "long_desc": ".",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Scalar_String",
+                "value": "get",
+                "attributes": {
+                    "startLine": 41,
+                    "endLine": 41,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        },
+        "preSetterMethod": {
+            "name": "preSetterMethod",
+            "line": 49,
+            "short_desc": "Google pre setter Method label\ni.e. setId,setName,etc.",
+            "long_desc": ".",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Scalar_String",
+                "value": "set",
+                "attributes": {
+                    "startLine": 49,
+                    "endLine": 49,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        }
+    },
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 56,
+            "short_desc": "ServiceCollection constructor.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "adWordsServices": {
+                    "name": "adWordsServices",
+                    "line": 56,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "items": {
+                    "name": "items",
+                    "line": 56,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "[]",
+                    "is_by_ref": false
+                }
+            }
+        },
+        "where": {
+            "name": "where",
+            "line": 71,
+            "short_desc": "search the value in the collection in a specific field.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Edujugon\\GoogleAds\\Services\\ServiceCollection",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "field": {
+                    "name": "field",
+                    "line": 71,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "value": {
+                    "name": "value",
+                    "line": 71,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "opposite": {
+                    "name": "opposite",
+                    "line": 71,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "false",
+                    "is_by_ref": false
+                }
+            }
+        },
+        "set": {
+            "name": "set",
+            "line": 89,
+            "short_desc": "Set the value in the specific field.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Edujugon\\GoogleAds\\Services\\ServiceCollection",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "field": {
+                    "name": "field",
+                    "line": 89,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "value": {
+                    "name": "value",
+                    "line": 89,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "map": {
+            "name": "map",
+            "line": 102,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Edujugon\\GoogleAds\\Services\\ServiceCollection",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "callback": {
+                    "name": "callback",
+                    "line": 102,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "filter": {
+            "name": "filter",
+            "line": 111,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Edujugon\\GoogleAds\\Services\\ServiceCollection",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "callback": {
+                    "name": "callback",
+                    "line": 111,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "save": {
+            "name": "save",
+            "line": 120,
+            "short_desc": "Persist values in google.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Edujugon\\GoogleAds\\Services\\false",
+                    false
+                ],
+                [
+                    "mixed",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "items": {
+            "name": "items",
+            "line": 142,
+            "short_desc": "Get item list.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Illuminate\\Support\\Collection",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "__call": {
+            "name": "__call",
+            "line": 174,
+            "short_desc": "If any method call is available in Collection class it will be fired for the items since it's a Collection instance.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "mixed",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "name": {
+                    "name": "name",
+                    "line": 174,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "arguments": {
+                    "name": "arguments",
+                    "line": 174,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

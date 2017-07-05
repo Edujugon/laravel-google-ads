@@ -1,0 +1,70 @@
+{
+    "name": "Edujugon\\GoogleAds\\Services\\Campaign",
+    "line": 15,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Edujugon\\GoogleAds\\Services",
+    "file": "\/Users\/Edujugon\/Code\/Documentation\/Documentator\/google-ads\/..\/..\/..\/OpenSource\/google-ads\/src\/Services\/Campaign.php",
+    "relative_file": "\/src\/Services\/Campaign.php",
+    "hash": "4516fb581a92021e7009450835c00466f1931e4f",
+    "parent": "Edujugon\\GoogleAds\\Services\\Service",
+    "modifiers": null,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "AdWordsSession": "Google\\AdsApi\\AdWords\\AdWordsSession",
+        "CampaignService": "Google\\AdsApi\\AdWords\\v201702\\cm\\CampaignService"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 18,
+            "short_desc": "Service constructor.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "session": {
+                    "name": "session",
+                    "line": 18,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Google\\AdsApi\\AdWords\\AdWordsSession",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "Google",
+                            "AdsApi",
+                            "AdWords",
+                            "AdWordsSession"
+                        ],
+                        "attributes": {
+                            "startLine": 18,
+                            "endLine": 18
+                        }
+                    },
+                    "default": "null",
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

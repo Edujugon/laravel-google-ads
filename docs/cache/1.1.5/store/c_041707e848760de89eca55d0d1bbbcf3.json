@@ -1,0 +1,706 @@
+{
+    "name": "Edujugon\\GoogleAds\\Reports\\Report",
+    "line": 17,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Edujugon\\GoogleAds\\Reports",
+    "file": "\/Users\/Edujugon\/Code\/Documentation\/Documentator\/google-ads\/..\/..\/..\/OpenSource\/google-ads\/src\/Reports\/Report.php",
+    "relative_file": "\/src\/Reports\/Report.php",
+    "hash": "2045e40b696dbce1bdb2e63ec55b2cf7c1a15771",
+    "parent": null,
+    "modifiers": null,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "AdwordsSession": "Edujugon\\GoogleAds\\Session\\AdwordsSession",
+        "ReportDownloader": "Google\\AdsApi\\AdWords\\Reporting\\v201702\\ReportDownloader",
+        "ApiException": "Google\\AdsApi\\AdWords\\v201702\\cm\\ApiException"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "session": {
+            "name": "session",
+            "line": 20,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "reportDownloader": {
+            "name": "reportDownloader",
+            "line": 24,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Google\\AdsApi\\AdWords\\Reporting\\v201702\\ReportDownloader",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "format": {
+            "name": "format",
+            "line": 28,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "data": {
+            "name": "data",
+            "line": 34,
+            "short_desc": "Report Data",
+            "long_desc": "",
+            "hint": [],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "query": {
+            "name": "query",
+            "line": 39,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Scalar_String",
+                "value": "",
+                "attributes": {
+                    "startLine": 39,
+                    "endLine": 39,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        },
+        "fields": {
+            "name": "fields",
+            "line": 44,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_Array",
+                "items": [],
+                "attributes": {
+                    "startLine": 44,
+                    "endLine": 44,
+                    "kind": 2
+                }
+            },
+            "errors": []
+        },
+        "during": {
+            "name": "during",
+            "line": 50,
+            "short_desc": "During clause",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_Array",
+                "items": [],
+                "attributes": {
+                    "startLine": 50,
+                    "endLine": 50,
+                    "kind": 2
+                }
+            },
+            "errors": []
+        },
+        "where": {
+            "name": "where",
+            "line": 57,
+            "short_desc": "Where Condition",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Scalar_String",
+                "value": "",
+                "attributes": {
+                    "startLine": 57,
+                    "endLine": 57,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        },
+        "type": {
+            "name": "type",
+            "line": 62,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Scalar_String",
+                "value": "",
+                "attributes": {
+                    "startLine": 62,
+                    "endLine": 62,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        },
+        "magicSelect": {
+            "name": "magicSelect",
+            "line": 68,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_ConstFetch",
+                "name": {
+                    "nodeType": "Name",
+                    "parts": [
+                        "false"
+                    ],
+                    "attributes": {
+                        "startLine": 68,
+                        "endLine": 68,
+                        "namespacedName": {
+                            "nodeType": "Name_FullyQualified",
+                            "parts": [
+                                "Edujugon",
+                                "GoogleAds",
+                                "Reports",
+                                "false"
+                            ],
+                            "attributes": {
+                                "startLine": 68,
+                                "endLine": 68
+                            }
+                        }
+                    }
+                },
+                "attributes": {
+                    "startLine": 68,
+                    "endLine": 68
+                }
+            },
+            "errors": []
+        }
+    },
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 74,
+            "short_desc": "Reports constructor.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "session": {
+                    "name": "session",
+                    "line": 74,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "is_by_ref": false
+                }
+            }
+        },
+        "format": {
+            "name": "format",
+            "line": 89,
+            "short_desc": "Set the format for the report.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Edujugon\\GoogleAds\\Reports\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "format": {
+                    "name": "format",
+                    "line": 89,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "select": {
+            "name": "select",
+            "line": 105,
+            "short_desc": "Set the fields to retrieve",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Edujugon\\GoogleAds\\Reports\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "fields": {
+                    "name": "fields",
+                    "line": 105,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "from": {
+            "name": "from",
+            "line": 118,
+            "short_desc": "Set the report type",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Edujugon\\GoogleAds\\Reports\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "reportType": {
+                    "name": "reportType",
+                    "line": 118,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "during": {
+            "name": "during",
+            "line": 138,
+            "short_desc": "Set the starting and ending dates for the report.",
+            "long_desc": "dates format 'Ymd' => e.g. 20170112,20171020",
+            "hint": [
+                [
+                    "Edujugon\\GoogleAds\\Reports\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\Edujugon\\GoogleAds\\Exceptions\\Report",
+                    ""
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "starting": {
+                    "name": "starting",
+                    "line": 138,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "ending": {
+                    "name": "ending",
+                    "line": 138,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "where": {
+            "name": "where",
+            "line": 154,
+            "short_desc": "Set where condition",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Edujugon\\GoogleAds\\Reports\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "condition": {
+                    "name": "condition",
+                    "line": 154,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "magicSelect": {
+            "name": "magicSelect",
+            "line": 166,
+            "short_desc": "Mark magicSelect as true.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Edujugon\\GoogleAds\\Reports\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getAsSimpleXMLObj": {
+            "name": "getAsSimpleXMLObj",
+            "line": 178,
+            "short_desc": "Get the report as a SimpleXMLObj",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\SimpleXMLElement",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getAsObj": {
+            "name": "getAsObj",
+            "line": 192,
+            "short_desc": "Get the report as an object",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Edujugon\\GoogleAds\\Reports\\MyReport",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getAsString": {
+            "name": "getAsString",
+            "line": 205,
+            "short_desc": "Get report as string",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getStream": {
+            "name": "getStream",
+            "line": 216,
+            "short_desc": "Get report as stream",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Edujugon\\GoogleAds\\Reports\\Stream",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "saveToFile": {
+            "name": "saveToFile",
+            "line": 229,
+            "short_desc": "Save the report in a file.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "filePath": {
+                    "name": "filePath",
+                    "line": 229,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "format": {
+                    "name": "format",
+                    "line": 229,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "'csvforexcel'",
+                    "is_by_ref": false
+                }
+            }
+        },
+        "except": {
+            "name": "except",
+            "line": 299,
+            "short_desc": "Pull fields out of fields list.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Edujugon\\GoogleAds\\Reports\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "excepts": {
+                    "name": "excepts",
+                    "line": 299,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getTypes": {
+            "name": "getTypes",
+            "line": 347,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getFields": {
+            "name": "getFields",
+            "line": 355,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getFormats": {
+            "name": "getFormats",
+            "line": 365,
+            "short_desc": "Get a list of the report formats.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "__get": {
+            "name": "__get",
+            "line": 374,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "name": {
+                    "name": "name",
+                    "line": 374,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}
