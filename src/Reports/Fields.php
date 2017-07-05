@@ -1,11 +1,4 @@
 <?php
-namespace Edujugon\GoogleAds\Reports;
-
-use Edujugon\GoogleAds\Session\AdwordsSession;
-use Google\AdsApi\AdWords\AdWordsServices;
-use Google\AdsApi\AdWords\v201702\cm\ReportDefinitionService;
-
-
 /**
  * Project: google-ads.
  * User: Edujugon
@@ -13,6 +6,13 @@ use Google\AdsApi\AdWords\v201702\cm\ReportDefinitionService;
  * Date: 10/2/17
  * Time: 9:07
  */
+
+namespace Edujugon\GoogleAds\Reports;
+
+use Edujugon\GoogleAds\Session\AdwordsSession;
+use Google\AdsApi\AdWords\AdWordsServices;
+use Google\AdsApi\AdWords\v201702\cm\ReportDefinitionService;
+
 class Fields
 {
     /**
