@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Edujugon\GoogleAds\GoogleAds | Google Adwords API for Laravel</title>
+
+            <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sami.css">
+        <script src="../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/typeahead.min.js"></script>
+        <script src="../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Edujugon_GoogleAds_GoogleAds" data-root-path="../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                    <form action="#" method="GET">
+                <select id="version-switcher" name="version">
+                                            <option value="../../../1.1.5/index.html" data-version="1.1.5">Laradoo 1.1.5</option>
+                                            <option value="../../../master/index.html" data-version="master">Laradoo Master</option>
+                                    </select>
+            </form>
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../index.html">Google Adwords API for Laravel</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../classes.html">Classes</a></li>
+                                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../traits.html">Traits</a></li>
+                    <li><a href="../../doc-index.html">Index</a></li>
+                    <li><a href="../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../Edujugon.html">Edujugon</a></li><li class="backslash">\</li><li><a href="../../Edujugon/GoogleAds.html">GoogleAds</a></li><li class="backslash">\</li><li>GoogleAds</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            GoogleAds
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>GoogleAds</strong>        (<a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/GoogleAds.php">View source</a>)
+</p>
+
+        
+    
+
+    
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_config">
+                                        protected                                        mixed
+                </td>
+                <td>$config</td>
+                <td class="last">Full config data.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_env">
+                                        protected                                        
+                </td>
+                <td>$env</td>
+                <td class="last">Environment => test/production</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_userCredentials">
+                                        protected                                        
+                </td>
+                <td>$userCredentials</td>
+                <td class="last">oAuth UserRefreshCredentials</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_session">
+                                        protected                                        
+                </td>
+                <td>$session</td>
+                <td class="last">Session.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_service">
+                                        protected                                        
+                </td>
+                <td>$service</td>
+                <td class="last">Service</td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(null $env = null)
+        
+                                            <p>GoogleAds constructor.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Edujugon\GoogleAds\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_oAuth">oAuth</a>(array $data = [])
+        
+                                            <p>Generate User Credentials.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Edujugon\GoogleAds\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_session">session</a>(array $data = [])
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../Edujugon/GoogleAds/Reports/Fields.html"><abbr title="Edujugon\GoogleAds\Reports\Fields">Fields</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_fields">fields</a>()
+        
+                                            <p>Get an instance of Fields</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../Edujugon/GoogleAds/Services/Service.html"><abbr title="Edujugon\GoogleAds\Services\Service">Service</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_service">service</a>(<abbr title="Google\AdsApi\AdWords\v201702\cm\*">*</abbr> $service)
+        
+                                            <p>Set the google adwords service.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../Edujugon/GoogleAds/Services/AdGroup.html"><abbr title="Edujugon\GoogleAds\Services\AdGroup">AdGroup</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_adGroupService">adGroupService</a>()
+        
+                                            <p>AdGroupService</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../Edujugon/GoogleAds/Services/AdGroupAd.html"><abbr title="Edujugon\GoogleAds\Services\AdGroupAd">AdGroupAd</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_adGroupAdService">adGroupAdService</a>()
+        
+                                            <p>AdGroupAdService</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../Edujugon/GoogleAds/Services/Campaign.html"><abbr title="Edujugon\GoogleAds\Services\Campaign">Campaign</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_campaignService">campaignService</a>()
+        
+                                            <p>CampaignService</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../Edujugon/GoogleAds/Reports/Report.html"><abbr title="Edujugon\GoogleAds\Reports\Report">Report</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_report">report</a>()
+        
+                                            <p>Get an instance of Report</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_showReportTypes">showReportTypes</a>()
+        
+                                            <p>Show a list of report types</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_showReportFormats">showReportFormats</a>()
+        
+                                            <p>Show a list of report formats.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    mixed
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getService">getService</a>()
+        
+                                            <p>Get the service.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../Edujugon/GoogleAds/Session/AdwordsSession.html"><abbr title="Edujugon\GoogleAds\Session\AdwordsSession">AdwordsSession</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getSession">getSession</a>()
+        
+                                            <p>Get the session.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Auth\Credentials\UserRefreshCredentials">UserRefreshCredentials</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getUserCredentials">getUserCredentials</a>()
+        
+                                            <p>Get UserRefreshCredentials</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Edujugon\GoogleAds\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_env">env</a>($env)
+        
+                                            <p>Set the environment to work with.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    null
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getEnv">getEnv</a>()
+        
+                                            <p>Get the environment.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/GoogleAds.php#L54">line 54</a></div>
+        <code>                    
+    <strong>__construct</strong>(null $env = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>GoogleAds constructor.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>null</td>
+                <td>$env</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_oAuth">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/GoogleAds.php#L67">line 67</a></div>
+        <code>                    <abbr title="Edujugon\GoogleAds\$this">$this</abbr>
+    <strong>oAuth</strong>(array $data = [])
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Generate User Credentials.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$data</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Edujugon\GoogleAds\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_session">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/GoogleAds.php#L78">line 78</a></div>
+        <code>                    <abbr title="Edujugon\GoogleAds\$this">$this</abbr>
+    <strong>session</strong>(array $data = [])
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$data</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Edujugon\GoogleAds\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_fields">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/GoogleAds.php#L98">line 98</a></div>
+        <code>                    <a href="../../Edujugon/GoogleAds/Reports/Fields.html"><abbr title="Edujugon\GoogleAds\Reports\Fields">Fields</abbr></a>
+    <strong>fields</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get an instance of Fields</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../Edujugon/GoogleAds/Reports/Fields.html"><abbr title="Edujugon\GoogleAds\Reports\Fields">Fields</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_service">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/GoogleAds.php#L113">line 113</a></div>
+        <code>                    <a href="../../Edujugon/GoogleAds/Services/Service.html"><abbr title="Edujugon\GoogleAds\Services\Service">Service</abbr></a>
+    <strong>service</strong>(<abbr title="Google\AdsApi\AdWords\v201702\cm\*">*</abbr> $service)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Set the google adwords service.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Google\AdsApi\AdWords\v201702\cm\*">*</abbr></td>
+                <td>$service</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../Edujugon/GoogleAds/Services/Service.html"><abbr title="Edujugon\GoogleAds\Services\Service">Service</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_adGroupService">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/GoogleAds.php#L124">line 124</a></div>
+        <code>                    <a href="../../Edujugon/GoogleAds/Services/AdGroup.html"><abbr title="Edujugon\GoogleAds\Services\AdGroup">AdGroup</abbr></a>
+    <strong>adGroupService</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>AdGroupService</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../Edujugon/GoogleAds/Services/AdGroup.html"><abbr title="Edujugon\GoogleAds\Services\AdGroup">AdGroup</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_adGroupAdService">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/GoogleAds.php#L133">line 133</a></div>
+        <code>                    <a href="../../Edujugon/GoogleAds/Services/AdGroupAd.html"><abbr title="Edujugon\GoogleAds\Services\AdGroupAd">AdGroupAd</abbr></a>
+    <strong>adGroupAdService</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>AdGroupAdService</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../Edujugon/GoogleAds/Services/AdGroupAd.html"><abbr title="Edujugon\GoogleAds\Services\AdGroupAd">AdGroupAd</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_campaignService">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/GoogleAds.php#L142">line 142</a></div>
+        <code>                    <a href="../../Edujugon/GoogleAds/Services/Campaign.html"><abbr title="Edujugon\GoogleAds\Services\Campaign">Campaign</abbr></a>
+    <strong>campaignService</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>CampaignService</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../Edujugon/GoogleAds/Services/Campaign.html"><abbr title="Edujugon\GoogleAds\Services\Campaign">Campaign</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_report">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/GoogleAds.php#L156">line 156</a></div>
+        <code>                    <a href="../../Edujugon/GoogleAds/Reports/Report.html"><abbr title="Edujugon\GoogleAds\Reports\Report">Report</abbr></a>
+    <strong>report</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get an instance of Report</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../Edujugon/GoogleAds/Reports/Report.html"><abbr title="Edujugon\GoogleAds\Reports\Report">Report</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_showReportTypes">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/GoogleAds.php#L166">line 166</a></div>
+        <code>                    array
+    <strong>showReportTypes</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Show a list of report types</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_showReportFormats">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/GoogleAds.php#L175">line 175</a></div>
+        <code>                    array
+    <strong>showReportFormats</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Show a list of report formats.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getService">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/GoogleAds.php#L189">line 189</a></div>
+        <code>                    mixed
+    <strong>getService</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get the service.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>mixed</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getSession">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/GoogleAds.php#L199">line 199</a></div>
+        <code>                    <a href="../../Edujugon/GoogleAds/Session/AdwordsSession.html"><abbr title="Edujugon\GoogleAds\Session\AdwordsSession">AdwordsSession</abbr></a>
+    <strong>getSession</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get the session.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../Edujugon/GoogleAds/Session/AdwordsSession.html"><abbr title="Edujugon\GoogleAds\Session\AdwordsSession">AdwordsSession</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getUserCredentials">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/GoogleAds.php#L209">line 209</a></div>
+        <code>                    <abbr title="Google\Auth\Credentials\UserRefreshCredentials">UserRefreshCredentials</abbr>
+    <strong>getUserCredentials</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get UserRefreshCredentials</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Auth\Credentials\UserRefreshCredentials">UserRefreshCredentials</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_env">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/GoogleAds.php#L220">line 220</a></div>
+        <code>                    <abbr title="Edujugon\GoogleAds\$this">$this</abbr>
+    <strong>env</strong>($env)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Set the environment to work with.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$env</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Edujugon\GoogleAds\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getEnv">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/GoogleAds.php#L230">line 230</a></div>
+        <code>                    null
+    <strong>getEnv</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get the environment.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>null</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

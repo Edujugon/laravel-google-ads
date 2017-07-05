@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Edujugon\GoogleAds\Services\ServiceCollection | Google Adwords API for Laravel</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/sami.css">
+        <script src="../../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+        <script src="../../../js/typeahead.min.js"></script>
+        <script src="../../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Edujugon_GoogleAds_Services_ServiceCollection" data-root-path="../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                    <form action="#" method="GET">
+                <select id="version-switcher" name="version">
+                                            <option value="../../../../1.1.5/index.html" data-version="1.1.5">Laradoo 1.1.5</option>
+                                            <option value="../../../../master/index.html" data-version="master">Laradoo Master</option>
+                                    </select>
+            </form>
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../index.html">Google Adwords API for Laravel</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../traits.html">Traits</a></li>
+                    <li><a href="../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../../Edujugon.html">Edujugon</a></li><li class="backslash">\</li><li><a href="../../../Edujugon/GoogleAds.html">GoogleAds</a></li><li class="backslash">\</li><li><a href="../../../Edujugon/GoogleAds/Services.html">Services</a></li><li class="backslash">\</li><li>ServiceCollection</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            ServiceCollection
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>ServiceCollection</strong>        (<a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Services/ServiceCollection.php">View source</a>)
+</p>
+
+        
+    
+
+    
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_adWordsServices">
+                                        protected                                        
+                </td>
+                <td>$adWordsServices</td>
+                <td class="last">Adwords service</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_items">
+                                        protected                                        <abbr title="Illuminate\Support\Collection">Collection</abbr>
+                </td>
+                <td>$items</td>
+                <td class="last">List of items</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_preGetterMethod">
+                                        protected                                        string
+                </td>
+                <td>$preGetterMethod</td>
+                <td class="last">Google pre getter Method label
+i.e. getId,getName,etc.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_preSetterMethod">
+                                        protected                                        string
+                </td>
+                <td>$preSetterMethod</td>
+                <td class="last">Google pre setter Method label
+i.e. setId,setName,etc.</td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>($adWordsServices, array $items = [])
+        
+                                            <p>ServiceCollection constructor.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Edujugon/GoogleAds/Services/ServiceCollection.html"><abbr title="Edujugon\GoogleAds\Services\ServiceCollection">ServiceCollection</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_where">where</a>($field, $value, bool $opposite = false)
+        
+                                            <p>search the value in the collection in a specific field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Edujugon/GoogleAds/Services/ServiceCollection.html"><abbr title="Edujugon\GoogleAds\Services\ServiceCollection">ServiceCollection</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_set">set</a>($field, $value)
+        
+                                            <p>Set the value in the specific field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Edujugon/GoogleAds/Services/ServiceCollection.html"><abbr title="Edujugon\GoogleAds\Services\ServiceCollection">ServiceCollection</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_map">map</a>($callback)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Edujugon/GoogleAds/Services/ServiceCollection.html"><abbr title="Edujugon\GoogleAds\Services\ServiceCollection">ServiceCollection</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_filter">filter</a>($callback)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Edujugon\GoogleAds\Services\false">false</abbr>|mixed
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_save">save</a>()
+        
+                                            <p>Persist values in google.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Illuminate\Support\Collection">Collection</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_items">items</a>()
+        
+                                            <p>Get item list.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    mixed
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___call">__call</a>($name, $arguments)
+        
+                                            <p>If any method call is available in Collection class it will be fired for the items since it's a Collection instance.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Services/ServiceCollection.php#L56">line 56</a></div>
+        <code>                    
+    <strong>__construct</strong>($adWordsServices, array $items = [])
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>ServiceCollection constructor.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$adWordsServices</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$items</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_where">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Services/ServiceCollection.php#L71">line 71</a></div>
+        <code>                    <a href="../../../Edujugon/GoogleAds/Services/ServiceCollection.html"><abbr title="Edujugon\GoogleAds\Services\ServiceCollection">ServiceCollection</abbr></a>
+    <strong>where</strong>($field, $value, bool $opposite = false)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>search the value in the collection in a specific field.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$field</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$value</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$opposite</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Edujugon/GoogleAds/Services/ServiceCollection.html"><abbr title="Edujugon\GoogleAds\Services\ServiceCollection">ServiceCollection</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_set">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Services/ServiceCollection.php#L89">line 89</a></div>
+        <code>                    <a href="../../../Edujugon/GoogleAds/Services/ServiceCollection.html"><abbr title="Edujugon\GoogleAds\Services\ServiceCollection">ServiceCollection</abbr></a>
+    <strong>set</strong>($field, $value)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Set the value in the specific field.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$field</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$value</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Edujugon/GoogleAds/Services/ServiceCollection.html"><abbr title="Edujugon\GoogleAds\Services\ServiceCollection">ServiceCollection</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_map">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Services/ServiceCollection.php#L102">line 102</a></div>
+        <code>                    <a href="../../../Edujugon/GoogleAds/Services/ServiceCollection.html"><abbr title="Edujugon\GoogleAds\Services\ServiceCollection">ServiceCollection</abbr></a>
+    <strong>map</strong>($callback)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$callback</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Edujugon/GoogleAds/Services/ServiceCollection.html"><abbr title="Edujugon\GoogleAds\Services\ServiceCollection">ServiceCollection</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_filter">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Services/ServiceCollection.php#L111">line 111</a></div>
+        <code>                    <a href="../../../Edujugon/GoogleAds/Services/ServiceCollection.html"><abbr title="Edujugon\GoogleAds\Services\ServiceCollection">ServiceCollection</abbr></a>
+    <strong>filter</strong>($callback)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$callback</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Edujugon/GoogleAds/Services/ServiceCollection.html"><abbr title="Edujugon\GoogleAds\Services\ServiceCollection">ServiceCollection</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_save">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Services/ServiceCollection.php#L120">line 120</a></div>
+        <code>                    <abbr title="Edujugon\GoogleAds\Services\false">false</abbr>|mixed
+    <strong>save</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Persist values in google.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Edujugon\GoogleAds\Services\false">false</abbr>|mixed</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_items">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Services/ServiceCollection.php#L142">line 142</a></div>
+        <code>                    <abbr title="Illuminate\Support\Collection">Collection</abbr>
+    <strong>items</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get item list.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Illuminate\Support\Collection">Collection</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method___call">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Services/ServiceCollection.php#L174">line 174</a></div>
+        <code>                    mixed
+    <strong>__call</strong>($name, $arguments)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>If any method call is available in Collection class it will be fired for the items since it's a Collection instance.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$name</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$arguments</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>mixed</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Edujugon\GoogleAds\Reports\Report | Google Adwords API for Laravel</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/sami.css">
+        <script src="../../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+        <script src="../../../js/typeahead.min.js"></script>
+        <script src="../../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Edujugon_GoogleAds_Reports_Report" data-root-path="../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                    <form action="#" method="GET">
+                <select id="version-switcher" name="version">
+                                            <option value="../../../../1.1.5/index.html" data-version="1.1.5">Laradoo 1.1.5</option>
+                                            <option value="../../../../master/index.html" data-version="master">Laradoo Master</option>
+                                    </select>
+            </form>
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../index.html">Google Adwords API for Laravel</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../traits.html">Traits</a></li>
+                    <li><a href="../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../../Edujugon.html">Edujugon</a></li><li class="backslash">\</li><li><a href="../../../Edujugon/GoogleAds.html">GoogleAds</a></li><li class="backslash">\</li><li><a href="../../../Edujugon/GoogleAds/Reports.html">Reports</a></li><li class="backslash">\</li><li>Report</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            Report
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>Report</strong>        (<a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Reports/Report.php">View source</a>)
+</p>
+
+        
+    
+
+    
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_session">
+                                        protected                                        
+                </td>
+                <td>$session</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_reportDownloader">
+                                        protected                                        <abbr title="Google\AdsApi\AdWords\Reporting\v201702\ReportDownloader">ReportDownloader</abbr>
+                </td>
+                <td>$reportDownloader</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_format">
+                                        protected                                        
+                </td>
+                <td>$format</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_data">
+                                        protected                                        
+                </td>
+                <td>$data</td>
+                <td class="last">Report Data</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_query">
+                                        protected                                        
+                </td>
+                <td>$query</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_fields">
+                                        protected                                        string
+                </td>
+                <td>$fields</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_during">
+                                        protected                                        string
+                </td>
+                <td>$during</td>
+                <td class="last">During clause</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_where">
+                                        protected                                        string
+                </td>
+                <td>$where</td>
+                <td class="last">Where Condition</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_type">
+                                        protected                                        string
+                </td>
+                <td>$type</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_magicSelect">
+                                        protected                                        bool
+                </td>
+                <td>$magicSelect</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(null $session = null)
+        
+                                            <p>Reports constructor.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Edujugon\GoogleAds\Reports\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_format">format</a>($format)
+        
+                                            <p>Set the format for the report.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Edujugon\GoogleAds\Reports\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_select">select</a>($fields)
+        
+                                            <p>Set the fields to retrieve</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Edujugon\GoogleAds\Reports\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_from">from</a>($reportType)
+        
+                                            <p>Set the report type</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Edujugon\GoogleAds\Reports\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_during">during</a>($starting, $ending)
+        
+                                            <p>Set the starting and ending dates for the report.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Edujugon\GoogleAds\Reports\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_where">where</a>($condition)
+        
+                                            <p>Set where condition</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Edujugon\GoogleAds\Reports\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_magicSelect">magicSelect</a>()
+        
+                                            <p>Mark magicSelect as true.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a target="_blank" href="http://php.net/SimpleXMLElement">SimpleXMLElement</a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getAsSimpleXMLObj">getAsSimpleXMLObj</a>()
+        
+                                            <p>Get the report as a SimpleXMLObj</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Edujugon/GoogleAds/Reports/MyReport.html"><abbr title="Edujugon\GoogleAds\Reports\MyReport">MyReport</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getAsObj">getAsObj</a>()
+        
+                                            <p>Get the report as an object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getAsString">getAsString</a>()
+        
+                                            <p>Get report as string</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Edujugon\GoogleAds\Reports\Stream">Stream</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getStream">getStream</a>()
+        
+                                            <p>Get report as stream</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_saveToFile">saveToFile</a>($filePath, string $format = &#039;csvforexcel&#039;)
+        
+                                            <p>Save the report in a file.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Edujugon\GoogleAds\Reports\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_except">except</a>($excepts)
+        
+                                            <p>Pull fields out of fields list.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getTypes">getTypes</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getFields">getFields</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getFormats">getFormats</a>()
+        
+                                            <p>Get a list of the report formats.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___get">__get</a>($name)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Reports/Report.php#L74">line 74</a></div>
+        <code>                    
+    <strong>__construct</strong>(null $session = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Reports constructor.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>null</td>
+                <td>$session</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_format">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Reports/Report.php#L89">line 89</a></div>
+        <code>                    <abbr title="Edujugon\GoogleAds\Reports\$this">$this</abbr>
+    <strong>format</strong>($format)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Set the format for the report.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$format</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Edujugon\GoogleAds\Reports\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_select">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Reports/Report.php#L105">line 105</a></div>
+        <code>                    <abbr title="Edujugon\GoogleAds\Reports\$this">$this</abbr>
+    <strong>select</strong>($fields)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Set the fields to retrieve</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$fields</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Edujugon\GoogleAds\Reports\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_from">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Reports/Report.php#L118">line 118</a></div>
+        <code>                    <abbr title="Edujugon\GoogleAds\Reports\$this">$this</abbr>
+    <strong>from</strong>($reportType)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Set the report type</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$reportType</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Edujugon\GoogleAds\Reports\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_during">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Reports/Report.php#L138">line 138</a></div>
+        <code>                    <abbr title="Edujugon\GoogleAds\Reports\$this">$this</abbr>
+    <strong>during</strong>($starting, $ending)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Set the starting and ending dates for the report.</p>                    <p>dates format 'Ymd' => e.g. 20170112,20171020</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$starting</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$ending</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Edujugon\GoogleAds\Reports\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Edujugon\GoogleAds\Exceptions\Report">Report</abbr></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_where">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Reports/Report.php#L154">line 154</a></div>
+        <code>                    <abbr title="Edujugon\GoogleAds\Reports\$this">$this</abbr>
+    <strong>where</strong>($condition)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Set where condition</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$condition</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Edujugon\GoogleAds\Reports\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_magicSelect">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Reports/Report.php#L166">line 166</a></div>
+        <code>                    <abbr title="Edujugon\GoogleAds\Reports\$this">$this</abbr>
+    <strong>magicSelect</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Mark magicSelect as true.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Edujugon\GoogleAds\Reports\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAsSimpleXMLObj">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Reports/Report.php#L178">line 178</a></div>
+        <code>                    <a target="_blank" href="http://php.net/SimpleXMLElement">SimpleXMLElement</a>
+    <strong>getAsSimpleXMLObj</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get the report as a SimpleXMLObj</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a target="_blank" href="http://php.net/SimpleXMLElement">SimpleXMLElement</a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAsObj">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Reports/Report.php#L192">line 192</a></div>
+        <code>                    <a href="../../../Edujugon/GoogleAds/Reports/MyReport.html"><abbr title="Edujugon\GoogleAds\Reports\MyReport">MyReport</abbr></a>
+    <strong>getAsObj</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get the report as an object</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Edujugon/GoogleAds/Reports/MyReport.html"><abbr title="Edujugon\GoogleAds\Reports\MyReport">MyReport</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAsString">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Reports/Report.php#L205">line 205</a></div>
+        <code>                    string
+    <strong>getAsString</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get report as string</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getStream">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Reports/Report.php#L216">line 216</a></div>
+        <code>                    <abbr title="Edujugon\GoogleAds\Reports\Stream">Stream</abbr>
+    <strong>getStream</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get report as stream</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Edujugon\GoogleAds\Reports\Stream">Stream</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_saveToFile">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Reports/Report.php#L229">line 229</a></div>
+        <code>                    bool
+    <strong>saveToFile</strong>($filePath, string $format = &#039;csvforexcel&#039;)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Save the report in a file.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$filePath</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$format</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_except">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Reports/Report.php#L299">line 299</a></div>
+        <code>                    <abbr title="Edujugon\GoogleAds\Reports\$this">$this</abbr>
+    <strong>except</strong>($excepts)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Pull fields out of fields list.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$excepts</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Edujugon\GoogleAds\Reports\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getTypes">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Reports/Report.php#L347">line 347</a></div>
+        <code>                    array
+    <strong>getTypes</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getFields">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Reports/Report.php#L355">line 355</a></div>
+        <code>                    array
+    <strong>getFields</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getFormats">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Reports/Report.php#L365">line 365</a></div>
+        <code>                    array
+    <strong>getFormats</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get a list of the report formats.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method___get">
+        <div class="location">at         <a href="https://github.com/edujugon/laravel-google-ads/blob/1.1.5/src/Reports/Report.php#L374">line 374</a></div>
+        <code>                    
+    <strong>__get</strong>($name)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$name</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

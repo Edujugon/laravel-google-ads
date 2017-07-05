@@ -1,0 +1,46 @@
+{
+    "name": "Edujugon\\GoogleAds\\Facades\\GoogleAds",
+    "line": 6,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Edujugon\\GoogleAds\\Facades",
+    "file": "\/Users\/Edujugon\/Code\/Documentation\/Documentator\/google-ads\/..\/..\/..\/OpenSource\/google-ads\/src\/Facades\/GoogleAds.php",
+    "relative_file": "\/src\/Facades\/GoogleAds.php",
+    "hash": "54924372698d9f481a4978e6459b3ea6c0631c30",
+    "parent": "Illuminate\\Support\\Facades\\Facade",
+    "modifiers": null,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "AliasGoogleAds": "Edujugon\\GoogleAds\\GoogleAds",
+        "Facade": "Illuminate\\Support\\Facades\\Facade"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "getFacadeAccessor": {
+            "name": "getFacadeAccessor",
+            "line": 13,
+            "short_desc": "Get the registered name of the component.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 10,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

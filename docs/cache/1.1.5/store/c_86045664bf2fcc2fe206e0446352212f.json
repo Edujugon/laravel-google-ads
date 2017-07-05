@@ -1,0 +1,480 @@
+{
+    "name": "Edujugon\\GoogleAds\\GoogleAds",
+    "line": 16,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Edujugon\\GoogleAds",
+    "file": "\/Users\/Edujugon\/Code\/Documentation\/Documentator\/google-ads\/..\/..\/..\/OpenSource\/google-ads\/src\/GoogleAds.php",
+    "relative_file": "\/src\/GoogleAds.php",
+    "hash": "9bbaf324a2d4ee83533ea880c006ee2a49b2bd43",
+    "parent": null,
+    "modifiers": null,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "OAuth2": "Edujugon\\GoogleAds\\Auth\\OAuth2",
+        "Fields": "Edujugon\\GoogleAds\\Reports\\Fields",
+        "Format": "Edujugon\\GoogleAds\\Reports\\Format",
+        "Report": "Edujugon\\GoogleAds\\Reports\\Report",
+        "ReportTypes": "Edujugon\\GoogleAds\\Reports\\ReportTypes",
+        "AdGroup": "Edujugon\\GoogleAds\\Services\\AdGroup",
+        "AdGroupAd": "Edujugon\\GoogleAds\\Services\\AdGroupAd",
+        "Campaign": "Edujugon\\GoogleAds\\Services\\Campaign",
+        "Service": "Edujugon\\GoogleAds\\Services\\Service",
+        "AdwordsSession": "Edujugon\\GoogleAds\\Session\\AdwordsSession"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "config": {
+            "name": "config",
+            "line": 24,
+            "short_desc": "Full config data.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "mixed",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "env": {
+            "name": "env",
+            "line": 30,
+            "short_desc": "Environment => test\/production",
+            "long_desc": "",
+            "hint": [],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "userCredentials": {
+            "name": "userCredentials",
+            "line": 36,
+            "short_desc": "oAuth UserRefreshCredentials",
+            "long_desc": "",
+            "hint": [],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "session": {
+            "name": "session",
+            "line": 42,
+            "short_desc": "Session.",
+            "long_desc": "",
+            "hint": [],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "service": {
+            "name": "service",
+            "line": 48,
+            "short_desc": "Service",
+            "long_desc": "",
+            "hint": [],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        }
+    },
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 54,
+            "short_desc": "GoogleAds constructor.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "env": {
+                    "name": "env",
+                    "line": 54,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "is_by_ref": false
+                }
+            }
+        },
+        "oAuth": {
+            "name": "oAuth",
+            "line": 67,
+            "short_desc": "Generate User Credentials.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Edujugon\\GoogleAds\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "data": {
+                    "name": "data",
+                    "line": 67,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "[]",
+                    "is_by_ref": false
+                }
+            }
+        },
+        "session": {
+            "name": "session",
+            "line": 78,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Edujugon\\GoogleAds\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "data": {
+                    "name": "data",
+                    "line": 78,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "[]",
+                    "is_by_ref": false
+                }
+            }
+        },
+        "fields": {
+            "name": "fields",
+            "line": 98,
+            "short_desc": "Get an instance of Fields",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Edujugon\\GoogleAds\\Reports\\Fields",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "service": {
+            "name": "service",
+            "line": 113,
+            "short_desc": "Set the google adwords service.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Edujugon\\GoogleAds\\Services\\Service",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "service": {
+                    "name": "service",
+                    "line": 113,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Google\\AdsApi\\AdWords\\v201702\\cm\\*",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "adGroupService": {
+            "name": "adGroupService",
+            "line": 124,
+            "short_desc": "AdGroupService",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Edujugon\\GoogleAds\\Services\\AdGroup",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "adGroupAdService": {
+            "name": "adGroupAdService",
+            "line": 133,
+            "short_desc": "AdGroupAdService",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Edujugon\\GoogleAds\\Services\\AdGroupAd",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "campaignService": {
+            "name": "campaignService",
+            "line": 142,
+            "short_desc": "CampaignService",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Edujugon\\GoogleAds\\Services\\Campaign",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "report": {
+            "name": "report",
+            "line": 156,
+            "short_desc": "Get an instance of Report",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Edujugon\\GoogleAds\\Reports\\Report",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "showReportTypes": {
+            "name": "showReportTypes",
+            "line": 166,
+            "short_desc": "Show a list of report types",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "showReportFormats": {
+            "name": "showReportFormats",
+            "line": 175,
+            "short_desc": "Show a list of report formats.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getService": {
+            "name": "getService",
+            "line": 189,
+            "short_desc": "Get the service.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "mixed",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getSession": {
+            "name": "getSession",
+            "line": 199,
+            "short_desc": "Get the session.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Edujugon\\GoogleAds\\Session\\AdwordsSession",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getUserCredentials": {
+            "name": "getUserCredentials",
+            "line": 209,
+            "short_desc": "Get UserRefreshCredentials",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Google\\Auth\\Credentials\\UserRefreshCredentials",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "env": {
+            "name": "env",
+            "line": 220,
+            "short_desc": "Set the environment to work with.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Edujugon\\GoogleAds\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "env": {
+                    "name": "env",
+                    "line": 220,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getEnv": {
+            "name": "getEnv",
+            "line": 230,
+            "short_desc": "Get the environment.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

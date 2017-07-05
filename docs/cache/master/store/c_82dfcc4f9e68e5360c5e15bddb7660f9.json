@@ -1,0 +1,145 @@
+{
+    "name": "Edujugon\\GoogleAds\\Reports\\MyReport",
+    "line": 16,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Edujugon\\GoogleAds\\Reports",
+    "file": "\/Users\/Edujugon\/Code\/Documentation\/Documentator\/google-ads\/..\/..\/..\/OpenSource\/google-ads\/src\/Reports\/MyReport.php",
+    "relative_file": "\/src\/Reports\/MyReport.php",
+    "hash": "e9aa3cd8aeb9bd85c5c2b8255d72f741122d7d93",
+    "parent": null,
+    "modifiers": null,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Collection": "Illuminate\\Support\\Collection",
+        "SimpleXMLElement": "SimpleXMLElement"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "name": {
+            "name": "name",
+            "line": 22,
+            "short_desc": "Report Name",
+            "long_desc": "",
+            "hint": [],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "date": {
+            "name": "date",
+            "line": 28,
+            "short_desc": "Report date range",
+            "long_desc": "",
+            "hint": [],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "fields": {
+            "name": "fields",
+            "line": 34,
+            "short_desc": "List of fields \/ columns requested",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Illuminate\\Support\\Collection",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "default": null,
+            "errors": []
+        },
+        "result": {
+            "name": "result",
+            "line": 40,
+            "short_desc": "List of items",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Illuminate\\Support\\Collection",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "default": null,
+            "errors": []
+        }
+    },
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 46,
+            "short_desc": "MyReport constructor.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "xml": {
+                    "name": "xml",
+                    "line": 46,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\SimpleXMLElement",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "SimpleXMLElement"
+                        ],
+                        "attributes": {
+                            "startLine": 46,
+                            "endLine": 46
+                        }
+                    },
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "count": {
+            "name": "count",
+            "line": 141,
+            "short_desc": "Count result items.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "int",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

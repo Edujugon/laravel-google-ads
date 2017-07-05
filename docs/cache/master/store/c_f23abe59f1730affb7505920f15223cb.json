@@ -1,0 +1,92 @@
+{
+    "name": "Edujugon\\GoogleAds\\Console\\RefreshTokenCommand",
+    "line": 7,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Edujugon\\GoogleAds\\Console",
+    "file": "\/Users\/Edujugon\/Code\/Documentation\/Documentator\/google-ads\/..\/..\/..\/OpenSource\/google-ads\/src\/Console\/RefreshTokenCommand.php",
+    "relative_file": "\/src\/Console\/RefreshTokenCommand.php",
+    "hash": "2f05df59066e75389e90859d7b7b9b076b7fa673",
+    "parent": "Illuminate\\Console\\Command",
+    "modifiers": null,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "OAuth2": "Edujugon\\GoogleAds\\Auth\\OAuth2",
+        "Command": "Illuminate\\Console\\Command"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "signature": {
+            "name": "signature",
+            "line": 14,
+            "short_desc": "Console command signature",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Scalar_String",
+                "value": "googleads:token:generate",
+                "attributes": {
+                    "startLine": 14,
+                    "endLine": 14,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        },
+        "description": {
+            "name": "description",
+            "line": 21,
+            "short_desc": "Description",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Scalar_String",
+                "value": "Generate a new refresh token for Google Adwords API",
+                "attributes": {
+                    "startLine": 21,
+                    "endLine": 21,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        }
+    },
+    "methods": {
+        "handle": {
+            "name": "handle",
+            "line": 27,
+            "short_desc": "Generate refresh token",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

@@ -1,0 +1,143 @@
+{
+    "name": "Edujugon\\GoogleAds\\Auth\\OAuth2",
+    "line": 16,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Edujugon\\GoogleAds\\Auth",
+    "file": "\/Users\/Edujugon\/Code\/Documentation\/Documentator\/google-ads\/..\/..\/..\/OpenSource\/google-ads\/src\/Auth\/OAuth2.php",
+    "relative_file": "\/src\/Auth\/OAuth2.php",
+    "hash": "a5491658d0158c0e37c43c482a970fd367ca462b",
+    "parent": null,
+    "modifiers": null,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "OAuth2TokenBuilder": "Google\\AdsApi\\Common\\OAuth2TokenBuilder",
+        "GoogleOAuth2": "Google\\Auth\\OAuth2"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "adsConfig": {
+            "name": "adsConfig",
+            "line": 23,
+            "short_desc": "Adwords config data based on the environment.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "mixed",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "oAuthConfig": {
+            "name": "oAuthConfig",
+            "line": 25,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        }
+    },
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 31,
+            "short_desc": "OAuth2 constructor.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "env": {
+                    "name": "env",
+                    "line": 31,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "is_by_ref": false
+                }
+            }
+        },
+        "userCredentials": {
+            "name": "userCredentials",
+            "line": 47,
+            "short_desc": "UserRefreshCredentials\nGenerate a refreshable OAuth2 credential for authentication.",
+            "long_desc": "Parameters:\n$data: [$clientId => '',$clientSecret => '',$refreshToken => '']",
+            "hint": [
+                [
+                    "\\Google\\Auth\\Credentials\\UserRefreshCredentials",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "data": {
+                    "name": "data",
+                    "line": 47,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": "[]",
+                    "is_by_ref": false
+                }
+            }
+        },
+        "build": {
+            "name": "build",
+            "line": 63,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Google\\Auth\\OAuth2",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

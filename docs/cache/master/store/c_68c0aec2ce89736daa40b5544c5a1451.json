@@ -1,0 +1,421 @@
+{
+    "name": "Edujugon\\GoogleAds\\Services\\Service",
+    "line": 17,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Edujugon\\GoogleAds\\Services",
+    "file": "\/Users\/Edujugon\/Code\/Documentation\/Documentator\/google-ads\/..\/..\/..\/OpenSource\/google-ads\/src\/Services\/Service.php",
+    "relative_file": "\/src\/Services\/Service.php",
+    "hash": "2e0f1a341cc1c2b1227428e8308e85bc6ad84412",
+    "parent": null,
+    "modifiers": null,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Session": "Edujugon\\GoogleAds\\Exceptions\\Session",
+        "AdwordsSession": "Edujugon\\GoogleAds\\Session\\AdwordsSession",
+        "AdWordsServices": "Google\\AdsApi\\AdWords\\AdWordsServices"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "where": {
+            "name": "where",
+            "line": 25,
+            "short_desc": "Where Condition",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Scalar_String",
+                "value": "",
+                "attributes": {
+                    "startLine": 25,
+                    "endLine": 25,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        },
+        "orderBy": {
+            "name": "orderBy",
+            "line": 31,
+            "short_desc": "Order By clause",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Scalar_String",
+                "value": "",
+                "attributes": {
+                    "startLine": 31,
+                    "endLine": 31,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        },
+        "limit": {
+            "name": "limit",
+            "line": 37,
+            "short_desc": "Limit clause",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Scalar_String",
+                "value": "",
+                "attributes": {
+                    "startLine": 37,
+                    "endLine": 37,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        },
+        "session": {
+            "name": "session",
+            "line": 42,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "mixed",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "adWordsServices": {
+            "name": "adWordsServices",
+            "line": 47,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Google\\AdsApi\\AdWords\\AdWordsServices",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "service": {
+            "name": "service",
+            "line": 52,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "fields": {
+            "name": "fields",
+            "line": 57,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        }
+    },
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 64,
+            "short_desc": "Service constructor.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "service": {
+                    "name": "service",
+                    "line": 64,
+                    "short_desc": "Service $service",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Edujugon\\GoogleAds\\Services\\Google",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "session": {
+                    "name": "session",
+                    "line": 64,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Google\\AdsApi\\AdWords\\AdWordsSession",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "Google",
+                            "AdsApi",
+                            "AdWords",
+                            "AdWordsSession"
+                        ],
+                        "attributes": {
+                            "startLine": 64,
+                            "endLine": 64
+                        }
+                    },
+                    "default": "null",
+                    "is_by_ref": false
+                }
+            }
+        },
+        "orderBy": {
+            "name": "orderBy",
+            "line": 77,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Edujugon\\GoogleAds\\Services\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "field": {
+                    "name": "field",
+                    "line": 77,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "limit": {
+            "name": "limit",
+            "line": 89,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Edujugon\\GoogleAds\\Services\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "number": {
+                    "name": "number",
+                    "line": 89,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "offset": {
+                    "name": "offset",
+                    "line": 89,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "0",
+                    "is_by_ref": false
+                }
+            }
+        },
+        "select": {
+            "name": "select",
+            "line": 102,
+            "short_desc": "Set the fields to retrieve",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Edujugon\\GoogleAds\\Services\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "fields": {
+                    "name": "fields",
+                    "line": 102,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "where": {
+            "name": "where",
+            "line": 116,
+            "short_desc": "Set where condition",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Edujugon\\GoogleAds\\Services\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "condition": {
+                    "name": "condition",
+                    "line": 116,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "get": {
+            "name": "get",
+            "line": 130,
+            "short_desc": "Get all items.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Edujugon\\GoogleAds\\Services\\ServiceCollection",
+                    false
+                ]
+            ],
+            "hint_desc": "E.g. => Campaign | AdGroup | AdGroupAd | ...",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "fields": {
+                    "name": "fields",
+                    "line": 130,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "[]",
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getService": {
+            "name": "getService",
+            "line": 147,
+            "short_desc": "Get the Google service.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "mixed",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

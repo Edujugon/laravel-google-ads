@@ -1,0 +1,291 @@
+{
+    "name": "Edujugon\\GoogleAds\\Reports\\Fields",
+    "line": 16,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Edujugon\\GoogleAds\\Reports",
+    "file": "\/Users\/Edujugon\/Code\/Documentation\/Documentator\/google-ads\/..\/..\/..\/OpenSource\/google-ads\/src\/Reports\/Fields.php",
+    "relative_file": "\/src\/Reports\/Fields.php",
+    "hash": "74f693ee13a34343b317cab7b3e155393e928da3",
+    "parent": null,
+    "modifiers": null,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "AdwordsSession": "Edujugon\\GoogleAds\\Session\\AdwordsSession",
+        "AdWordsServices": "Google\\AdsApi\\AdWords\\AdWordsServices",
+        "ReportDefinitionService": "Google\\AdsApi\\AdWords\\v201702\\cm\\ReportDefinitionService"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "session": {
+            "name": "session",
+            "line": 23,
+            "short_desc": "Adwords Session",
+            "long_desc": "",
+            "hint": [
+                [
+                    "mixed",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "adWordsServices": {
+            "name": "adWordsServices",
+            "line": 28,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Google\\AdsApi\\AdWords\\AdWordsServices",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "reportDefinitionService": {
+            "name": "reportDefinitionService",
+            "line": 33,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Google\\AdsApi\\Common\\AdsSoapClient",
+                    false
+                ],
+                [
+                    "\\Google\\AdsApi\\Common\\SoapClient",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "reportDefinitionFields": {
+            "name": "reportDefinitionFields",
+            "line": 37,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "obj": {
+            "name": "obj",
+            "line": 44,
+            "short_desc": "Fields with type and accepted values.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\stdClass",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        }
+    },
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 50,
+            "short_desc": "Fields constructor.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "session": {
+                    "name": "session",
+                    "line": 50,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": "null",
+                    "is_by_ref": false
+                }
+            }
+        },
+        "of": {
+            "name": "of",
+            "line": 67,
+            "short_desc": "Load the fields of the passed reportType",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Edujugon\\GoogleAds\\Reports\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "reportType": {
+                    "name": "reportType",
+                    "line": 67,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "asObj": {
+            "name": "asObj",
+            "line": 86,
+            "short_desc": "Get fields as object",
+            "long_desc": "The properties will be the fields name.\nEach property is an array with type and accepted values.",
+            "hint": [
+                [
+                    "\\stdClass",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "asList": {
+            "name": "asList",
+            "line": 96,
+            "short_desc": "Get array of fields names.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "asQuerySelector": {
+            "name": "asQuerySelector",
+            "line": 107,
+            "short_desc": "Get a query selector of all filters.",
+            "long_desc": "E.g. Id,Name,Description...",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "reportTypes": {
+            "name": "reportTypes",
+            "line": 116,
+            "short_desc": "Get all report types",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "except": {
+            "name": "except",
+            "line": 127,
+            "short_desc": "Pull fields from the list.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Edujugon\\GoogleAds\\Reports\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "list": {
+                    "name": "list",
+                    "line": 127,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}
