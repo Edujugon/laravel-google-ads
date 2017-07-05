@@ -1,8 +1,4 @@
 <?php
-
-namespace Edujugon\GoogleAds\Exceptions;
-use Exception;
-
 /**
  * Project: google-ads.
  * User: Edujugon
@@ -10,4 +6,9 @@ use Exception;
  * Date: 9/2/17
  * Time: 13:01
  */
+
+namespace Edujugon\GoogleAds\Exceptions;
+use Exception;
+
+
 class ReportFormat extends \Exception{}

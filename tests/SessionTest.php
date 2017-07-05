@@ -1,7 +1,4 @@
 <?php
-use Edujugon\GoogleAds\Auth\OAuth2;
-use Edujugon\GoogleAds\Session\AdwordsSession;
-
 /**
  * Project: google-ads.
  * User: Edujugon
@@ -9,6 +6,10 @@ use Edujugon\GoogleAds\Session\AdwordsSession;
  * Date: 9/2/17
  * Time: 13:38
  */
+
+use Edujugon\GoogleAds\Auth\OAuth2;
+use Edujugon\GoogleAds\Session\AdwordsSession;
+
 
 
 class SessionTest extends PHPUnit_Framework_TestCase {
