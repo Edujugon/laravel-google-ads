@@ -1,6 +1,4 @@
 <?php
-use Edujugon\GoogleAds\Reports\MyReport;
-
 /**
  * Project: google-ads.
  * User: Edujugon
@@ -8,6 +6,10 @@ use Edujugon\GoogleAds\Reports\MyReport;
  * Date: 21/2/17
  * Time: 20:52
  */
+
+use Edujugon\GoogleAds\Reports\MyReport;
+
+
 class GlobalFunctionWrappers extends PHPUnit_Framework_TestCase {
 
     /** @test */

@@ -1,10 +1,4 @@
 <?php
-namespace Edujugon\GoogleAds\Reports;
-
-use Google\AdsApi\AdWords\v201702\cm\ReportDefinitionReportType;
-use Edujugon\GoogleAds\Exceptions\ReportTypes as ReportException;
-use ReflectionClass;
-
 /**
  * Project: google-ads.
  * User: Edujugon
@@ -12,6 +6,13 @@ use ReflectionClass;
  * Date: 10/2/17
  * Time: 9:25
  */
+
+namespace Edujugon\GoogleAds\Reports;
+
+use Google\AdsApi\AdWords\v201702\cm\ReportDefinitionReportType;
+use Edujugon\GoogleAds\Exceptions\ReportTypes as ReportException;
+use ReflectionClass;
+
 abstract class ReportTypes
 {
 
