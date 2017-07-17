@@ -55,7 +55,7 @@ class GoogleAds
     {
         $this->config = e_ads_config();
 
-        $this->env = $env ? $env : $this->config['env'] ;
+        $this->env = $env ?: $this->config['env'] ;
     }
 
     /**
