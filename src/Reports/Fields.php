@@ -51,7 +51,7 @@ class Fields
     {
         $this->adWordsServices = new AdWordsServices();
 
-        $this->session = $session ? $session : (new AdwordsSession())->oAuth()->build();
+        $this->session = $session ?: (new AdwordsSession())->oAuth()->build();
 
         $this->reportDefinitionService = $this->adWordsServices->get($this->session, ReportDefinitionService::class);
 
