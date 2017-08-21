@@ -11,7 +11,7 @@ namespace Edujugon\GoogleAds\Reports;
 
 use Edujugon\GoogleAds\Session\AdwordsSession;
 use Google\AdsApi\AdWords\AdWordsServices;
-use Google\AdsApi\AdWords\v201702\cm\ReportDefinitionService;
+use Google\AdsApi\AdWords\v201708\cm\ReportDefinitionService;
 
 class Fields
 {
@@ -51,7 +51,7 @@ class Fields
     {
         $this->adWordsServices = new AdWordsServices();
 
-        $this->session = $session ? $session : (new AdwordsSession())->oAuth()->build();
+        $this->session = $session ?: (new AdwordsSession())->oAuth()->build();
 
         $this->reportDefinitionService = $this->adWordsServices->get($this->session, ReportDefinitionService::class);
 

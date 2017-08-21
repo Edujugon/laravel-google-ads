@@ -12,7 +12,7 @@
     "require": {
         "illuminate/support": "^5.1",
         "illuminate/console": "^5.1",
-        "googleads/googleads-php-lib": "^25.1"
+        "googleads/googleads-php-lib": "^29.0"
     },
     "require-dev": {
       "phpunit/phpunit": "~5.0"
