@@ -11,7 +11,7 @@ namespace Edujugon\GoogleAds\Reports;
 
 use Edujugon\GoogleAds\Session\AdwordsSession;
 use Google\AdsApi\AdWords\AdWordsServices;
-use Google\AdsApi\AdWords\v201702\cm\ReportDefinitionService;
+use Google\AdsApi\AdWords\v201708\cm\ReportDefinitionService;
 
 class Fields
 {
