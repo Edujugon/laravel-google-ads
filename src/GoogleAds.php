@@ -55,7 +55,7 @@ class GoogleAds
     {
         $this->config = e_ads_config();
 
-        $this->env = $env ? $env : $this->config['env'] ;
+        $this->env = $env ?: $this->config['env'] ;
     }
 
     /**
@@ -107,7 +107,7 @@ class GoogleAds
     /**
      * Set the google adwords service.
      *
-     * @param \Google\AdsApi\AdWords\v201702\cm\*  $service
+     * @param \Google\AdsApi\AdWords\v201708\cm\*  $service
      * @return \Edujugon\GoogleAds\Services\Service
      */
     public function service($service)
