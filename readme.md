@@ -10,7 +10,11 @@ Simple and easy to use API for your Google Adwords.
 composer require edujugon/laravel-google-ads
 ```
 
-##### Register the GoogleAds service by adding it to the providers array.
+##### Laravel 5.5 or higher?
+
+Then you don't have to either register or add the alias, this package uses Package Auto-Discovery's feature, and should be available as soon as you install it via Composer.
+
+##### (Only for Laravel 5.4 or minor) Register the GoogleAds service by adding it to the providers array.
 
 ```
 'providers' => array(
@@ -19,7 +23,7 @@ composer require edujugon/laravel-google-ads
     )
 ```
 
-##### Let's add the Alias facade, add it to the aliases array.
+##### (Only for Laravel 5.4 or minor) Let's add the Alias facade, add it to the aliases array.
 
 ```
 'aliases' => array(
