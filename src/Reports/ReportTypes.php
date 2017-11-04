@@ -9,7 +9,7 @@
 
 namespace Edujugon\GoogleAds\Reports;
 
-use Google\AdsApi\AdWords\v201708\cm\ReportDefinitionReportType;
+use Google\AdsApi\AdWords\v201710\cm\ReportDefinitionReportType;
 use Edujugon\GoogleAds\Exceptions\ReportTypes as ReportException;
 use ReflectionClass;
 

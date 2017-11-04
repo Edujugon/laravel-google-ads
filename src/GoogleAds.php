@@ -107,7 +107,7 @@ class GoogleAds
     /**
      * Set the google adwords service.
      *
-     * @param \Google\AdsApi\AdWords\v201708\cm\*  $service
+     * @param \Google\AdsApi\AdWords\v201710\cm\*  $service
      * @return \Edujugon\GoogleAds\Services\Service
      */
     public function service($service)
