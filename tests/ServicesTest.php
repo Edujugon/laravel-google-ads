@@ -1,16 +1,6 @@
 <?php
 
-
-use Google\AdsApi\AdWords\v201609\cm\AdvertisingChannelType;
-use Google\AdsApi\AdWords\v201609\cm\BiddingStrategyConfiguration;
-use Google\AdsApi\AdWords\v201609\cm\BiddingStrategyType;
-use Google\AdsApi\AdWords\v201609\cm\Budget;
-use Google\AdsApi\AdWords\v201609\cm\BudgetBudgetDeliveryMethod;
-use Google\AdsApi\AdWords\v201609\cm\BudgetOperation;
-use Google\AdsApi\AdWords\v201609\cm\CampaignOperation;
-use Google\AdsApi\AdWords\v201708\cm\CampaignService;
-use Google\AdsApi\AdWords\v201609\cm\Money;
-use Google\AdsApi\AdWords\v201609\cm\Operator;
+use Google\AdsApi\AdWords\v201710\cm\CampaignService;
 
 class ServicesTest extends PHPUnit_Framework_TestCase {
 
@@ -22,7 +12,7 @@ class ServicesTest extends PHPUnit_Framework_TestCase {
     public function add_service()
     {
         $service = (new \Edujugon\GoogleAds\Services\Service(CampaignService::class));
-        $this->assertInstanceOf(\Google\AdsApi\AdWords\v201708\cm\CampaignService::class,$service->getService());
+        $this->assertInstanceOf(\Google\AdsApi\AdWords\v201710\cm\CampaignService::class,$service->getService());
     }
 
 
@@ -146,16 +136,16 @@ class ServicesTest extends PHPUnit_Framework_TestCase {
 //        $campaignService = (new \Edujugon\GoogleAds\Services\Service(CampaignService::class))->getService();
 //
 //        //Create the campaign
-//        $campaign = new \Google\AdsApi\AdWords\v201708\cm\Campaign();
+//        $campaign = new \Google\AdsApi\AdWords\v201710\cm\Campaign();
 //        $campaign->setName('My first campaign');
-//        $campaign->setStatus(\Google\AdsApi\AdWords\v201708\cm\CampaignStatus::PAUSED);
+//        $campaign->setStatus(\Google\AdsApi\AdWords\v201710\cm\CampaignStatus::PAUSED);
 //
 //        $biddingStrategyConfiguration = new BiddingStrategyConfiguration();
 //        $biddingStrategyConfiguration->setBiddingStrategyType(BiddingStrategyType::MANUAL_CPC);
 //        $campaign->setBiddingStrategyConfiguration($biddingStrategyConfiguration);
 //
 //        //Budget
-//        $budgetService = (new \Edujugon\GoogleAds\Services\Service(\Google\AdsApi\AdWords\v201708\cm\BudgetService::class))->getService();
+//        $budgetService = (new \Edujugon\GoogleAds\Services\Service(\Google\AdsApi\AdWords\v201710\cm\BudgetService::class))->getService();
 //        $sharedBudget = new Budget();
 //        $budget = new Budget();
 //
