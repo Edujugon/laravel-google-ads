@@ -162,7 +162,7 @@ or
 $ads->service(AdGroupAdService::class);
 ```
 
-or Any google ads services available under `Google\AdsApi\AdWords\v201708\cm` folder.
+or Any google ads services available under `Google\AdsApi\AdWords\v201710\cm` folder.
 
 Also you can use the global helper in order the get an instance of Service.
 
