@@ -25,5 +25,15 @@
           "src/Support/helpers.php"
       ]
     },
+    "extra": {
+      "laravel": {
+        "providers": [
+          "Edujugon\\GoogleAds\\Providers\\GoogleAdsServiceProvider"
+        ],
+        "aliases": {
+          "GoogleAds": "Edujugon\\GoogleAds\\Facades\\GoogleAds"
+        }
+      }
+    },
     "minimum-stability": "dev"
 }
