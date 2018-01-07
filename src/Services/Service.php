@@ -181,7 +181,6 @@ class Service
      * Set the service
      *
      * @param $service
-     * @return $this
      * @throws \Edujugon\GoogleAds\Exceptions\Service
      */
     private function setService($service)
