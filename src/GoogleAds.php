@@ -103,16 +103,16 @@ class GoogleAds
     //////////////////////////////////
     //SERVICES
     /////////////////////////////////
-
     /**
      * Set the google adwords service.
      *
      * @param \Google\AdsApi\AdWords\v201710\cm\*  $service
-     * @return \Edujugon\GoogleAds\Services\Service
+     * @param \Google\AdsApi\AdWords\AdWordsSession|null $session
+     * @return Service
      */
-    public function service($service)
+    public function service($service,$session = null)
     {
-        $this->service = (new Service($service,$this->session));
+        $this->service = (new Service($service,$session ?: $this->session));
 
         return $this->service;
     }
