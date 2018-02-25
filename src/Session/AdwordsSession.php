@@ -76,6 +76,22 @@ class AdwordsSession
     }
 
     /**
+     * Construct an API session from OAuth2
+     *
+     * @param string $developerToken
+     * @param \Google\Auth\Credentials\UserRefreshCredentials $oAuth2Credential
+     * @return mixed
+     */
+    public function buildWithOAuth($developerToken, $oAuth2Credential)
+    {
+        $adwordsSession = new AdWordsSessionBuilder();
+
+        return $adwordsSession->withDeveloperToken($developerToken)
+            ->withOAuth2Credential($oAuth2Credential)
+            ->build();
+    }
+
+    /**
      * Create an array merging the config array with passed data.
      *
      * @param $data
