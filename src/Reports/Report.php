@@ -11,8 +11,8 @@ namespace Edujugon\GoogleAds\Reports;
 
 
 use Edujugon\GoogleAds\Session\AdwordsSession;
-use Google\AdsApi\AdWords\Reporting\v201710\ReportDownloader;
-use Google\AdsApi\AdWords\v201710\cm\ApiException;
+use Google\AdsApi\AdWords\Reporting\v201802\ReportDownloader;
+use Google\AdsApi\AdWords\v201802\cm\ApiException;
 
 class Report
 {

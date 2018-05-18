@@ -103,10 +103,11 @@ class GoogleAds
     //////////////////////////////////
     //SERVICES
     /////////////////////////////////
+
     /**
      * Set the google adwords service.
      *
-     * @param \Google\AdsApi\AdWords\v201710\cm\*  $service
+     * @param \Google\AdsApi\AdWords\v201802\cm\*  $service
      * @param \Google\AdsApi\AdWords\AdWordsSession|null $session
      * @return Service
      */

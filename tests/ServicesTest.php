@@ -1,6 +1,6 @@
 <?php
 
-use Google\AdsApi\AdWords\v201710\cm\CampaignService;
+use Google\AdsApi\AdWords\v201802\cm\CampaignService;
 
 class ServicesTest extends PHPUnit_Framework_TestCase {
 
@@ -12,7 +12,7 @@ class ServicesTest extends PHPUnit_Framework_TestCase {
     public function add_service()
     {
         $service = (new \Edujugon\GoogleAds\Services\Service(CampaignService::class));
-        $this->assertInstanceOf(\Google\AdsApi\AdWords\v201710\cm\CampaignService::class,$service->getService());
+        $this->assertInstanceOf(\Google\AdsApi\AdWords\v201802\cm\CampaignService::class,$service->getService());
     }
 
 
@@ -136,16 +136,16 @@ class ServicesTest extends PHPUnit_Framework_TestCase {
 //        $campaignService = (new \Edujugon\GoogleAds\Services\Service(CampaignService::class))->getService();
 //
 //        //Create the campaign
-//        $campaign = new \Google\AdsApi\AdWords\v201710\cm\Campaign();
+//        $campaign = new \Google\AdsApi\AdWords\v201802\cm\Campaign();
 //        $campaign->setName('My first campaign');
-//        $campaign->setStatus(\Google\AdsApi\AdWords\v201710\cm\CampaignStatus::PAUSED);
+//        $campaign->setStatus(\Google\AdsApi\AdWords\v201802\cm\CampaignStatus::PAUSED);
 //
 //        $biddingStrategyConfiguration = new BiddingStrategyConfiguration();
 //        $biddingStrategyConfiguration->setBiddingStrategyType(BiddingStrategyType::MANUAL_CPC);
 //        $campaign->setBiddingStrategyConfiguration($biddingStrategyConfiguration);
 //
 //        //Budget
-//        $budgetService = (new \Edujugon\GoogleAds\Services\Service(\Google\AdsApi\AdWords\v201710\cm\BudgetService::class))->getService();
+//        $budgetService = (new \Edujugon\GoogleAds\Services\Service(\Google\AdsApi\AdWords\v201802\cm\BudgetService::class))->getService();
 //        $sharedBudget = new Budget();
 //        $budget = new Budget();
 //
