@@ -11,7 +11,7 @@ namespace Edujugon\GoogleAds\Services;
 
 
 use Google\AdsApi\AdWords\AdWordsSession;
-use Google\AdsApi\AdWords\v201710\cm\AdGroupAdService;
+use Google\AdsApi\AdWords\v201802\cm\AdGroupAdService;
 
 class AdGroupAd extends Service
 {
