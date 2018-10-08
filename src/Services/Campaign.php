@@ -10,7 +10,7 @@
 namespace Edujugon\GoogleAds\Services;
 
 use Google\AdsApi\AdWords\AdWordsSession;
-use Google\AdsApi\AdWords\v201802\cm\CampaignService;
+use Google\AdsApi\AdWords\v201809\cm\CampaignService;
 
 class Campaign extends Service
 {
