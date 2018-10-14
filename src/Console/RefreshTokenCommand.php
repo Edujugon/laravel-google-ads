@@ -42,7 +42,16 @@ class RefreshTokenCommand extends Command {
         $oAth2->setCode($accessToken);
         $authToken = $oAth2->fetchAuthToken();
 
+        if (!array_key_exists('refresh_token', $authToken)) {
+            $this->error('Couldn\'t find refresh_token key in the response.');
+            $this->comment('Below you can check the whole response:');
+            $this->line(json_encode($authToken));
+
+            return;
+        }
+
         $this->comment('Copy the refresh token in your googleads configuration file (config/google-ads.php)');
+
         // Print refresh token
         $this->line(sprintf(
             'Refresh token: "%s"',
