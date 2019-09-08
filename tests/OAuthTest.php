@@ -1,9 +1,9 @@
 <?php
 
-
+use PHPUnit\Framework\TestCase;
 use Edujugon\GoogleAds\Auth\OAuth2;
 
-class OAuthTest extends PHPUnit_Framework_TestCase {
+class OAuthTest extends TestCase {
 
     /** @test */
     public function new_login(){

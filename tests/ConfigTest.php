@@ -1,12 +1,12 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
 
-
-class ConfigTest extends PHPUnit_Framework_TestCase {
+class ConfigTest extends TestCase {
 
     /** @test */
     public function load_config_file(){
-        $this->assertInternalType('array',e_ads_config());
+        $this->assertIsArray(e_ads_config());
     }
 
     /** @test */
@@ -22,6 +22,5 @@ class ConfigTest extends PHPUnit_Framework_TestCase {
         $this->expectExceptionMessage('Please provide a correct environment. Available options: production/test');
 
         e_ads_config_google_ads('nothing');
-
     }
 }

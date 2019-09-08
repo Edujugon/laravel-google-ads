@@ -1,12 +1,12 @@
 <?php
 
-
+use PHPUnit\Framework\TestCase;
 use Edujugon\GoogleAds\GoogleAds;
 use Edujugon\GoogleAds\Reports\MyReport;
 use Google\AdsApi\AdWords\v201809\cm\AdGroupService;
 use Google\AdsApi\AdWords\v201809\cm\CampaignService;
 
-class GoogleAdsTest extends PHPUnit_Framework_TestCase {
+class GoogleAdsTest extends TestCase {
 
 
     /** @test */
@@ -126,7 +126,7 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
 
         $fields = $ads->fields()->of('CRITERIA_PERFORMANCE_REPORT')->asList();
 
-        $this->assertInternalType('array',$fields);
+        $this->assertIsArray($fields);
     }
 
     /** @test */
@@ -156,7 +156,7 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
     {
         $ads = new GoogleAds();
 
-        $this->assertInternalType('array',$ads->showReportTypes());
+        $this->assertIsArray($ads->showReportTypes());
     }
 
     /** @test */
@@ -164,7 +164,7 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
     {
         $ads = new GoogleAds();
 
-        $this->assertInternalType('array',$ads->showReportFormats());
+        $this->assertIsArray($ads->showReportFormats());
     }
 
     /** @test */
@@ -199,13 +199,13 @@ class GoogleAdsTest extends PHPUnit_Framework_TestCase {
     {
         $ads = new GoogleAds();
         $fields = $ads->report()->from('CRITERIA_PERFORMANCE_REPORT')->getFields();
-        $this->assertInternalType('array',$fields);
+        $this->assertIsArray($fields);
     }
 
     /** @test */
     public function get_report_formats()
     {
         $ads = new GoogleAds();
-        $this->assertInternalType('array',$ads->report()->getFormats());
+        $this->assertIsArray($ads->report()->getFormats());
     }
 }

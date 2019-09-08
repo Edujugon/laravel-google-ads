@@ -1,18 +1,12 @@
 <?php
-/**
- * Project: google-ads.
- * User: Edujugon
- * Email: edujugon@gmail.com
- * Date: 9/2/17
- * Time: 13:38
- */
 
+use PHPUnit\Framework\TestCase;
 use Edujugon\GoogleAds\Auth\OAuth2;
 use Edujugon\GoogleAds\Session\AdwordsSession;
 
 
 
-class SessionTest extends PHPUnit_Framework_TestCase {
+class SessionTest extends TestCase {
 
     /** @test */
     public function create_session()

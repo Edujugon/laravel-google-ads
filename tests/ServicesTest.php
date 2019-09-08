@@ -1,8 +1,9 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
 use Google\AdsApi\AdWords\v201809\cm\CampaignService;
 
-class ServicesTest extends PHPUnit_Framework_TestCase {
+class ServicesTest extends TestCase {
 
 
     protected $testedCampaignId = 795625088;
@@ -122,7 +123,7 @@ class ServicesTest extends PHPUnit_Framework_TestCase {
             $changed = $campaign->save();
             if($changed)
             {
-                $this->assertInternalType('array',$changed);
+                $this->assertIsArray($changed);
 
                 $this->assertEquals('hello !!',$changed[0]->getName());
             }
