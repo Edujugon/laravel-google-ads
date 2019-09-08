@@ -1,16 +1,8 @@
 <?php
-/**
- * Project: google-ads.
- * User: Edujugon
- * Email: edujugon@gmail.com
- * Date: 21/2/17
- * Time: 20:52
- */
 
-use Edujugon\GoogleAds\Reports\MyReport;
+use PHPUnit\Framework\TestCase;
 
-
-class GlobalFunctionWrappers extends PHPUnit_Framework_TestCase {
+class GlobalFunctionWrappers extends TestCase{
 
     /** @test */
     public function get_report_by_global_function_wrapper()
@@ -21,7 +13,7 @@ class GlobalFunctionWrappers extends PHPUnit_Framework_TestCase {
     /** @test */
     public function get_service_by_global_function_wrapper()
     {
-        $this->assertInstanceOf(\Edujugon\GoogleAds\Services\Service::class,google_service(\Google\AdsApi\AdWords\v201609\cm\CampaignService::class));
+        $this->assertInstanceOf(\Edujugon\GoogleAds\Services\Service::class,google_service(\Google\AdsApi\AdWords\v201809\cm\CampaignService::class));
     }
 
     /** @test */

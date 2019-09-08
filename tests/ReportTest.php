@@ -1,16 +1,17 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
 use Edujugon\GoogleAds\Reports\Report;
 
-class ReportTest extends PHPUnit_Framework_TestCase {
+class ReportTest extends TestCase {
 
     /** @test */
     public function report_fields()
     {
         $list = (new \Edujugon\GoogleAds\Reports\Fields())->of('CRITERIA_PERFORMANCE_REPORT')->except(['Parameters','AccountCurrencyCode'])->asList();
 
-        $this->assertInternalType('array',$list);
-        $this->assertInternalType('array',(new \Edujugon\GoogleAds\Reports\Fields())->reportTypes());
+        $this->assertIsArray($list);
+        $this->assertIsArray((new \Edujugon\GoogleAds\Reports\Fields())->reportTypes());
         $this->assertInstanceOf('stdClass',(new \Edujugon\GoogleAds\Reports\Fields())->of('CRITERIA_PERFORMANCE_REPORT')->asObj());
         $this->assertArrayNotHasKey('Parameter',$list);
     }
@@ -18,7 +19,7 @@ class ReportTest extends PHPUnit_Framework_TestCase {
     /** @test */
     public function format()
     {
-        $this->assertInternalType('array',\Edujugon\GoogleAds\Reports\Format::getList());
+        $this->assertIsArray(\Edujugon\GoogleAds\Reports\Format::getList());
         $this->assertEquals('CSV',\Edujugon\GoogleAds\Reports\Format::get('csv'));
     }
 
@@ -74,7 +75,7 @@ class ReportTest extends PHPUnit_Framework_TestCase {
     {
         $report = new Report();
 
-        $this->assertInternalType('array',$report->getTypes());
+        $this->assertIsArray($report->getTypes());
     }
 
     /** @test */
