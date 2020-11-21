@@ -51,19 +51,11 @@ function google_report_fields($session = null)
  */
 function e_ads_config()
 {
-    if(function_exists('config_path'))
-    {
-        if(file_exists(config_path('google-ads.php')))
-        {
-            $configuration = include(config_path('google-ads.php'));
-
-            return $configuration;
-        }
+    if (function_exists('config')) {
+        return config('google-ads');
     }
 
-    $configuration = include(__DIR__ . '/../Config/config.php');
-
-    return $configuration;
+    return include(__DIR__ . '/../Config/config.php');
 }
 
 /**
